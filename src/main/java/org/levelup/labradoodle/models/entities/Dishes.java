@@ -25,9 +25,9 @@ public class Dishes implements Serializable {
 
     private String name;
 
-    private Integer price_original;
+    private Integer priceOriginal;
 
-    private Integer price_new;
+    private Integer priceNew;
 
     private Date deadline;
 
@@ -62,21 +62,21 @@ public class Dishes implements Serializable {
         return this;
     }
 
-    public Integer getPrice_original() {
-        return price_original;
+    public Integer getPriceOriginal() {
+        return priceOriginal;
     }
 
     public Dishes setPrice_original(Integer price_original) {
-        this.price_original = price_original;
+        this.priceOriginal = price_original;
         return this;
     }
 
-    public Integer getPrice_new() {
-        return price_new;
+    public Integer getPriceNew() {
+        return priceNew;
     }
 
     public Dishes setPrice_new(Integer price_new) {
-        this.price_new = price_new;
+        this.priceNew = price_new;
         return this;
     }
 
