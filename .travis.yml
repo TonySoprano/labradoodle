@@ -1,7 +1,7 @@
 #указание языка программирования
 language: java
 
-#сборка болько для ветки master
+#сборка только для ветки master
 #http://docs.travis-ci.com/user/customizing-the-build/#Building-Specific-Branches
 branches:
     only:
