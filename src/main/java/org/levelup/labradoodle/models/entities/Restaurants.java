@@ -29,7 +29,7 @@ public class Restaurants implements Serializable{
 
     private String street;
 
-    private Integer building;
+    private String building;
 
     private String phone;
 
@@ -37,7 +37,7 @@ public class Restaurants implements Serializable{
 
     private String closeTime;
 
-    private Integer email;
+    private String email;
 
     public Integer getId() {
         return id;
@@ -84,11 +84,11 @@ public class Restaurants implements Serializable{
         return this;
     }
 
-    public Integer getBuilding() {
+    public String getBuilding() {
         return building;
     }
 
-    public Restaurants setBuilding(Integer building) {
+    public Restaurants setBuilding(String building) {
         this.building = building;
         return this;
     }
@@ -120,11 +120,11 @@ public class Restaurants implements Serializable{
         return this;
     }
 
-    public Integer getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public Restaurants setEmail(Integer email) {
+    public Restaurants setEmail(String email) {
         this.email = email;
         return this;
     }
