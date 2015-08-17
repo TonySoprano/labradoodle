@@ -1,54 +1,56 @@
-package org.levelup.labradoodle.models.entities;
+package org.levelup.labradoodle.models.web;
 
-
-import javax.persistence.*;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.levelup.labradoodle.models.entities.City;
+import org.levelup.labradoodle.models.entities.Restaurants;
 
 /**
- * @author Revuk Alex
- * @version 1.0
- * @since 16.08.2015
+ * Created by toha on 17.08.15.
  */
-@Entity
-@Table(name = "restaurants")
-@NamedQueries({
-        @NamedQuery(name = "getAll", query = "SELECT a FROM Restaurants a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM Restaurants a WHERE a.id = :id")
-})
-public class Restaurants implements Serializable{
+@JsonAutoDetect
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+public class RestaurantsDto implements Serializable {
 
-    @Id
-    @GeneratedValue
+    @JsonProperty
     private Integer id;
 
+    @JsonProperty
     private String name;
 
+    @JsonProperty
     private City city;
 
+    @JsonProperty
     private String district;
 
+    @JsonProperty
     private String street;
 
+    @JsonProperty
     private Integer building;
 
+    @JsonProperty
     private String phone;
 
+    @JsonProperty
     private String openTime;
 
+    @JsonProperty
     private String closeTime;
 
+    @JsonProperty
     private String email;
 
+    @JsonProperty
     public Integer getId() {
         return id;
     }
 
-    public Restaurants setId(Integer id) {
+    @JsonProperty
+    public RestaurantsDto setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -57,7 +59,7 @@ public class Restaurants implements Serializable{
         return name;
     }
 
-    public Restaurants setName(String name) {
+    public RestaurantsDto setName(String name) {
         this.name = name;
         return this;
     }
@@ -66,7 +68,7 @@ public class Restaurants implements Serializable{
         return city;
     }
 
-    public Restaurants setCity(City city) {
+    public RestaurantsDto setCity(City city) {
         this.city = city;
         return this;
     }
@@ -75,7 +77,7 @@ public class Restaurants implements Serializable{
         return district;
     }
 
-    public Restaurants setDistrict(String district) {
+    public RestaurantsDto setDistrict(String district) {
         this.district = district;
         return this;
     }
@@ -84,7 +86,7 @@ public class Restaurants implements Serializable{
         return street;
     }
 
-    public Restaurants setStreet(String street) {
+    public RestaurantsDto setStreet(String street) {
         this.street = street;
         return this;
     }
@@ -93,7 +95,7 @@ public class Restaurants implements Serializable{
         return building;
     }
 
-    public Restaurants setBuilding(Integer building) {
+    public RestaurantsDto setBuilding(Integer building) {
         this.building = building;
         return this;
     }
@@ -102,7 +104,7 @@ public class Restaurants implements Serializable{
         return phone;
     }
 
-    public Restaurants setPhone(String phone) {
+    public RestaurantsDto setPhone(String phone) {
         this.phone = phone;
         return this;
     }
@@ -111,7 +113,7 @@ public class Restaurants implements Serializable{
         return openTime;
     }
 
-    public Restaurants setOpenTime(String openTime) {
+    public RestaurantsDto setOpenTime(String openTime) {
         this.openTime = openTime;
         return this;
     }
@@ -120,7 +122,7 @@ public class Restaurants implements Serializable{
         return closeTime;
     }
 
-    public Restaurants setCloseTime(String closeTime) {
+    public RestaurantsDto setCloseTime(String closeTime) {
         this.closeTime = closeTime;
         return this;
     }
@@ -129,9 +131,8 @@ public class Restaurants implements Serializable{
         return email;
     }
 
-    public Restaurants setEmail(String email) {
+    public RestaurantsDto setEmail(String email) {
         this.email = email;
         return this;
     }
-
 }
