@@ -16,8 +16,8 @@
 </head>
 <body>
 <div id="dishesTypes">Доступные блюда</div>
-<div id="listDishesTypes" >
-    <select >
+<div id="listDishesTypes">
+    <select>
         <option>тип 1</option>
         <option>тип 2</option>
         <option>тип 2</option>
