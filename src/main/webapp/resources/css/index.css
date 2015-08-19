@@ -1,7 +1,27 @@
-#hotOffers {
+#dishesTypes {
+    text-align: center;
+    margin: 5px;
+}
+
+#listDishesTypes {
+    margin: 5px auto;
     text-align: center;
 }
 
-#dishesTypes {
-    text-align: center;
+.tableDishesTypes {
+    margin: 5px auto;
+
+}
+
+.tableDishesTypes td{
+    padding: 10px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: #FFE4E1;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
 }
