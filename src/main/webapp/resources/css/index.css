@@ -25,3 +25,29 @@
     -webkit-border-radius: 50px;
     border-radius: 50px;
 }
+#blocks{
+    padding: 30px;
+    margin:100px;
+    height:500px;
+    width: 950px;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+.block1{
+    height:230px;
+    float: left;
+}
+.block2{
+    height:230px;
+    float: right;
+}
+.block3{
+    height:230px;
+    float: left;
+    padding-top: 20px;
+}
+.block4{
+    height:230px;
+    float: right;
+    padding-top: 20px;
+}
