@@ -9,5 +9,4 @@ var onStart = function () {
     $.ajax({
 
     });
-
 };

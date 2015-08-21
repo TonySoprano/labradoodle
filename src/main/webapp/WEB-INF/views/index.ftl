@@ -16,8 +16,8 @@
 </head>
 <body>
 <div id="dishesTypes">Доступные блюда</div>
-<div id="listDishesTypes" >
-    <select >
+<div id="listDishesTypes">
+    <select>
         <option>тип 1</option>
         <option>тип 2</option>
         <option>тип 2</option>
@@ -36,5 +36,27 @@
         </td>
     </tr>
 </table>
+<div id="blocks" >
+    <div class="block1">
+        <a href=" " >
+            <img src="https://tpc.googlesyndication.com/simgad/10150932345484726920" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+    <div class="block2">
+        <a href=" ">
+            <img src="https://tpc.googlesyndication.com/simgad/14368965802840480494" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+    <div class="block3">
+        <a href=" " >
+            <img src="https://tpc.googlesyndication.com/simgad/2125599233914660053" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+    <div class="block4">
+        <a href=" " >
+            <img src="https://tpc.googlesyndication.com/simgad/6661425047524397169" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+</div>
 </body>
 </html>
