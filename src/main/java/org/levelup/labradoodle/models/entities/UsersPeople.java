@@ -11,8 +11,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 @NamedQueries({
-        @NamedQuery(name = "getAll", query = "SELECT a FROM Users a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM Users a WHERE a.id = :id")
+        @NamedQuery(name = "getAll", query = "SELECT a FROM UsersPeople a"),
+        @NamedQuery(name = "getById", query = "SELECT a FROM UsersPeople a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteById", query = "DELETE FROM UsersPeople a WHERE a.id = :id")
 })
 public class UsersPeople implements Serializable {
 
