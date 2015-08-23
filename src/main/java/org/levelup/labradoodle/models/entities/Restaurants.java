@@ -13,7 +13,8 @@ import java.io.Serializable;
 @Table(name = "restaurants")
 @NamedQueries({
         @NamedQuery(name = "getAll", query = "SELECT a FROM Restaurants a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM Restaurants a WHERE a.id = :id")
+        @NamedQuery(name = "getById", query = "SELECT a FROM Restaurants a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteById", query = "DELETE FROM Restaurants a WHERE a.id = :id")
 })
 public class Restaurants implements Serializable{
 
