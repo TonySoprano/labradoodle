@@ -8,3 +8,6 @@ language: java
 branches:
     only:
     - master
+
+after_success:
+    - ll -a
