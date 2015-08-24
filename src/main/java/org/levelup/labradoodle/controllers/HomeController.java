@@ -1,8 +1,15 @@
 package org.levelup.labradoodle.controllers;
 
+import org.levelup.labradoodle.models.entities.Dishes;
+import org.levelup.labradoodle.models.entities.TypeDishes;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class {@link HomeController}
@@ -18,5 +25,29 @@ public class HomeController {
     @RequestMapping(value = "/")
     public String home() {
         return "Hello stranger";
+    }
+
+    /**
+     * This method return Dish from DB by id
+     *
+     * @param id - dish id
+     * @return Dish
+     */
+    @ResponseBody
+    @RequestMapping(value = "/get_dish/{id}", method = RequestMethod.GET)
+    public List<Dishes> deleteEmployee(@PathVariable(value = "id") int id) {
+
+        //Temp mock for front
+        ArrayList<Dishes> dishes = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Dishes dish = new Dishes();
+            dish.setId(i)
+                    .setName("Dish name  " + i)
+                    .setDescription("Some description " + i)
+                    .setTypeDishes(TypeDishes.FISH)
+                    .setPrice_original(2 + i);
+            dishes.add(dish);
+        }
+        return dishes;
     }
 }

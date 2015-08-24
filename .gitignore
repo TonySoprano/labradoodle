@@ -1,3 +1,24 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/**
 *.iml
+target/classes/org/levelup/labradoodle/Application.class
+target/classes/org/levelup/labradoodle/config/ApplicationConfig.class
+target/classes/org/levelup/labradoodle/controllers/HomeController.class
+target/classes/org/levelup/labradoodle/models/entities/City.class
+target/classes/org/levelup/labradoodle/models/entities/Dishes.class
+target/classes/org/levelup/labradoodle/models/entities/Restaurants.class
+target/classes/org/levelup/labradoodle/models/entities/TypeDishes.class
+target/classes/org/levelup/labradoodle/models/entities/UsersPeople.class
+target/classes/org/levelup/labradoodle/models/web/DishesDto.class
+target/classes/org/levelup/labradoodle/models/web/RestaurantsDto.class
+target/classes/org/levelup/labradoodle/models/web/UsersPeopleDto.class
+target/classes/org/levelup/labradoodle/repositories/DishRepository.class
+target/classes/org/levelup/labradoodle/repositories/IDishRepository.class
+target/classes/org/levelup/labradoodle/repositories/IRestaurantRepository.class
+target/classes/org/levelup/labradoodle/repositories/IUserRepository.class
+target/classes/org/levelup/labradoodle/repositories/RestaurantRepository.class
+target/classes/org/levelup/labradoodle/repositories/UserRepository.class
+target/test-classes/DishesDtoTest.class
+target/test-classes/RestaurantsDtoTest.class
+target/test-classes/UsersPeopleDtoTest.class
+sh.exe.stackdump

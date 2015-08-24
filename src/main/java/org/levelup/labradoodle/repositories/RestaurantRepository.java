@@ -1,51 +1,27 @@
 package org.levelup.labradoodle.repositories;
 
 import org.levelup.labradoodle.models.entities.Restaurants;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
- * Created by RomanMosiienko on 18.08.15.
+ * Class {@link org.levelup.labradoodle.services.AppService}
+ * This interface worked with Restaurant in DB
+ *
+ * @author Mosiienko Roman
+ * @version 1.0
+ * @since 18.08.15
  */
-@Repository
-@Transactional
-public class RestaurantRepository implements IRestaurantRepository {
+public interface RestaurantRepository {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    Restaurants getById(int id);
 
-    @Override
-    public Restaurants getById(int id) {
-        return (Restaurants) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
-    }
+    List<Restaurants> getAll();
 
-    @Override
-    public List<Restaurants> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
-    }
+    List<Restaurants> delete(int id);
 
-    @Override
-    public List<Restaurants> delete(int id) {
-        try {
-            return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+    void add(Restaurants restaurant);
 
-    @Override
-    public List<Restaurants> add(Restaurants restaurant) {
-        entityManager.persist(restaurant);
-        return entityManager.createNamedQuery("getAll").getResultList();
-    }
+    void update(Restaurants restaurant);
 
-    @Override
-    public List<Restaurants> update(Restaurants restaurant) {
-        entityManager.merge(restaurant);
-        return entityManager.createNamedQuery("getAll").getResultList();
-    }
 }
+
