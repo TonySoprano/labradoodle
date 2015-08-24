@@ -21,7 +21,7 @@ public class UserRepository implements IUserRepository {
     @Override
     public UsersPeople getById(int id) {
         try {
-            return (UsersPeople) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+            return (UsersPeople) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -31,13 +31,13 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public List<UsersPeople> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 
     @Override
     public List<UsersPeople> delete(int id) {
         try {
-            return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+            return entityManager.createNamedQuery("deleteRestaurantById").setParameter("id", id).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
             return null;

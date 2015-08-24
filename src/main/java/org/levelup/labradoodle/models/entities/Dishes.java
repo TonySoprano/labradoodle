@@ -12,9 +12,9 @@ import java.sql.Date;
 @Entity
 @Table(name = "dishes")
 @NamedQueries({
-        @NamedQuery(name = "getAll", query = "SELECT a FROM Dishes a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM Dishes a WHERE a.id = :id"),
-        @NamedQuery(name = "deleteById", query = "DELETE FROM Dishes a WHERE a.id = :id")
+        @NamedQuery(name = "getAllDishes", query = "SELECT a FROM Dishes a"),
+        @NamedQuery(name = "getDishById", query = "SELECT a FROM Dishes a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dishes a WHERE a.id = :id")
 })
 public class Dishes implements Serializable {
 

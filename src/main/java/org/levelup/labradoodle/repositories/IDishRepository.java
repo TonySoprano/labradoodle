@@ -9,7 +9,11 @@ import java.util.List;
  * Created by RomanMosiienko on 18.08.15.
  */
 public interface IDishRepository {
-
+    /**
+     * oasidqsaioe
+     * @param id
+     * @return
+     */
     Dishes getById(int id);
 
     List<Dishes> getAll();

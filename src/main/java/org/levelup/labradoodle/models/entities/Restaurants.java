@@ -12,11 +12,11 @@ import java.io.Serializable;
 @Entity
 @Table(name = "restaurants")
 @NamedQueries({
-        @NamedQuery(name = "getAll", query = "SELECT a FROM Restaurants a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM Restaurants a WHERE a.id = :id"),
-        @NamedQuery(name = "deleteById", query = "DELETE FROM Restaurants a WHERE a.id = :id")
+        @NamedQuery(name = "getAllRestaurants", query = "SELECT a FROM Restaurants a"),
+        @NamedQuery(name = "getRestaurantById", query = "SELECT a FROM Restaurants a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteRestaurantById", query = "DELETE FROM Restaurants a WHERE a.id = :id")
 })
-public class Restaurants implements Serializable{
+public class Restaurants implements Serializable {
 
     @Id
     @GeneratedValue

@@ -9,11 +9,11 @@ import javax.persistence.*;
  * @since 17.08.2015
  */
 @Entity
-@Table(name = "users")
+@Table(name = "userslwkerjfjas")
 @NamedQueries({
-        @NamedQuery(name = "getAll", query = "SELECT a FROM UsersPeople a"),
-        @NamedQuery(name = "getById", query = "SELECT a FROM UsersPeople a WHERE a.id = :id"),
-        @NamedQuery(name = "deleteById", query = "DELETE FROM UsersPeople a WHERE a.id = :id")
+        @NamedQuery(name = "getAllUsers", query = "SELECT a FROM UsersPeople a"),
+        @NamedQuery(name = "getUserById", query = "SELECT a FROM UsersPeople a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteUserById", query = "DELETE FROM UsersPeople a WHERE a.id = :id")
 })
 public class UsersPeople implements Serializable {
 

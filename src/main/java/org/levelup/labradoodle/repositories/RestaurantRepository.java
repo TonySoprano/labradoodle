@@ -19,18 +19,18 @@ public class RestaurantRepository implements IRestaurantRepository {
 
     @Override
     public Restaurants getById(int id) {
-        return (Restaurants) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+        return (Restaurants) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
     }
 
     @Override
     public List<Restaurants> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 
     @Override
     public List<Restaurants> delete(int id) {
         try {
-            return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+            return entityManager.createNamedQuery("deleteRestaurantById").setParameter("id", id).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -40,12 +40,12 @@ public class RestaurantRepository implements IRestaurantRepository {
     @Override
     public List<Restaurants> add(Restaurants restaurant) {
         entityManager.persist(restaurant);
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 
     @Override
     public List<Restaurants> update(Restaurants restaurant) {
         entityManager.merge(restaurant);
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 }

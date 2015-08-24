@@ -20,7 +20,7 @@ public class DishRepository implements IDishRepository {
     @Override
     public Dishes getById(int id) {
         try {
-            return (Dishes) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+            return (Dishes) entityManager.createNamedQuery("getDishById").setParameter("id", id).getSingleResult();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -30,13 +30,13 @@ public class DishRepository implements IDishRepository {
 
     @Override
     public List<Dishes> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllDishes").getResultList();
     }
 
     @Override
     public List<Dishes> delete(int id) {
         try {
-            return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+            return entityManager.createNamedQuery("deleteDishById").setParameter("id", id).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -46,13 +46,13 @@ public class DishRepository implements IDishRepository {
     @Override
     public List<Dishes> add(Dishes dish) {
         entityManager.persist(dish);
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllDishes").getResultList();
     }
 
     @Override
     public List<Dishes> update(Dishes dish) {
         entityManager.merge(dish);
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllDishes").getResultList();
     }
 
 }
