@@ -16,26 +16,12 @@
 </head>
 <body>
 <div id="dishesTypes">Доступные блюда</div>
-<div id="listDishesTypes">
-    <select>
-        <option>тип 1</option>
-        <option>тип 2</option>
-        <option>тип 2</option>
-    </select>
+
+<div id="circleDishesTypes">
+    <div class="circle" style="background: url(https://pp.vk.me/c622317/v622317838/19844/MfHSmGUIN7I.jpg) center no-repeat; background-size: 150%;"></div>
+    <div class="circle" style="background: url(http://zdorov.guru/img/catalog/zdorov/282/original.jpg) center no-repeat; background-size: 150%;"></div>
+    <div class="circle" style="background: url(http://xvatit.com/uploads/posts/2015-01/1421935996_pizza-mushroom-01.jpg) center no-repeat; background-size: 150%;"></div>
 </div>
-<table class="tableDishesTypes">
-    <tr>
-        <td>
-            <div class="circle"></div>
-        </td>
-        <td>
-            <div class="circle"></div>
-        </td>
-        <td>
-            <div class="circle"></div>
-        </td>
-    </tr>
-</table>
 <div id="blocks" >
     <div class="block1">
         <a href=" " >
