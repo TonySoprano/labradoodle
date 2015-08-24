@@ -1,7 +1,10 @@
 package org.levelup.labradoodle.services;
 
 
+import org.levelup.labradoodle.models.entities.TypeDishes;
 import org.levelup.labradoodle.models.web.DishesDto;
+
+import java.util.List;
 
 /**
  * Class {@link org.levelup.labradoodle.services.AppService}
@@ -17,4 +20,11 @@ public interface AppService {
      * @return DishesDto
      */
     DishesDto getDishById(int id);
+
+    /**
+     *
+     * @param typeDishes
+     * @return All dishes with current type
+     */
+    List<DishesDto> getDishesByType(TypeDishes typeDishes);
 }

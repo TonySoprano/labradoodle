@@ -3,6 +3,7 @@ package org.levelup.labradoodle.repositories;
 import org.levelup.labradoodle.models.entities.Restaurants;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -33,8 +34,8 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     }
 
     @Override
-    public List<Restaurants> delete(int id) {
-        return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+    public void delete(int id) {
+        entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
     }
 
     @Override

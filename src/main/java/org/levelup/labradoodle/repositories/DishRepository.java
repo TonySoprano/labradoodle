@@ -1,6 +1,7 @@
 package org.levelup.labradoodle.repositories;
 
 import org.levelup.labradoodle.models.entities.Dishes;
+import org.levelup.labradoodle.models.entities.TypeDishes;
 
 import java.util.List;
 
@@ -18,10 +19,12 @@ public interface DishRepository {
 
     List<Dishes> getAll();
 
-    List<Dishes> delete(int id);
+    void delete(int id);
 
     void add(Dishes admin);
 
     void update(Dishes dish);
+
+    List<Dishes> geByType(TypeDishes typeDishes);
 
 }

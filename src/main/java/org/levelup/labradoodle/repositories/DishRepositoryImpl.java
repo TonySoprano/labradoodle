@@ -1,6 +1,7 @@
 package org.levelup.labradoodle.repositories;
 
 import org.levelup.labradoodle.models.entities.Dishes;
+import org.levelup.labradoodle.models.entities.TypeDishes;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
@@ -33,8 +34,8 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public List<Dishes> delete(int id) {
-        return entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+    public void delete(int id) {
+        entityManager.createNamedQuery("deleteById").setParameter("id", id);
     }
 
     @Override
@@ -45,6 +46,11 @@ public class DishRepositoryImpl implements DishRepository {
     @Override
     public void update(Dishes dish) {
         entityManager.merge(dish);
+    }
+
+    @Override
+    public List<Dishes> geByType(TypeDishes typeDishes) {
+        return entityManager.createNamedQuery("getByType").setParameter("typeDishes", typeDishes).getResultList();
     }
 
 }

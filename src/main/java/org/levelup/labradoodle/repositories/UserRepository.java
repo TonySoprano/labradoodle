@@ -18,7 +18,7 @@ public interface UserRepository {
 
     List getAll();
 
-    List<UsersPeople> delete(int id);
+    void delete(int id);
 
     void add(UsersPeople admin);
 
