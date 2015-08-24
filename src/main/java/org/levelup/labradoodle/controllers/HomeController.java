@@ -2,6 +2,8 @@ package org.levelup.labradoodle.controllers;
 
 import org.levelup.labradoodle.models.entities.Dishes;
 import org.levelup.labradoodle.models.entities.TypeDishes;
+import org.levelup.labradoodle.services.AppService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,9 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    @Autowired
+    private AppService appService;
+
     @ResponseBody
     @RequestMapping(value = "/")
     public String home() {
@@ -28,7 +33,7 @@ public class HomeController {
     }
 
     /**
-     * This method return Dish from DB by id
+     * This method return Dish (WEB model) from DB by id
      *
      * @param id - dish id
      * @return Dish
@@ -36,6 +41,8 @@ public class HomeController {
     @ResponseBody
     @RequestMapping(value = "/get_dish/{id}", method = RequestMethod.GET)
     public List<Dishes> deleteEmployee(@PathVariable(value = "id") int id) {
+//    This line was be add to comment because DB not already connect
+//    return appService.getDishById(id);
 
         //Temp mock for front
         ArrayList<Dishes> dishes = new ArrayList<>();
