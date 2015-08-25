@@ -11,103 +11,138 @@ import java.util.Date;
 /**
  * Created by toha on 18.08.15.
  */
-public class DishesDto implements Serializable{
+public class DishesDto implements Serializable {
 
-        @JsonProperty
-        private Integer id;
+    @JsonProperty
+    private Integer id;
 
-        @JsonProperty
-        private TypeDishes typeDishes;
+    @JsonProperty
+    private TypeDishes typeDishes;
 
-        @JsonProperty
-        private String name;
+    @JsonProperty
+    private String name;
 
-        @JsonProperty
-        private Integer priceOriginal;
+    @JsonProperty
+    private Integer priceOriginal;
 
-        @JsonProperty
-        private Integer priceNew;
+    @JsonProperty
+    private Integer priceNew;
 
-        @JsonProperty
-        private Date deadline;
+    @JsonProperty
+    private Date deadline;
 
-        @JsonProperty
-        private String photo;
-        @JsonProperty
-        private String Description;
+    @JsonProperty
+    private String photo;
 
-        @JsonProperty
-        public Integer getId() {
-            return id;
-        }
+    @JsonProperty
+    private String Description;
 
-        public DishesDto setId(Integer id) {
-            this.id = id;
-            return this;
-        }
+    @JsonProperty
+    public Integer getId() {
+        return id;
+    }
 
-        public TypeDishes getTypeDishes() {
-            return typeDishes;
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        public DishesDto setTypeDishes(TypeDishes typeDishes) {
-            this.typeDishes = typeDishes;
-            return this;
-        }
+        DishesDto dishesDto = (DishesDto) o;
 
-        public String getName() {
-            return name;
-        }
+        if (Description != null ? !Description.equals(dishesDto.Description) : dishesDto.Description != null)
+            return false;
+        if (deadline != null ? !deadline.equals(dishesDto.deadline) : dishesDto.deadline != null) return false;
+        if (id != null ? !id.equals(dishesDto.id) : dishesDto.id != null) return false;
+        if (name != null ? !name.equals(dishesDto.name) : dishesDto.name != null) return false;
+        if (photo != null ? !photo.equals(dishesDto.photo) : dishesDto.photo != null) return false;
+        if (priceNew != null ? !priceNew.equals(dishesDto.priceNew) : dishesDto.priceNew != null) return false;
+        if (priceOriginal != null ? !priceOriginal.equals(dishesDto.priceOriginal) : dishesDto.priceOriginal != null)
+            return false;
+        if (typeDishes != dishesDto.typeDishes) return false;
 
-        public DishesDto setName(String name) {
-            this.name = name;
-            return this;
-        }
+        return true;
+    }
 
-        public Integer getPriceOriginal() {
-            return priceOriginal;
-        }
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (typeDishes != null ? typeDishes.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (priceOriginal != null ? priceOriginal.hashCode() : 0);
+        result = 31 * result + (priceNew != null ? priceNew.hashCode() : 0);
+        result = 31 * result + (deadline != null ? deadline.hashCode() : 0);
+        result = 31 * result + (photo != null ? photo.hashCode() : 0);
+        result = 31 * result + (Description != null ? Description.hashCode() : 0);
+        return result;
+    }
 
-        public DishesDto setPrice_Original(Integer priceo_riginal) {
-            this.priceOriginal = priceo_riginal;
-            return this;
-        }
+    public DishesDto setId(Integer id) {
+        this.id = id;
+        return this;
+    }
 
-        public Integer getPriceNew() {
-            return priceNew;
-        }
+    public TypeDishes getTypeDishes() {
+        return typeDishes;
+    }
 
-        public DishesDto setPrice_new(Integer price_new) {
-            this.priceNew = price_new;
-            return this;
-        }
+    public DishesDto setTypeDishes(TypeDishes typeDishes) {
+        this.typeDishes = typeDishes;
+        return this;
+    }
 
-        public Date getDeadline() {
-            return deadline;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public DishesDto setDeadline(Date deadline) {
-            this.deadline = deadline;
-            return this;
-        }
+    public DishesDto setName(String name) {
+        this.name = name;
+        return this;
+    }
 
-        public String getPhoto() {
-            return photo;
-        }
+    public Integer getPriceOriginal() {
+        return priceOriginal;
+    }
 
-        public DishesDto setPhoto(String photo) {
-            this.photo = photo;
-            return this;
-        }
+    public DishesDto setPrice_Original(Integer priceo_riginal) {
+        this.priceOriginal = priceo_riginal;
+        return this;
+    }
 
-        public String getDescription() {
-            return Description;
-        }
+    public Integer getPriceNew() {
+        return priceNew;
+    }
 
-        public DishesDto setDescription(String description) {
-            Description = description;
-            return this;
-        }
+    public DishesDto setPrice_new(Integer price_new) {
+        this.priceNew = price_new;
+        return this;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public DishesDto setDeadline(Date deadline) {
+        this.deadline = deadline;
+        return this;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public DishesDto setPhoto(String photo) {
+        this.photo = photo;
+        return this;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public DishesDto setDescription(String description) {
+        Description = description;
+        return this;
+    }
 
 }
 

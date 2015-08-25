@@ -17,37 +17,48 @@
     padding: 10px;
 }
 
-.circle {
-    width: 100px;
-    height: 100px;
-    background: #FFE4E1;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
+#circleDishesTypes {
+    margin-left: 30%;
+    margin-right: 30%;
 }
+
+.circle {
+    width: 140px;
+    height: 140px;
+    -moz-border-radius: 70px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+    float: left;
+    margin: 5px;
+}
+
 #blocks{
     padding: 30px;
-    margin:100px;
-    height:500px;
+    margin: 100px;
+    height: 500px;
     width: 950px;
-    position: absolute;
+    /* position: absolute; */ /* to put the elements do not overlap each other */
     background-repeat: repeat-y;
 }
+
 .block1{
-    height:230px;
+    height: 230px;
     float: left;
 }
+
 .block2{
-    height:230px;
+    height: 230px;
     float: right;
 }
+
 .block3{
-    height:230px;
+    height: 230px;
     float: left;
     padding-top: 20px;
 }
+
 .block4{
-    height:230px;
+    height: 230px;
     float: right;
     padding-top: 20px;
 }

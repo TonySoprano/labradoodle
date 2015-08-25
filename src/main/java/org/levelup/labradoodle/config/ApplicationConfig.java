@@ -6,8 +6,10 @@ import org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletConta
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import javax.sql.DataSource;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -41,5 +43,15 @@ public class ApplicationConfig {
         JettyEmbeddedServletContainerFactory servletContainer =
                 new JettyEmbeddedServletContainerFactory("/*", port);
         return servletContainer;
+    }
+
+    @Bean
+    public DataSource makeDataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/hibernate");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres");
+        return dataSource;
     }
 }
