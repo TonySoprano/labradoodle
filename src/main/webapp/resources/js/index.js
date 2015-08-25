@@ -34,7 +34,7 @@ var onStart = function() {
                 }
                 if (data[i] = 'CHINE') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" style="background: url(../img/burgers.jpg) center no-repeat; background-size: 150%;"></div>')
+                        .html('<div class="circle" style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;"></div>')
                 }
                 if (data[i] = 'SUSHI') {
                     $('#circleDishesTypes')

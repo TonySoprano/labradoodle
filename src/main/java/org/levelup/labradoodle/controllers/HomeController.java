@@ -62,8 +62,11 @@ public class HomeController {
     //temporary plug for types of dishes
     @ResponseBody
     @RequestMapping(value = "/get_dishes_type", method = RequestMethod.GET)
-    public ArrayList<TypeDishes> getDishesType() {
-        return new ArrayList<TypeDishes>
-                (TypeDishes.PIZZA, TypeDishes.CHINE, TypeDishes.BURGERS, TypeDishes.FISH, TypeDishes.SUSHI);
+    public List<TypeDishes> getDishesType() {
+        List<TypeDishes> typeDishes = new ArrayList<>();
+        for (TypeDishes n : TypeDishes.values()) {
+            typeDishes.add(n);
+        }
+        return typeDishes;
     }
 }
