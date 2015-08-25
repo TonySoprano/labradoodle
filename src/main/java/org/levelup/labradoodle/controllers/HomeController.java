@@ -63,7 +63,12 @@ public class HomeController {
     @ResponseBody
     @RequestMapping(value = "/get_dishes_type", method = RequestMethod.GET)
     public ArrayList<TypeDishes> getDishesType() {
-        return new ArrayList<TypeDishes>
-                (TypeDishes.PIZZA, TypeDishes.CHINE, TypeDishes.BURGERS, TypeDishes.FISH, TypeDishes.SUSHI);
+        ArrayList dishesType = new ArrayList<TypeDishes>();
+        dishesType.add("PIZZA");
+        dishesType.add("CHINE");
+        dishesType.add("BURGERS");
+        dishesType.add("FISH");
+        dishesType.add("SUSHI");
+        return dishesType;
     }
 }
