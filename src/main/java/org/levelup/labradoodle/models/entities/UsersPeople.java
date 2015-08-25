@@ -9,7 +9,7 @@ import javax.persistence.*;
  * @since 17.08.2015
  */
 @Entity
-@Table(name = "userslwkerjfjas")
+@Table(name = "restaurant_users")
 @NamedQueries({
         @NamedQuery(name = "getAllUsers", query = "SELECT a FROM UsersPeople a"),
         @NamedQuery(name = "getUserById", query = "SELECT a FROM UsersPeople a WHERE a.id = :id"),

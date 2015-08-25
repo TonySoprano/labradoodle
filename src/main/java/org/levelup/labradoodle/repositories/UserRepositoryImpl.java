@@ -26,17 +26,17 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public UsersPeople getById(int id) {
-        return (UsersPeople) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+        return (UsersPeople) entityManager.createNamedQuery("getUserById").setParameter("id", id).getSingleResult();
     }
 
     @Override
     public List<UsersPeople> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllUsers").getResultList();
     }
 
     @Override
     public void delete(int id) {
-        entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+        entityManager.createNamedQuery("deleteUserById").setParameter("id", id).getResultList();
     }
 
     @Override

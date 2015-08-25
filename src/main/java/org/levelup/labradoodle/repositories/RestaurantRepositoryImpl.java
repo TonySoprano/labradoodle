@@ -25,17 +25,17 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
 
     @Override
     public Restaurants getById(int id) {
-        return (Restaurants) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+        return (Restaurants) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
     }
 
     @Override
     public List<Restaurants> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 
     @Override
     public void delete(int id) {
-        entityManager.createNamedQuery("deleteById").setParameter("id", id).getResultList();
+        entityManager.createNamedQuery("deleteRestaurantById").setParameter("id", id).getResultList();
     }
 
     @Override

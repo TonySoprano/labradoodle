@@ -25,17 +25,17 @@ public class DishRepositoryImpl implements DishRepository {
 
     @Override
     public Dishes getById(int id) {
-        return (Dishes) entityManager.createNamedQuery("getById").setParameter("id", id).getSingleResult();
+        return (Dishes) entityManager.createNamedQuery("getDishById").setParameter("id", id).getSingleResult();
     }
 
     @Override
     public List<Dishes> getAll() {
-        return entityManager.createNamedQuery("getAll").getResultList();
+        return entityManager.createNamedQuery("getAllDishes").getResultList();
     }
 
     @Override
     public void delete(int id) {
-        entityManager.createNamedQuery("deleteById").setParameter("id", id);
+        entityManager.createNamedQuery("deleteDishById").setParameter("id", id);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class DishRepositoryImpl implements DishRepository {
 
     @Override
     public List<Dishes> geByType(TypeDishes typeDishes) {
-        return entityManager.createNamedQuery("getByType").setParameter("typeDishes", typeDishes).getResultList();
+        return entityManager.createNamedQuery("getDishByType").setParameter("typeDishes", typeDishes).getResultList();
     }
 
 }
