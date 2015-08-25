@@ -13,14 +13,20 @@
     <script type="text/javascript" src="<@c.url value="/resources/js/jquery-2.1.4.js"/>"></script>
     <script type="text/javascript" src="<@c.url value="/resources/js/bootstrap.js"/>"></script>
     <script type="text/javascript" src="<@c.url value="/resources/js/index.js"/>"></script>
+    <script type="text/javascript">
+        var $applicationRoot = "<@s.url value="/" />";
+        var $host = document.location.protocol + '//' + document.location.host;
+        var $hostRoot = document.location.protocol + '//' + document.location.host + $applicationRoot;
+    </script>
 </head>
 <body>
 <div id="dishesTypes">Доступные блюда</div>
 
 <div id="circleDishesTypes">
-    <div class="circle" style="background: url(https://pp.vk.me/c622317/v622317838/19844/MfHSmGUIN7I.jpg) center no-repeat; background-size: 150%;"></div>
-    <div class="circle" style="background: url(http://zdorov.guru/img/catalog/zdorov/282/original.jpg) center no-repeat; background-size: 150%;"></div>
-    <div class="circle" style="background: url(http://xvatit.com/uploads/posts/2015-01/1421935996_pizza-mushroom-01.jpg) center no-repeat; background-size: 150%;"></div>
+    <#--dishes types preloader-->
+    <div id="dishesTypes-preloader">
+        <i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>
+    </div>
 </div>
 <div id="blocks" >
     <div class="block1">
