@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,5 +57,13 @@ public class HomeController {
     @RequestMapping(value = "/get_dishes_by_type/{type}", method = RequestMethod.GET)
     public List<DishesDto> getDishesByType(@PathVariable(value = "type") TypeDishes typeDishes) {
         return appService.getDishesByType(typeDishes);
+    }
+
+    //temporary plug for types of dishes
+    @ResponseBody
+    @RequestMapping(value = "/get_dishes_type", method = RequestMethod.GET)
+    public ArrayList<TypeDishes> getDishesType() {
+        return new ArrayList<TypeDishes>
+                (TypeDishes.PIZZA, TypeDishes.CHINE, TypeDishes.BURGERS, TypeDishes.FISH, TypeDishes.SUSHI);
     }
 }
