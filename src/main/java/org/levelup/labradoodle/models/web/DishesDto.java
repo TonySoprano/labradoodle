@@ -1,6 +1,8 @@
 package org.levelup.labradoodle.models.web;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.levelup.labradoodle.models.entities.TypeDishes;
 
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,10 @@ import java.util.Date;
 /**
  * Created by toha on 18.08.15.
  */
+
+//Dishes transfer object
+@JsonAutoDetect
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class DishesDto implements Serializable {
 
     @JsonProperty
@@ -142,6 +148,12 @@ public class DishesDto implements Serializable {
     public DishesDto setDescription(String description) {
         Description = description;
         return this;
+    }
+
+    @Override
+    public String toString(){
+        return "DishesDto{"+
+                "photo='\""+'\''+"}";
     }
 
 }

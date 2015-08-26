@@ -4,7 +4,10 @@ import org.levelup.labradoodle.models.web.DishesDto;
 import org.levelup.labradoodle.models.web.UsersPeopleDto;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -12,6 +15,8 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by toha on 18.08.15.
  */
+
+//Testing setters,getters and creation of DishesDto object
 public class DishesDtoTest {
 
     @Test
@@ -120,6 +125,16 @@ public class DishesDtoTest {
         DishesDto dishesDto = new DishesDto();
         dishesDto.setDescription("description");
         assertEquals("description", dishesDto.getDescription());
+    }
+
+    @Test
+    public void testDishes() throws JsonProcessingException, IOException{
+        ObjectMapper mapper = new ObjectMapper();
+        DishesDto dishesDto = new DishesDto().setDescription("Gamburger").setPrice_new(100).setName("Gamburger").setId(3).setPhoto("photo").setPrice_Original(100);
+        Writer writer = new StringWriter();
+        mapper.writeValue(writer, dishesDto);
+        DishesDto dishesDtoTest = mapper.readValue(writer.toString(),DishesDto.class);
+        assertEquals(dishesDto,dishesDtoTest);
     }
 
 }

@@ -1,4 +1,7 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.levelup.labradoodle.models.entities.City;
+import org.levelup.labradoodle.models.web.DishesDto;
 import org.levelup.labradoodle.models.web.RestaurantsDto;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -6,12 +9,19 @@ import org.mockito.MockitoAnnotations;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 /**
  * Created by toha on 17.08.15.
  */
+
+//Testing setters,getters and creation of RestaurantsDto object
 public class RestaurantsDtoTest {
     @Mock
     private RestaurantsDto restaurantsDto;
@@ -154,5 +164,16 @@ public class RestaurantsDtoTest {
         restaurantsDto = new RestaurantsDto();
         restaurantsDto.setEmail("www@gmail.com");
         assertTrue(restaurantsDto.getEmail().equals("www@gmail.com"));
+    }
+
+    @Test
+    public void testRestaurantsDto() throws JsonProcessingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        RestaurantsDto restorantDto = new RestaurantsDto().setBuilding(3).setCity(City.Lviv).setCloseTime("12.00").
+                setDistrict("Jovtneviy").setEmail("volik.anton@gmail.ru").setId(3).setName("Casta").setOpenTime("12.00-5.00").setPhone("0675666513").setStreet("ul.Lenina 23");
+        Writer writer = new StringWriter();
+        mapper.writeValue(writer, restorantDto);
+        RestaurantsDto  restaurantDtoTest = mapper.readValue(writer.toString(),RestaurantsDto .class);
+        assertEquals(restorantDto, restaurantDtoTest);
     }
 }
