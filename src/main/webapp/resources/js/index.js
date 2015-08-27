@@ -22,26 +22,30 @@ var onStart = function() {
             for (i = 0; i < data.length; i++) {
                 if (data[i] = 'PIZZA') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" id="PIZZA" style="background: url(../img/pizza.jpg) center no-repeat; background-size: 150%;"></div>');
+                        .html('<div class="circle" id=data[i] style="background: url(../img/pizza.jpg) center no-repeat; background-size: 150%;"></div>');
                 }
                 if (data[i] = 'FISH') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" id="FISH" style="background: url(../img/fish.jpg) center no-repeat; background-size: 150%;"></div>');
+                        .html('<div class="circle" id=data[i] style="background: url(../img/fish.jpg) center no-repeat; background-size: 150%;"></div>');
                 }
                 if (data[i] = 'BURGERS') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" id="BURGERS" style="background: url(../img/burgers.jpg) center no-repeat; background-size: 150%;"></div>');
+                        .html('<div class="circle" id=data[i] style="background: url(../img/burgers.jpg) center no-repeat; background-size: 150%;"></div>');
                 }
                 if (data[i] = 'CHINE') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" id="CHINE" style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;"></div>');
+                        .html('<div class="circle" id=data[i] style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;"></div>');
                 }
                 if (data[i] = 'SUSHI') {
                     $('#circleDishesTypes')
-                        .html('<div class="circle" id="SUSHI" style="background: url(../img/sushi.jpg) center no-repeat; background-size: 150%;"></div>');
+                        .html('<div class="circle" id=data[i] style="background: url(../img/sushi.jpg) center no-repeat; background-size: 150%;"></div>');
                 }
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
+
     });
 };
 
@@ -61,8 +65,11 @@ $('#PIZZA').on('click', function() {
             $('#blocks').remove();
 
             for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes').html('<div class="circle" id="PIZZA"  index="[data.id]" style="background: url(../img/pizza.jpg) center no-repeat; background-size: 150%;">Пицца $('data[i]').text()</div>');
+                $('#circleDishesTypes').html('<div class="circle" id="PIZZA"  index=data.id style="background: url(../img/pizza.jpg) center no-repeat; background-size: 150%;">Пицца $('data[i]').text()</div>');
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
     });
 });
@@ -83,8 +90,11 @@ $('#FISH').on('click', function() {
             $('#blocks').remove();
 
             for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes').html('<div class="circle" id="FISH" index="[data.id]" style="background: url(../img/fish.jpg) center no-repeat; background-size: 150%;">Рыба $('data[i]').text()</div>');
+                $('#circleDishesTypes').html('<div class="circle" id="FISH" index=data.id style="background: url(../img/fish.jpg) center no-repeat; background-size: 150%;">Рыба $('data[i]').text()</div>');
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
     });
 });
@@ -105,8 +115,11 @@ $('#BURGERS').on('click', function() {
             $('#blocks').remove();
 
             for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes').html('<div class="circle" id="BURGERS" index="[data.id]" style="background: url(../img/burgers.jpg) center no-repeat; background-size: 150%;">Бургер $('data[i]').text()</div>');
+                $('#circleDishesTypes').html('<div class="circle" id="BURGERS" index=data.id style="background: url(../img/burgers.jpg) center no-repeat; background-size: 150%;">Бургер $('data[i]').text()</div>');
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
     });
 });
@@ -127,8 +140,11 @@ $('#CHINE').on('click', function() {
             $('#blocks').remove();
 
             for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes').html('<div class="circle" id="CHINE" index="[data.id]" style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;">Мясо $('data[i]').text()</div>');
+                $('#circleDishesTypes').html('<div class="circle" id="CHINE" index=data.id style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;">Мясо $('data[i]').text()</div>');
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
     });
 });
@@ -148,10 +164,30 @@ $('#SUSHI').on('click', function() {
             //remove hot offers
             $('#blocks').remove();
 
+
             for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes').html('<div class="circle" id="SUSHI" index="[data.id]" style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;">Суши $('data[i]').text()</div>');
+                $('#circleDishesTypes').html('<div class="circle" id="SUSHI" index=data.id style="background: url(../img/chine.jpg) center no-repeat; background-size: 150%;">Суши $('data[i]').text()</div>');
             }
+        },
+        error: function (error) {
+            console.log(error)
         }
     });
 });
 
+function detailDish (id) {
+    $.ajax({
+        url: $hostRoot + "/get_dish/" + id,
+        type: 'get',
+        success: function (data) {
+
+            //remove dishes by type
+            $('.circle').remove();
+
+            $('#circleDishesTypes').html('<div> data.setDescription.setId(1).setName("Dish name").setPrice_Original(20).setPrice_new(10).setTypeDishes(TypeDishes.BURGERS); </div>');
+        },
+        error: function (error) {
+            console.log(error)
+        }
+    });
+}
