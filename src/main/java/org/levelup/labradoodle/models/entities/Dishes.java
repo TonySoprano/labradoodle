@@ -15,7 +15,8 @@ import java.sql.Date;
         @NamedQuery(name = "getAllDishes", query = "SELECT a FROM Dishes a"),
         @NamedQuery(name = "getDishById", query = "SELECT a FROM Dishes a WHERE a.id = :id"),
         @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dishes a WHERE a.id = :id"),
-        @NamedQuery(name = "getDishByType", query = "SELECT FROM Dishes a WHERE a.typeDishes = :typeDishes")
+        @NamedQuery(name = "getDishByType", query = "SELECT FROM Dishes a WHERE a.typeDishes = :typeDishes"),
+        @NamedQuery(name = "getFirst20Dishes",query = "SELECT a FROM Dishes a ORDER BY deadline")
 })
 public class Dishes implements Serializable {
 

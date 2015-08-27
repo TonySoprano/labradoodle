@@ -69,4 +69,22 @@ public class HomeController {
         }
         return typeDishes;
     }
+
+    /**
+     * This method return Dish (WEB model) from DB by id. Current version work with mock
+     * @author Barkovskiy Alexandr
+     * @return Dish
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getFirst20",method = RequestMethod.GET)
+    public List<DishesDto> getFirst20Dishes(){
+        List<DishesDto> dishesDtos = null;
+        try {
+            dishesDtos = appService.getFirst20Dishes();
+        }
+        catch (Exception e){
+            System.out.println(e);//Maybe we need write it in log
+        }
+        return dishesDtos;
+    }
 }

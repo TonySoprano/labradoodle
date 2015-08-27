@@ -68,4 +68,26 @@ public class AppServiceImpl implements AppService {
         }
         return dishesDtos;
     }
+
+    /**
+     *@author Barkovskiy Alexandr
+     *
+     * @return List of 20 dishes with min  deadline
+     */
+    @Override
+    public List<DishesDto> getFirst20Dishes() {
+        List<DishesDto> dishesDtos = new ArrayList<>();
+        for (Dishes dish: dishRepository.getFirst20()){
+            dishesDtos.add(new DishesDto()
+                .setId(dish.getId())
+                .setName(dish.getName())
+                .setDeadline(dish.getDeadline())
+                .setDescription(dish.getDescription())
+                .setPhoto(dish.getPhoto())
+                .setPrice_new(dish.getPriceNew())
+                .setPrice_Original(dish.getPriceOriginal())
+                .setTypeDishes(dish.getTypeDishes()));
+        }
+        return dishesDtos;
+    }
 }
