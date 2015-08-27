@@ -22,3 +22,10 @@ target/test-classes/DishesDtoTest.class
 target/test-classes/RestaurantsDtoTest.class
 target/test-classes/UsersPeopleDtoTest.class
 sh.exe.stackdump
+target/MANIFEST.MF
+target/classes/log4j2.xml
+target/classes/org/levelup/labradoodle/repositories/DishRepositoryImpl.class
+target/classes/org/levelup/labradoodle/repositories/RestaurantRepositoryImpl.class
+target/classes/org/levelup/labradoodle/repositories/UserRepositoryImpl.class
+target/classes/org/levelup/labradoodle/services/AppService.class
+target/classes/org/levelup/labradoodle/services/AppServiceImpl.class

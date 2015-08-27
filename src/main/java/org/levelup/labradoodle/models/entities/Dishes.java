@@ -1,5 +1,7 @@
 package org.levelup.labradoodle.models.entities;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
@@ -15,7 +17,7 @@ import java.sql.Date;
         @NamedQuery(name = "getAllDishes", query = "SELECT a FROM Dishes a"),
         @NamedQuery(name = "getDishById", query = "SELECT a FROM Dishes a WHERE a.id = :id"),
         @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dishes a WHERE a.id = :id"),
-        @NamedQuery(name = "getDishByType", query = "SELECT FROM Dishes a WHERE a.typeDishes = :typeDishes")
+        @NamedQuery(name = "getDishByType", query = "FROM Dishes a WHERE a.typeDishes = ?")
 })
 public class Dishes implements Serializable {
 
