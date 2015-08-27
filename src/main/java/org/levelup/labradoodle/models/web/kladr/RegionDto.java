@@ -1,7 +1,6 @@
 package org.levelup.labradoodle.models.web.kladr;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.levelup.labradoodle.models.entities.kladr.Regions;
 
 
 /**
@@ -14,7 +13,7 @@ public class RegionDto {
     private String region_id;
 
     @JsonProperty
-    private Regions region;
+    private String region;
 
     public String getId() {
         return region_id;
@@ -24,11 +23,11 @@ public class RegionDto {
         this.region_id = region_id;
     }
 
-    public Regions getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(Regions region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 }

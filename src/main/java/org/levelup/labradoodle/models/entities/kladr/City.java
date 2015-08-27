@@ -12,7 +12,7 @@ import java.util.Collection;
 public class City {
 
     @Id
-    private Integer id;
+    private Integer city_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="region_id")
@@ -22,14 +22,14 @@ public class City {
     private Collection<Street> street= new ArrayList<Street>();
 
     @Column
-    private City city;
+    private String city;
 
     public Integer getId() {
-        return id;
+        return city_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer city_id) {
+        this.city_id = city_id;
     }
 
     public Region getRegion_id() {
@@ -40,11 +40,11 @@ public class City {
         this.region_id = region_id;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
 }

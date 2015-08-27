@@ -18,7 +18,7 @@ public class Region {
     private Collection<City> city= new ArrayList<City>();
 
     @Column
-    private Regions region;
+    private String region;
 
     public String getId() {
         return region_id;
@@ -28,11 +28,11 @@ public class Region {
         this.region_id = region_id;
     }
 
-    public Regions getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(Regions region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 }

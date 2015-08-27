@@ -24,7 +24,7 @@ public class Restaurants implements Serializable {
 
     private String name;
 
-    private City city;
+    private String city;
 
     private String district;
 
@@ -58,11 +58,11 @@ public class Restaurants implements Serializable {
         return this;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 
-    public Restaurants setCity(City city) {
+    public Restaurants setCity(String city) {
         this.city = city;
         return this;
     }

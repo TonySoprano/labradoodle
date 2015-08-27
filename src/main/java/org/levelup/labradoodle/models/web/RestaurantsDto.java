@@ -3,7 +3,6 @@ package org.levelup.labradoodle.models.web;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.levelup.labradoodle.models.entities.City;
 
 import java.io.Serializable;
 
@@ -24,7 +23,7 @@ public class RestaurantsDto implements Serializable {
     private String name;
 
     @JsonProperty
-    private City city;
+    private String city;
 
     @JsonProperty
     private String district;
@@ -67,11 +66,11 @@ public class RestaurantsDto implements Serializable {
         return this;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 
-    public RestaurantsDto setCity(City city) {
+    public RestaurantsDto setCity(String city) {
         this.city = city;
         return this;
     }
@@ -148,7 +147,7 @@ public class RestaurantsDto implements Serializable {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (city != that.city) return false;
+        if (city != null ? !city.equals(that.city) : that.city != null) return false;
         if (district != null ? !district.equals(that.district) : that.district != null) return false;
         if (street != null ? !street.equals(that.street) : that.street != null) return false;
         if (building != null ? !building.equals(that.building) : that.building != null) return false;

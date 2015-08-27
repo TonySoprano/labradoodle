@@ -1,18 +1,12 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.levelup.labradoodle.models.entities.City;
-import org.levelup.labradoodle.models.web.DishesDto;
 import org.levelup.labradoodle.models.web.RestaurantsDto;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -57,15 +51,15 @@ public class RestaurantsDtoTest {
     @Test
     public void testSetCity(){
         restaurantsDto = new RestaurantsDto();
-        restaurantsDto.setCity(City.Dnipropetrovsk);
-        assertEquals(City.Dnipropetrovsk, restaurantsDto.getCity());
+        restaurantsDto.setCity("Dnipropetrovsk");
+        assertEquals("Dnipropetrovsk", restaurantsDto.getCity());
     }
 
     @Test
     public void testGetCity(){
         restaurantsDto = new RestaurantsDto();
-        restaurantsDto.setCity(City.Dnipropetrovsk);
-        assertTrue(restaurantsDto.getCity().equals(City.Dnipropetrovsk));
+        restaurantsDto.setCity("Dnipropetrovsk");
+        assertTrue(restaurantsDto.getCity().equals("Dnipropetrovsk"));
     }
 
     @Test
@@ -169,11 +163,11 @@ public class RestaurantsDtoTest {
     @Test
     public void testRestaurantsDto() throws JsonProcessingException, IOException {
         ObjectMapper mapper = new ObjectMapper();
-        RestaurantsDto restorantDto = new RestaurantsDto().setBuilding(3).setCity(City.Lviv).setCloseTime("12.00").
+        RestaurantsDto restaurantDto = new RestaurantsDto().setBuilding(3).setCity("Lviv").setCloseTime("12.00").
                 setDistrict("Jovtneviy").setEmail("volik.anton@gmail.ru").setId(3).setName("Casta").setOpenTime("12.00-5.00").setPhone("0675666513").setStreet("ul.Lenina 23");
         Writer writer = new StringWriter();
-        mapper.writeValue(writer, restorantDto);
+        mapper.writeValue(writer, restaurantDto);
         RestaurantsDto  restaurantDtoTest = mapper.readValue(writer.toString(),RestaurantsDto .class);
-        assertEquals(restorantDto, restaurantDtoTest);
+        assertEquals(restaurantDto, restaurantDtoTest);
     }
 }

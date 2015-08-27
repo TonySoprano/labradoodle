@@ -1,7 +1,6 @@
 package org.levelup.labradoodle.models.web.kladr;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.levelup.labradoodle.models.entities.kladr.Streets;
 
 
 /**
@@ -11,19 +10,19 @@ import org.levelup.labradoodle.models.entities.kladr.Streets;
 public class StreetDto {
 
     @JsonProperty
-    private Streets street_id;
+    private String street_id;
 
     @JsonProperty
     public CityDto city_id ;
 
     @JsonProperty
-    private Streets street;
+    private String street;
 
-    public Streets getStreet_id() {
+    public String getStreet_id() {
         return street_id;
     }
 
-    public void setStreet_id(Streets street_id) {
+    public void setStreet_id(String street_id) {
         this.street_id = street_id;
     }
 
@@ -35,11 +34,11 @@ public class StreetDto {
         this.city_id = city_id;
     }
 
-    public Streets getStreet() {
+    public String getStreet() {
         return street;
     }
 
-    public void setStreet(Streets street) {
+    public void setStreet(String street) {
         this.street = street;
     }
 

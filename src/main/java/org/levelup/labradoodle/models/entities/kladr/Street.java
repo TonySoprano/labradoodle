@@ -11,20 +11,20 @@ public class Street {
 
     @Id
     @GeneratedValue
-    private Streets street_id;
+    private String street_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="city_id")
     public  City city_id ;
 
     @Column
-    private Streets street;
+    private String street;
 
-    public Streets getStreet_id() {
+    public String getStreet_id() {
         return street_id;
     }
 
-    public void setStreet_id(Streets street_id) {
+    public void setStreet_id(String street_id) {
         this.street_id = street_id;
     }
 
@@ -36,11 +36,11 @@ public class Street {
         this.city_id = city_id;
     }
 
-    public Streets getStreet() {
+    public String getStreet() {
         return street;
     }
 
-    public void setStreet(Streets street) {
+    public void setStreet(String street) {
         this.street = street;
     }
 }
