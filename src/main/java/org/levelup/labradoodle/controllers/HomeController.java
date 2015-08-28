@@ -26,10 +26,10 @@ public class HomeController {
     @Autowired
     private AppService appService;
 
-    @ResponseBody
+
     @RequestMapping(value = "/")
-    public String home() {
-        return "Hello stranger";
+    public String index() {
+        return "index";
     }
 
     /**
