@@ -1,7 +1,7 @@
 package org.levelup.labradoodle.repositories;
 
 
-import org.levelup.labradoodle.models.entities.UsersPeople;
+import org.levelup.labradoodle.models.entities.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,12 +25,12 @@ public class UserRepositoryImpl implements UserRepository {
     private EntityManager entityManager;
 
     @Override
-    public UsersPeople getById(int id) {
-        return (UsersPeople) entityManager.createNamedQuery("getUserById").setParameter("id", id).getSingleResult();
+    public User getById(int id) {
+        return (User) entityManager.createNamedQuery("getUserById").setParameter("id", id).getSingleResult();
     }
 
     @Override
-    public List<UsersPeople> getAll() {
+    public List<User> getAll() {
         return entityManager.createNamedQuery("getAllUsers").getResultList();
     }
 
@@ -40,12 +40,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public void add(UsersPeople admin) {
+    public void add(User admin) {
         entityManager.persist(admin);
     }
 
     @Override
-    public void update(UsersPeople admin) {
+    public void update(User admin) {
         entityManager.merge(admin);
     }
 }

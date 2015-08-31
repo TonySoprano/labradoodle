@@ -1,6 +1,6 @@
 package org.levelup.labradoodle.repositories;
 
-import org.levelup.labradoodle.models.entities.Restaurants;
+import org.levelup.labradoodle.models.entities.Restaurant;
 import java.util.List;
 
 /**
@@ -13,15 +13,15 @@ import java.util.List;
  */
 public interface RestaurantRepository {
 
-    Restaurants getById(int id);
+    Restaurant getById(int id);
 
-    List<Restaurants> getAll();
+    List<Restaurant> getAll();
 
     void delete(int id);
 
-    void add(Restaurants restaurant);
+    void add(Restaurant restaurant);
 
-    void update(Restaurants restaurant);
+    void update(Restaurant restaurant);
 
 }
 
