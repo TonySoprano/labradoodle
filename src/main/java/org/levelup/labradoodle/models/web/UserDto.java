@@ -13,7 +13,7 @@ import java.io.Serializable;
 //UsersPeople transfer object
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class UsersPeopleDto implements Serializable{
+public class UserDto implements Serializable{
 
     @JsonProperty
     private Integer id;
@@ -29,7 +29,7 @@ public class UsersPeopleDto implements Serializable{
         return id;
     }
 
-    public UsersPeopleDto setId(Integer id) {
+    public UserDto setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -38,7 +38,7 @@ public class UsersPeopleDto implements Serializable{
         return pass;
     }
 
-    public UsersPeopleDto setPass(String pass) {
+    public UserDto setPass(String pass) {
         this.pass = pass;
         return this;
     }
@@ -47,7 +47,7 @@ public class UsersPeopleDto implements Serializable{
         return email;
     }
 
-    public UsersPeopleDto setEmail(String email) {
+    public UserDto setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -57,7 +57,7 @@ public class UsersPeopleDto implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UsersPeopleDto that = (UsersPeopleDto) o;
+        UserDto that = (UserDto) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;

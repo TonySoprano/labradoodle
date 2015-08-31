@@ -1,6 +1,6 @@
 package org.levelup.labradoodle.repositories;
 
-import org.levelup.labradoodle.models.entities.Restaurants;
+import org.levelup.labradoodle.models.entities.Restaurant;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,12 +24,12 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     private EntityManager entityManager;
 
     @Override
-    public Restaurants getById(int id) {
-        return (Restaurants) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
+    public Restaurant getById(int id) {
+        return (Restaurant) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
     }
 
     @Override
-    public List<Restaurants> getAll() {
+    public List<Restaurant> getAll() {
         return entityManager.createNamedQuery("getAllRestaurants").getResultList();
     }
 
@@ -39,12 +39,12 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     }
 
     @Override
-    public void add(Restaurants restaurant) {
+    public void add(Restaurant restaurant) {
         entityManager.persist(restaurant);
     }
 
     @Override
-    public void update(Restaurants restaurant) {
+    public void update(Restaurant restaurant) {
         entityManager.merge(restaurant);
     }
 }

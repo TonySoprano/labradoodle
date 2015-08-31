@@ -13,7 +13,7 @@ import java.io.Serializable;
 //Restorants transfer object
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class RestaurantsDto implements Serializable {
+public class RestaurantDto implements Serializable {
 
 
     @JsonProperty
@@ -52,7 +52,7 @@ public class RestaurantsDto implements Serializable {
     }
 
     @JsonProperty
-    public RestaurantsDto setId(Integer id) {
+    public RestaurantDto setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -61,7 +61,7 @@ public class RestaurantsDto implements Serializable {
         return name;
     }
 
-    public RestaurantsDto setName(String name) {
+    public RestaurantDto setName(String name) {
         this.name = name;
         return this;
     }
@@ -70,7 +70,7 @@ public class RestaurantsDto implements Serializable {
         return city;
     }
 
-    public RestaurantsDto setCity(String city) {
+    public RestaurantDto setCity(String city) {
         this.city = city;
         return this;
     }
@@ -79,7 +79,7 @@ public class RestaurantsDto implements Serializable {
         return district;
     }
 
-    public RestaurantsDto setDistrict(String district) {
+    public RestaurantDto setDistrict(String district) {
         this.district = district;
         return this;
     }
@@ -88,7 +88,7 @@ public class RestaurantsDto implements Serializable {
         return street;
     }
 
-    public RestaurantsDto setStreet(String street) {
+    public RestaurantDto setStreet(String street) {
         this.street = street;
         return this;
     }
@@ -97,7 +97,7 @@ public class RestaurantsDto implements Serializable {
         return building;
     }
 
-    public RestaurantsDto setBuilding(Integer building) {
+    public RestaurantDto setBuilding(Integer building) {
         this.building = building;
         return this;
     }
@@ -106,7 +106,7 @@ public class RestaurantsDto implements Serializable {
         return phone;
     }
 
-    public RestaurantsDto setPhone(String phone) {
+    public RestaurantDto setPhone(String phone) {
         this.phone = phone;
         return this;
     }
@@ -115,7 +115,7 @@ public class RestaurantsDto implements Serializable {
         return openTime;
     }
 
-    public RestaurantsDto setOpenTime(String openTime) {
+    public RestaurantDto setOpenTime(String openTime) {
         this.openTime = openTime;
         return this;
     }
@@ -124,7 +124,7 @@ public class RestaurantsDto implements Serializable {
         return closeTime;
     }
 
-    public RestaurantsDto setCloseTime(String closeTime) {
+    public RestaurantDto setCloseTime(String closeTime) {
         this.closeTime = closeTime;
         return this;
     }
@@ -133,7 +133,7 @@ public class RestaurantsDto implements Serializable {
         return email;
     }
 
-    public RestaurantsDto setEmail(String email) {
+    public RestaurantDto setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -143,7 +143,7 @@ public class RestaurantsDto implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RestaurantsDto that = (RestaurantsDto) o;
+        RestaurantDto that = (RestaurantDto) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

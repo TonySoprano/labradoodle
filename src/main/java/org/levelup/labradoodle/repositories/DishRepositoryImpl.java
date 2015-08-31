@@ -1,7 +1,7 @@
 package org.levelup.labradoodle.repositories;
 
-import org.levelup.labradoodle.models.entities.Dishes;
-import org.levelup.labradoodle.models.entities.TypeDishes;
+import org.levelup.labradoodle.models.entities.Dish;
+import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
@@ -24,12 +24,12 @@ public class DishRepositoryImpl implements DishRepository {
     private EntityManager entityManager;
 
     @Override
-    public Dishes getById(int id) {
-        return (Dishes) entityManager.createNamedQuery("getDishById").setParameter("id", id).getSingleResult();
+    public Dish getById(int id) {
+        return (Dish) entityManager.createNamedQuery("getDishById").setParameter("id", id).getSingleResult();
     }
 
     @Override
-    public List<Dishes> getAll() {
+    public List<Dish> getAll() {
         return entityManager.createNamedQuery("getAllDishes").getResultList();
     }
 
@@ -39,18 +39,18 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public void add(Dishes dish) {
+    public void add(Dish dish) {
         entityManager.persist(dish);
     }
 
     @Override
-    public void update(Dishes dish) {
+    public void update(Dish dish) {
         entityManager.merge(dish);
     }
 
     @Override
-    public List<Dishes> geByType(TypeDishes typeDishes) {
-        return entityManager.createNamedQuery("getDishByType").setParameter("typeDishes", typeDishes).getResultList();
+    public List<Dish> geByType(TypesOfDishes typesOfDishes) {
+        return entityManager.createNamedQuery("getDishByType").setParameter("typesOfDishes", typesOfDishes).getResultList();
     }
 
 }
