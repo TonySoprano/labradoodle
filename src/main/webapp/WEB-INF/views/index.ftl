@@ -20,6 +20,29 @@
     </script>
 </head>
 <body>
+<!-- Location -->
+<form class="form-inline" align="center">
+    <label for="sel1">Местоположение: </label>
+    <select class="form-control" id="region-select">
+        <option>Киевская область</option>
+        <option>Донецкая область</option>
+        <option>Днепропетровская область</option>
+        <option>Одесская область</option>
+    </select>
+    <select class="form-control" id="city-select">
+        <option>Киев</option>
+        <option>Днепропетровск</option>
+        <option>Одесса</option>
+        <option>Донецк</option>
+    </select>
+    <select class="form-control"  disabled="disabled" id="street-select">
+        <option>Бажана</option>
+        <option>Институтская</option>
+        <option>Херутская</option>
+        <option>выаывавыаыва</option>
+    </select>
+</form>
+<hr>
 <div id="dishesTypes">Доступные блюда</div>
 
 <div id="circleDishesTypes">
