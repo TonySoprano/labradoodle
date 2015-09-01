@@ -8,7 +8,7 @@ $(document).ready(function () {
 //function in start page
 var onStart = function() {
     $.ajax({
-        url: $hostRoot + "/typesofdishes",
+        url: $hostRoot + "/get/typesofdishes",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
