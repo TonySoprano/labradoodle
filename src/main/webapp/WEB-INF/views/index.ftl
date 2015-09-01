@@ -23,7 +23,6 @@
 <div id="dishesTypes">Доступные блюда</div>
 
 <div id="circleDishesTypes">
-    <#--dishes types preloader-->
     <div id="dishesTypes-preloader">
         <i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>
     </div>

@@ -3,23 +3,9 @@
     margin: 5px;
 }
 
-#listDishesTypes {
-    margin: 5px auto;
-    text-align: center;
-}
-
-.tableDishesTypes {
-    margin: 5px auto;
-
-}
-
-.tableDishesTypes td{
-    padding: 10px;
-}
-
 #circleDishesTypes {
-    margin-left: 30%;
-    margin-right: 30%;
+    /*margin-left: 30%;*/
+    /*margin-right: 30%;*/
 }
 
 .circle {
@@ -28,8 +14,10 @@
     -moz-border-radius: 70px;
     -webkit-border-radius: 70px;
     border-radius: 70px;
-    float: left;
+    /*float: left;*/
     margin: 5px;
+    cursor: pointer;
+    display: inline-block;
 }
 
 #blocks{
