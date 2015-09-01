@@ -1,7 +1,7 @@
 package org.levelup.labradoodle.controllers;
 
-import org.levelup.labradoodle.models.entities.TypeDishes;
-import org.levelup.labradoodle.models.web.DishesDto;
+import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.services.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,34 +39,34 @@ public class HomeController {
      * @return Dish
      */
     @ResponseBody
-    @RequestMapping(value = "/get_dish/{id}", method = RequestMethod.GET)
-    public DishesDto getDishById(@PathVariable(value = "id") int id) {
+    @RequestMapping(value = "/get/dish/{id}", method = RequestMethod.GET)
+    public DishDto getDishById(@PathVariable(value = "id") int id) {
 //    This line was be add to comment because DB not already connect
 //    return appService.getDishById(id);
 
         //Temp mock for front ( for proton)
-        return new DishesDto().setDescription("Dish description").setId(1).setName("Dish name").setPrice_Original(20).setPrice_new(10).setTypeDishes(TypeDishes.BURGERS);
+        return new DishDto().setDescription("Dish description").setId(1).setName("Dish name").setPrice_Original(20).setPrice_new(10).setTypesOfDishes(TypesOfDishes.BURGERS);
     }
 
     /**
      * I am not sure this method is not correct because maybe sending parameter has not valid type
-     * @param typeDishes
+     * @param typesOfDishes
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/get_dishes_by_type/{type}", method = RequestMethod.GET)
-    public List<DishesDto> getDishesByType(@PathVariable(value = "type") TypeDishes typeDishes) {
-        return appService.getDishesByType(typeDishes);
+    @RequestMapping(value = "/get/dishes/{type}", method = RequestMethod.GET)
+    public List<DishDto> getDishesByType(@PathVariable(value = "type") TypesOfDishes typesOfDishes) {
+        return appService.getDishesByType(typesOfDishes);
     }
 
     //temporary plug for types of dishes
     @ResponseBody
-    @RequestMapping(value = "/typesofdishes", method = RequestMethod.GET)
-    public List<TypeDishes> getDishesType() {
-        List<TypeDishes> typeDishes = new ArrayList<>();
-        for (TypeDishes n : TypeDishes.values()) {
-            typeDishes.add(n);
+    @RequestMapping(value = "/get/typesofdishes", method = RequestMethod.GET)
+    public List<TypesOfDishes> getDishesType() {
+        List<TypesOfDishes> typesOfDishes = new ArrayList<>();
+        for (TypesOfDishes n : TypesOfDishes.values()) {
+            typesOfDishes.add(n);
         }
-        return typeDishes;
+        return typesOfDishes;
     }
 }

@@ -1,8 +1,8 @@
 package org.levelup.labradoodle.services;
 
-import org.levelup.labradoodle.models.entities.Dishes;
-import org.levelup.labradoodle.models.entities.TypeDishes;
-import org.levelup.labradoodle.models.web.DishesDto;
+import org.levelup.labradoodle.models.entities.Dish;
+import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,33 +30,33 @@ public class AppServiceImpl implements AppService {
      * @return DishesDto
      */
     @Override
-    public DishesDto getDishById(int id) {
+    public DishDto getDishById(int id) {
         if (id < 0) {
             return null;
         }
-        Dishes dish = dishRepository.getById(id);
-        DishesDto dishesDto = new DishesDto();
-        dishesDto.setDeadline(dish.getDeadline())
-                .setTypeDishes(dish.getTypeDishes())
+        Dish dish = dishRepository.getById(id);
+        DishDto dishDto = new DishDto();
+        dishDto.setDeadline(dish.getDeadline())
+                .setTypesOfDishes(dish.getTypesOfDishes())
                 .setDescription(dish.getDescription())
                 .setName(dish.getName())
                 .setId(dish.getId())
                 .setPhoto(dish.getPhoto())
                 .setPrice_new(dish.getPriceNew())
                 .setPrice_Original(dish.getPriceOriginal());
-        return dishesDto;
+        return dishDto;
     }
 
     /**
      *
-     * @param typeDishes - ( burger, fish, pizza, etc.)
+     * @param typesOfDishes - ( burger, fish, pizza, etc.)
      * @return All dishes with current type
      */
     @Override
-    public List<DishesDto> getDishesByType(TypeDishes typeDishes) {
-        ArrayList<DishesDto> dishesDtos = new ArrayList<>();
-        for (Dishes dish : dishRepository.geByType(typeDishes)) {
-            dishesDtos.add(new DishesDto()
+    public List<DishDto> getDishesByType(TypesOfDishes typesOfDishes) {
+        ArrayList<DishDto> dishDtos = new ArrayList<>();
+        for (Dish dish : dishRepository.geByType(typesOfDishes)) {
+            dishDtos.add(new DishDto()
                     .setDeadline(dish.getDeadline())
                     .setDescription(dish.getDescription())
                     .setId(dish.getId())
@@ -64,8 +64,8 @@ public class AppServiceImpl implements AppService {
                     .setPhoto(dish.getPhoto())
                     .setPrice_new(dish.getPriceNew())
                     .setPrice_Original(dish.getPriceOriginal())
-                    .setTypeDishes(dish.getTypeDishes()));
+                    .setTypesOfDishes(dish.getTypesOfDishes()));
         }
-        return dishesDtos;
+        return dishDtos;
     }
 }

@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "restaurant_users")
 @NamedQueries({
-        @NamedQuery(name = "getAllUsers", query = "SELECT a FROM UsersPeople a"),
-        @NamedQuery(name = "getUserById", query = "SELECT a FROM UsersPeople a WHERE a.id = :id"),
-        @NamedQuery(name = "deleteUserById", query = "DELETE FROM UsersPeople a WHERE a.id = :id")
+        @NamedQuery(name = "getAllUsers", query = "SELECT a FROM User a"),
+        @NamedQuery(name = "getUserById", query = "SELECT a FROM User a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteUserById", query = "DELETE FROM User a WHERE a.id = :id")
 })
-public class UsersPeople implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue
@@ -29,7 +29,7 @@ public class UsersPeople implements Serializable {
         return id;
     }
 
-    public UsersPeople setId(Integer id) {
+    public User setId(Integer id) {
         this.id = id;
         return this;
     }
@@ -38,7 +38,7 @@ public class UsersPeople implements Serializable {
         return pass;
     }
 
-    public UsersPeople setPass(String pass) {
+    public User setPass(String pass) {
         this.pass = pass;
         return this;
     }
@@ -47,7 +47,7 @@ public class UsersPeople implements Serializable {
         return email;
     }
 
-    public UsersPeople setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
         return this;
     }

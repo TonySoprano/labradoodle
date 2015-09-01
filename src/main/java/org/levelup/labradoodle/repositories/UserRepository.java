@@ -1,6 +1,6 @@
 package org.levelup.labradoodle.repositories;
 
-import org.levelup.labradoodle.models.entities.UsersPeople;
+import org.levelup.labradoodle.models.entities.User;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ import java.util.List;
  */
 public interface UserRepository {
 
-    UsersPeople getById(int id);
+    User getById(int id);
 
     List getAll();
 
     void delete(int id);
 
-    void add(UsersPeople admin);
+    void add(User admin);
 
-    void update(UsersPeople admin);
+    void update(User admin);
 }
