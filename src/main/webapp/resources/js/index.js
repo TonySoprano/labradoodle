@@ -191,3 +191,45 @@ function detailDish (id) {
         }
     });
 }
+var loadLocationData = function() {
+    $.ajax({
+        url: $hostRoot + "/get/regions",
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            var regions = "";
+            for (var i = 0; i < data.length; i++) {
+                var region = data[i];
+                regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
+
+            }
+            $('#region-select').html(regions);
+        },
+        error: function (error) {
+            console.log(error)
+        }
+
+    });
+    $.ajax({
+        url: $hostRoot + "/get/cities",
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            var cities = "";
+            for (var i = 0; i < data.length; i++) {
+                var city = data[i];
+                cities += "<option id= \"" + city.id + "\">" + city.city +"</option>";
+
+            }
+            $('#region-select').html(cities);
+        },
+        error: function (error) {
+            console.log(error)
+        }
+
+    });
+};

@@ -12,7 +12,7 @@ import java.util.Collection;
 public class City {
 
     @Id
-    private Integer city_id;
+    private String city_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="region_id")
@@ -24,11 +24,11 @@ public class City {
     @Column
     private String city;
 
-    public Integer getId() {
+    public String getId() {
         return city_id;
     }
 
-    public void setId(Integer city_id) {
+    public void setId(String city_id) {
         this.city_id = city_id;
     }
 
