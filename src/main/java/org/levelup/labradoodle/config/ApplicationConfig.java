@@ -28,6 +28,15 @@ public class ApplicationConfig {
     @Value("${LD_PORT:8080}")
     private int port;
 
+    @Value("${URL}")
+    private String url;
+
+    @Value("${USERNAME}")
+    private String username;
+
+    @Value("${PASSWORD}")
+    private String password;
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
@@ -49,9 +58,9 @@ public class ApplicationConfig {
     public DataSource makeDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/hibernate");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("123");
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 }
