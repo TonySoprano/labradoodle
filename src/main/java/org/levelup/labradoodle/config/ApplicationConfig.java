@@ -28,13 +28,13 @@ public class ApplicationConfig {
     @Value("${LD_PORT:8080}")
     private int port;
 
-    @Value("${URL}")
+    @Value("${POSTGRES_URL}")
     private String url;
 
-    @Value("${USERNAME}")
+    @Value("${POSTGRES_USERNAME}")
     private String username;
 
-    @Value("${PASSWORD}")
+    @Value("${POSTGRES_PASSWORD}")
     private String password;
 
     @Bean
