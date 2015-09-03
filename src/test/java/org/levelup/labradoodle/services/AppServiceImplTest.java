@@ -15,8 +15,7 @@ import org.testng.asserts.LoggingAssert;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Mockito.when;
-import static org.testng.Assert.*;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by Alexandr Barkovskiy on 01.09.2015.
@@ -37,14 +36,22 @@ public class AppServiceImplTest {
     }
 
     @Test
-    public void testGetFirst20Dishes() throws Exception {
-        when(dishRepository.getFirst20()).thenReturn(createListDishesDto());
-        List<DishesDto> response = appService.getFirst20Dishes();
+    public void testGetHotDishes1() {
+        when(dishRepository.getHotDishes()).thenReturn(createListDishesDto());
+        List<DishesDto> response = appService.getHotDishes();
         assertion.assertNotNull(response);
-        assertion.assertEquals(response.size(),20);
+        assertion.assertEquals(response.size(), 20);
     }
 
-    //This method creates a List with 20 Dishes for testing method "testGetFirst20Dishes"
+    @Test
+    public void testGetHotDishes2() {
+        doThrow(new RuntimeException()).when(dishRepository).getHotDishes();
+        appService.getHotDishes();
+        verify(dishRepository, times(1)).getHotDishes();
+    }
+
+
+    //This method creates a List with 20 Dishes for testing method "testGetFirst20Dishes1"
     private List<Dishes> createListDishesDto(){
         List<Dishes> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){

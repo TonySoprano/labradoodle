@@ -27,6 +27,6 @@ public interface DishRepository {
 
     List<Dishes> geByType(TypeDishes typeDishes);
 
-    List<Dishes> getFirst20 ();
+    List<Dishes> getHotDishes ();
 
 }

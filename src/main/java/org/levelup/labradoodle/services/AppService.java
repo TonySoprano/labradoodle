@@ -33,5 +33,5 @@ public interface AppService {
      * This method get frirst 20 Dish with min deadLine from BD and converting it to WEB model
      * @return List of Dishes
      */
-    List<DishesDto> getFirst20Dishes();
+    List<DishesDto> getHotDishes();
 }
