@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
     onStart();
+    addEvents();
 });
 
 //function in start page
@@ -31,35 +32,39 @@ var onStart = function() {
 
     });
 };
+addEvents = function () {
+    $('#circleDishesTypes').on('click', '.type-of-dishes', function () {
 
-$('.type-of-dishes').on('click', function() {
+        var type = $(this).attr('index');
+        //temporary plug for click on types of dish
+        console.log(type);
 
-    var type = $(this).attr('index');
+        $.ajax({
+            url: $hostRoot + "/get/dishes/" + type,
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
 
-    $.ajax({
-        url: $hostRoot + "/get/dishes/" + type,
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function (data) {
+                //remove dishes type
+                $('.circle').hide();
 
-            //remove dishes type
-            $('.circle').hide();
+                //remove hot offers
+                $('#blocks').hide();
 
-            //remove hot offers
-            $('#blocks').hide();
-
-            for (i = 0; i < data.length; i++) {
-                $('#circleDishesTypes')
-                    .addClass('container center-block')
-                    .append('<div class="circle" index="'+ data.id +'" style="background: url(../img/'+ data[i].photo +') center no-repeat; background-size: 150%;"></div>');
+                for (i = 0; i < data.length; i++) {
+                    $('#circleDishesTypes')
+                        .addClass('container center-block')
+                        .append('<div class="circle" index="' + data.id + '" style="background: url(../img/' + data[i].photo + ') center no-repeat; background-size: 150%;"></div>');
+                }
+            },
+            error: function (error) {
+                console.log(error)
             }
-        },
-        error: function (error) {
-            console.log(error)
-        }
+        });
+
     });
-});
+};
 
 $('.circle').on('click', function() {
 
