@@ -36,8 +36,6 @@ addEvents = function () {
     $('#circleDishesTypes').on('click', '.type-of-dishes', function () {
 
         var type = $(this).attr('index');
-        //temporary plug for click on types of dish
-        console.log(type);
 
         $.ajax({
             url: $hostRoot + "/get/dishes/" + type,
