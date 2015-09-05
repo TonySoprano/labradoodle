@@ -7,7 +7,10 @@ $(document).ready(function () {
 });
 
 //function in start page
-var onStart = function() {
+    var onStart = function() {
+    //HotDishes
+    hotDishes();
+
     $.ajax({
         url: $hostRoot + "/get/typesofdishes",
         type: 'get',
