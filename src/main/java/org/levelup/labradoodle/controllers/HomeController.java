@@ -69,4 +69,16 @@ public class HomeController {
         }
         return typesOfDishes;
     }
+
+    /**
+     * This method return List of Dishes (WEB model) from DB by deadline. 
+     * @author Barkovskiy Alexandr
+     * @return List of DishesDto
+     */
+    @ResponseBody
+    @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
+    public List<DishesDto> getHotDishes(){
+        List<DishesDto> dishesDtos = appService.getHotDishes();
+        return dishesDtos;
+    }
 }

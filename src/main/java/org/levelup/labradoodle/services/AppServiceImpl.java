@@ -68,4 +68,30 @@ public class AppServiceImpl implements AppService {
         }
         return dishDtos;
     }
+
+    /**
+     *@author Barkovskiy Alexandr
+     *
+     * @return List of dishes with min  deadline
+     */
+    @Override
+    public List<DishesDto> getHotDishes() {
+        List<DishesDto> dishesDtos = new ArrayList<>();
+        try{
+            for (Dishes dish: dishRepository.getHotDishes()){
+                dishesDtos.add(new DishesDto()
+                        .setId(dish.getId())
+                        .setName(dish.getName())
+                        .setDeadline(dish.getDeadline())
+                        .setDescription(dish.getDescription())
+                        .setPhoto(dish.getPhoto())
+                        .setPrice_new(dish.getPriceNew())
+                        .setPrice_Original(dish.getPriceOriginal())
+                        .setTypeDishes(dish.getTypeDishes()));
+            }
+        }catch (Exception e){
+            System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
+        }
+        return dishesDtos;
+    }
 }

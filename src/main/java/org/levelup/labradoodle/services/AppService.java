@@ -27,4 +27,11 @@ public interface AppService {
      * @return All dishes with current type
      */
     List<DishDto> getDishesByType(TypesOfDishes typesOfDishes);
+
+    /**
+     * @author Barkovskiy Alexandr
+     * This method get frirst 20 Dish with min deadLine from BD and converting it to WEB model
+     * @return List of Dishes
+     */
+    List<DishDto> getHotDishes();
 }
