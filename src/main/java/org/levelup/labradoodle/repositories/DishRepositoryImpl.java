@@ -54,7 +54,7 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public List<Dishes> getHotDishes() {
+    public List<Dish> getHotDishes() {
         return entityManager.createNamedQuery("getHotDishes").setMaxResults(20).getResultList();
     }
 }

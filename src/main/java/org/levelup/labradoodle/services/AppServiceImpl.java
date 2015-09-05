@@ -75,11 +75,11 @@ public class AppServiceImpl implements AppService {
      * @return List of dishes with min  deadline
      */
     @Override
-    public List<DishesDto> getHotDishes() {
-        List<DishesDto> dishesDtos = new ArrayList<>();
+    public List<DishDto> getHotDishes() {
+        List<DishDto> dishesDtos = new ArrayList<>();
         try{
-            for (Dishes dish: dishRepository.getHotDishes()){
-                dishesDtos.add(new DishesDto()
+            for (Dish dish: dishRepository.getHotDishes()){
+                dishesDtos.add(new DishDto()
                         .setId(dish.getId())
                         .setName(dish.getName())
                         .setDeadline(dish.getDeadline())
@@ -87,7 +87,7 @@ public class AppServiceImpl implements AppService {
                         .setPhoto(dish.getPhoto())
                         .setPrice_new(dish.getPriceNew())
                         .setPrice_Original(dish.getPriceOriginal())
-                        .setTypeDishes(dish.getTypeDishes()));
+                        .setTypesOfDishes(dish.getTypesOfDishes()));
             }
         }catch (Exception e){
             System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)

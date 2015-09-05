@@ -1,8 +1,8 @@
 package org.levelup.labradoodle.services;
 
-import org.levelup.labradoodle.models.entities.Dishes;
-import org.levelup.labradoodle.models.entities.TypeDishes;
-import org.levelup.labradoodle.models.web.DishesDto;
+import org.levelup.labradoodle.models.entities.Dish;
+import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -38,7 +38,7 @@ public class AppServiceImplTest {
     @Test
     public void testGetHotDishes1() {
         when(dishRepository.getHotDishes()).thenReturn(createListDishesDto());
-        List<DishesDto> response = appService.getHotDishes();
+        List<DishDto> response = appService.getHotDishes();
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(), 20);
     }
@@ -52,14 +52,14 @@ public class AppServiceImplTest {
 
 
     //This method creates a List with 20 Dishes for testing method "testGetFirst20Dishes1"
-    private List<Dishes> createListDishesDto(){
-        List<Dishes> dishesList = new ArrayList<>();
+    private List<Dish> createListDishesDto(){
+        List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
-            dishesList.add(new Dishes()
+            dishesList.add(new Dish()
                         .setId(i)
                         .setName("SomeDish")
                         .setPrice_new(20)
-                        .setTypeDishes(TypeDishes.BURGERS)
+                        .setTypesOfDishes(TypesOfDishes.BURGERS)
                         .setDescription("BLALALA"));
         }
         return dishesList;
