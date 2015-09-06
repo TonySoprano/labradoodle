@@ -1,6 +1,7 @@
 package org.levelup.labradoodle.services;
 
 
+import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 
@@ -27,4 +28,7 @@ public interface AppService {
      * @return All dishes with current type
      */
     List<DishDto> getDishesByType(TypesOfDishes typesOfDishes);
+
+    List<DishDto> getDishesByCity(String city);
+
 }

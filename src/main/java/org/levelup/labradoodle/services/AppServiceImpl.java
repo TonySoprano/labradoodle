@@ -1,9 +1,11 @@
 package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.entities.Dish;
+import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
+import org.levelup.labradoodle.repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -22,6 +24,8 @@ public class AppServiceImpl implements AppService {
 
     @Autowired
     private DishRepository dishRepository;
+    @Autowired
+    private RestaurantRepository restaurantRepository;
 
     /**
      * This method get Dish from BD and converting it to WEB model
@@ -67,5 +71,39 @@ public class AppServiceImpl implements AppService {
                     .setTypesOfDishes(dish.getTypesOfDishes()));
         }
         return dishDtos;
+    }
+
+    /**
+     *
+     * Method return List Dishes of restourant in select city
+     * (should at least)
+     */
+    @Override
+    public List<DishDto> getDishesByCity(String city){
+        List<DishDto> DishDtoByCity=new ArrayList<>(30);
+        List<Dish> tempDish=new ArrayList<>();
+        try{
+            List <Restaurant> restaurantsInCity=restaurantRepository.getByCity(city);
+            for (Restaurant rest: restaurantsInCity){
+                int i=rest.getId();
+                tempDish.addAll(dishRepository.getDishesByRestaurant(i));
+                for (Dish dish : tempDish) {
+                    DishDtoByCity.add(new DishDto()
+                            .setDeadline(dish.getDeadline())
+                            .setDescription(dish.getDescription())
+                            .setId(dish.getId())
+                            .setName(dish.getName())
+                            .setPhoto(dish.getPhoto())
+                            .setPrice_new(dish.getPriceNew())
+                            .setPrice_Original(dish.getPriceOriginal())
+                            .setTypesOfDishes(dish.getTypesOfDishes()));
+                }
+                tempDish.clear();
+            }
+        }
+        catch (Exception e) {
+
+        }
+        return DishDtoByCity;
     }
 }

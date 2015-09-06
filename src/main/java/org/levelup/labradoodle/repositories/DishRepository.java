@@ -17,6 +17,8 @@ public interface DishRepository {
 
     Dish getById(int id);
 
+    List<Dish> getDishesByRestaurant(int id);
+
     List<Dish> getAll();
 
     void delete(int id);

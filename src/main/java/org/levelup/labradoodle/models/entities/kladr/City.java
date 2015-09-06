@@ -1,5 +1,7 @@
 package org.levelup.labradoodle.models.entities.kladr;
 
+import org.levelup.labradoodle.models.entities.Restaurant;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,6 +22,9 @@ public class City {
 
     @OneToMany(mappedBy = "city_id")
     private Collection<Street> street= new ArrayList<Street>();
+
+    @OneToMany(mappedBy = "city")
+    private Collection<Restaurant> restaurants=new ArrayList<>();
 
     @Column
     private String city;

@@ -17,6 +17,8 @@ public interface RestaurantRepository {
 
     List<Restaurant> getAll();
 
+    List<Restaurant> getByCity(String city);
+
     void delete(int id);
 
     void add(Restaurant restaurant);
