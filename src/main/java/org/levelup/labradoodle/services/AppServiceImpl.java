@@ -72,7 +72,6 @@ public class AppServiceImpl implements AppService {
         }
         return dishDtos;
     }
-
     /**
      *
      * Method return List Dishes of restourant in select city
@@ -102,7 +101,6 @@ public class AppServiceImpl implements AppService {
             }
         }
         catch (Exception e) {
-
         }
         return DishDtoByCity;
     }
