@@ -204,7 +204,7 @@ var makeHotDishesTableRow = function (data) {
         "<td>" + data.deadline + "<td>"+
         "<td>" + data.photo + "<td>"+
         "<td>" + data.description + "<td>"+
-        "<td>" + data.restaurantName + "<td>"+ //this property have to be added in DishesDto as new field
+        "<td>" + data.restaurant.name + "<td>"+
         "</tr>";
 };
 //function returns the table with HotDishes to the main page
