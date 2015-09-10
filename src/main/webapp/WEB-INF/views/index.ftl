@@ -39,7 +39,7 @@
         <option>Бажана</option>
         <option>Институтская</option>
         <option>Херутская</option>
-        <option>выаывавыаыва</option>
+        <option>Проститутская</option>
     </select>
 </form>
 <hr>
