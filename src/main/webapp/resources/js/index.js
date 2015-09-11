@@ -7,7 +7,8 @@ $(document).ready(function () {
 });
 
 //function in start page
-var onStart = function() {
+    var onStart = function() {
+
     $.ajax({
         url: $hostRoot + "/get/typesofdishes",
         type: 'get',
