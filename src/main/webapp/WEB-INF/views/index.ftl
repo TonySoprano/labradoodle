@@ -24,22 +24,13 @@
 <form class="form-inline" align="center">
     <label for="sel1">Местоположение: </label>
     <select class="form-control" id="region-select">
-        <option>Киевская область</option>
-        <option>Донецкая область</option>
-        <option>Днепропетровская область</option>
-        <option>Одесская область</option>
+        <option disabled selected>Выбрать область</option>
     </select>
     <select class="form-control" id="city-select">
-        <option>Киев</option>
-        <option>Днепропетровск</option>
-        <option>Одесса</option>
-        <option>Донецк</option>
+        <option>Выбрать город</option>
     </select>
-    <select class="form-control"  disabled="disabled" id="street-select">
-        <option>Бажана</option>
-        <option>Институтская</option>
-        <option>Херутская</option>
-        <option>выаывавыаыва</option>
+    <select class="form-control" disabled="disabled" id="street-select">
+        <option>Выбрать улицу</option>
     </select>
 </form>
 <hr>
