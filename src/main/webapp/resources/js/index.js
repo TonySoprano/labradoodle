@@ -8,9 +8,11 @@ $(document).ready(function () {
 
 //function in start page
     var onStart = function() {
+    //HotDishes
+    hotDishes();
 
     $.ajax({
-        url: $hostRoot + "get/typesofdishes",
+        url: $hostRoot + "/get/typesofdishes",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -30,26 +32,7 @@ $(document).ready(function () {
         error: function (error) {
             console.log(error)
         }
-    });
 
-        //add regions from alex barkovsky
-    $.ajax({
-        url: $hostRoot + "get/regions",
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        success: function (data) {
-            var regions = "";
-            for (var i = 0; i < data.length; i++) {
-                 var region = data[i];
-                 regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
-                }
-                $('#region-select').html(regions);
-            },
-            error: function (error) {
-                console.log(error)
-            }
     });
 };
 addEvents = function () {
@@ -58,7 +41,7 @@ addEvents = function () {
         var type = $(this).attr('index');
 
         $.ajax({
-            url: $hostRoot + "get/dishes/" + type,
+            url: $hostRoot + "/get/dishes/" + type,
             type: 'get',
             dataType: 'json',
             contentType: 'application/json',
@@ -68,7 +51,7 @@ addEvents = function () {
                 $('.circle').hide();
 
                 //remove hot offers
-                //$('#blocks').hide();
+                $('#blocks').hide();
 
                 for (i = 0; i < data.length; i++) {
                     $('#circleDishesTypes')
@@ -89,7 +72,7 @@ $('.circle').on('click', function() {
     var id = $(this).attr('index');
 
     $.ajax({
-        url: $hostRoot + "get_dish/" + id,
+        url: $hostRoot + "/get_dish/" + id,
         type: 'get',
         success: function (data) {
 
@@ -106,9 +89,28 @@ $('.circle').on('click', function() {
     });
 });
 var loadLocationData = function() {
-
     $.ajax({
-        url: $hostRoot + "get/cities",
+        url: $hostRoot + "/get/regions",
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            var regions = "";
+            for (var i = 0; i < data.length; i++) {
+                var region = data[i];
+                regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
+
+            }
+            $('#region-select').html(regions);
+        },
+        error: function (error) {
+            console.log(error)
+        }
+
+    });
+    $.ajax({
+        url: $hostRoot + "/get/cities",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
