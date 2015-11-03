@@ -8,9 +8,30 @@ $(document).ready(function () {
 
 //function in start page
     var onStart = function() {
-    //HotDishes
-    hotDishes();
 
+        //get kladr by alex barkovsky
+        $.ajax({
+            url: $hostRoot + "/get/kladr",
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (data) {
+                var regions = "";
+                for (var i = 0; i < data.length; i++) {
+                    var region = data[i];
+                    regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
+
+                }
+                $('#region-select').html(regions);
+            },
+            error: function (error) {
+                console.log(error)
+            }
+
+        });
+
+    //get type of dishes
     $.ajax({
         url: $hostRoot + "/get/typesofdishes",
         type: 'get',
@@ -89,26 +110,7 @@ $('.circle').on('click', function() {
     });
 });
 var loadLocationData = function() {
-    $.ajax({
-        url: $hostRoot + "/get/regions",
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        success: function (data) {
-            var regions = "";
-            for (var i = 0; i < data.length; i++) {
-                var region = data[i];
-                regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
 
-            }
-            $('#region-select').html(regions);
-        },
-        error: function (error) {
-            console.log(error)
-        }
-
-    });
     $.ajax({
         url: $hostRoot + "/get/cities",
         type: 'get',
