@@ -19,12 +19,12 @@ var onStart = function() {
             $('#dishesTypes-preloader').hide();
 
             //add circle with available dishes type
-            for (i = 0; i < data.length; i++) {
-                var type = data[i].toLowerCase();
-                    $('#circleDishesTypes')
-                        .addClass('container center-block')
-                        .append('<div class="circle type-of-dishes" index="'+ type +'" style="background: url(../img/'+ type +'.jpg) center no-repeat; background-size: 150%;"></div>');
-            }
+            //for (i = 0; i < data.length; i++) {
+            //    var type = data[i].toLowerCase();
+            //        $('#circleDishesTypes')
+            //            .addClass('container center-block')
+            //            .append('<div class="circle type-of-dishes" index="'+ type +'" style="background: url(../img/'+ type +'.jpg) center no-repeat; background-size: 150%;"></div>');
+            //}
         },
         error: function (error) {
             console.log(error)

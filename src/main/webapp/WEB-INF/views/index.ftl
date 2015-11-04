@@ -22,8 +22,9 @@
 <body>
 <!-- Location -->
 <form class="form-inline" align="center">
-    <label for="sel1">Местоположение: </label>
+    <label for="sel1"></label>
     <select class="form-control" id="region-select">
+        <option>Please, select your region</option>
         <option>Киевская область</option>
         <option>Донецкая область</option>
         <option>Днепропетровская область</option>
@@ -42,36 +43,42 @@
         <option>Проститутская</option>
     </select>
 </form>
-<hr>
 
-<div id="dishesTypes">Доступные блюда</div>
 
-<div id="circleDishesTypes">
-    <div id="dishesTypes-preloader">
-        <i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>
+<div id="dishesTypes">
+    <div id="forDishes">
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+
+
     </div>
+
+
+
+    <#--<div id="circleDishesTypes">-->
+        <#--<div id="dishesTypes-preloader">-->
+            <#--<i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>-->
+        <#--</div>-->
+    <#--</div>-->
 </div>
-<div id="blocks" >
-    <div class="block1">
-        <a href=" " >
-            <img src="https://tpc.googlesyndication.com/simgad/10150932345484726920" border="0" width="460" height="230" alt="" class="img_ad">
-        </a>
-    </div>
-    <div class="block2">
-        <a href=" ">
-            <img src="https://tpc.googlesyndication.com/simgad/14368965802840480494" border="0" width="460" height="230" alt="" class="img_ad">
-        </a>
-    </div>
-    <div class="block3">
-        <a href=" " >
-            <img src="https://tpc.googlesyndication.com/simgad/2125599233914660053" border="0" width="460" height="230" alt="" class="img_ad">
-        </a>
-    </div>
-    <div class="block4">
-        <a href=" " >
-            <img src="https://tpc.googlesyndication.com/simgad/6661425047524397169" border="0" width="460" height="230" alt="" class="img_ad">
-        </a>
-    </div>
-</div>
+
 </body>
 </html>

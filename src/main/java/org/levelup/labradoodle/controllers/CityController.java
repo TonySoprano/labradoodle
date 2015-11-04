@@ -32,7 +32,7 @@ public class CityController {
      This controller takes name of city in selector on the cite
      */
     @ResponseBody
-    @RequestMapping(value = "/get/cityName{city}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/cities{city}", method = RequestMethod.GET)
     public List<DishDto> getDishesByCity(@PathVariable String city) {
         return appService.getDishesByCity(city);
     }

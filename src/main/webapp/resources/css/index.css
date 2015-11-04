@@ -1,10 +1,51 @@
 #dishesTypes {
+    display:flex;
     text-align: center;
-    margin: 5px;
+    height: 300px;
+    background-image: url(../img/pizza_1920x300.jpg);
+}
+#forDishes{
+    margin:auto;
+    height: 290px;
+    width: 1200px;
+    display: flex;
+}
+.info{
+    width: 130px;
+    height: 130px;
+    margin-top: 15px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../img/pizza.svg);
+    background-size: contain;
+}
+.infoText{
+    color: white;
+    font-size: 40pt;
+    font-family: sans-serif ;
+    display: inline-block;
+    vertical-align: middle;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 
-#circleDishesTypes {
-
+.blackRectangle{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.22);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background: rgba(15, 15, 15, 0.71);
+    width: 215px;
+    height: 230px;
+}
+.blackRectangle:hover{
+    background: rgba(32, 50, 5, 0.8);
+    box-shadow: 0 0 25px rgba(255, 249, 255, 0.6);
 }
 
 .circle {
@@ -48,11 +89,12 @@
     padding-top: 20px;
 }
 .form-inline{
-    background-color: gainsboro;
-    height: 40px;
+    background-color: rgb(50, 163, 37);
+    /*background-color: rgb(66, 64, 62);*/
+    height: 70px;
 }
 .form-inline label{
-    margin: 10px;
+    margin: 18px;
 }
 .form-control{
     margin-bottom: 6px;
