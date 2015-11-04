@@ -15,6 +15,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = "getAllRestaurants", query = "SELECT a FROM Restaurant a"),
         @NamedQuery(name = "getRestaurantById", query = "SELECT a FROM Restaurant a WHERE a.id = :id"),
+        @NamedQuery(name= "getAllRestorantsByCity", query = "SELECT a FROM Restaurant a WHERE a.city= :city "),
         @NamedQuery(name = "deleteRestaurantById", query = "DELETE FROM Restaurant a WHERE a.id = :id")
 })
 public class Restaurant implements Serializable {
