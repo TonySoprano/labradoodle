@@ -42,6 +42,13 @@
         <i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>
     </div>
 </div>
+<br></br>
+<div id="dishesTypes">Горящие блюда</div>
+<div id="blocks" >
+    <div id="hotDishes-preloader">
+        <i class="fa fa-spinner fa-pulse fa-4x"></i>
+    </div>
+</div>
 
 
 </body>
