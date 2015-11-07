@@ -22,26 +22,29 @@
 <body>
 <!-- Location -->
 <form class="form-inline" align="center">
-    <label for="sel1"></label>
-    <select class="form-control" id="region-select">
-        <option>Please, select your region</option>
-        <option>Киевская область</option>
-        <option>Донецкая область</option>
-        <option>Днепропетровская область</option>
-        <option>Одесская область</option>
-    </select>
-    <select class="form-control" id="city-select">
-        <option>Киев</option>
-        <option>Днепропетровск</option>
-        <option>Одесса</option>
-        <option>Донецк</option>
-    </select>
-    <select class="form-control"  disabled="disabled" id="street-select">
-        <option>Бажана</option>
-        <option>Институтская</option>
-        <option>Херутская</option>
-        <option>Проститутская</option>
-    </select>
+    <div class="head">
+        <svg class="logo"></svg>
+        <label for="sel1"></label>
+        <select class="form-control" id="region-select">
+            <option>Please, select your region</option>
+            <option>Киевская область</option>
+            <option>Донецкая область</option>
+            <option>Днепропетровская область</option>
+            <option>Одесская область</option>
+        </select>
+        <select class="form-control" id="city-select">
+            <option>Киев</option>
+            <option>Днепропетровск</option>
+            <option>Одесса</option>
+            <option>Донецк</option>
+        </select>
+        <select class="form-control" disabled="disabled" id="street-select">
+            <option>Бажана</option>
+            <option>Институтская</option>
+            <option>Херутская</option>
+            <option>Проститутская</option>
+        </select>
+    </div>
 </form>
 
 
@@ -51,21 +54,21 @@
             <div class="info"></div>
             <div class="infoText">PIZZA</div>
         </div>
-        <div id="pizza" class="blackRectangle">
+        <div id="chine" class="blackRectangle">
             <div class="info"></div>
-            <div class="infoText">PIZZA</div>
+            <div class="infoText">CHINE</div>
         </div>
-        <div id="pizza" class="blackRectangle">
+        <div id="fish" class="blackRectangle">
             <div class="info"></div>
-            <div class="infoText">PIZZA</div>
+            <div class="infoText">FISH</div>
         </div>
-        <div id="pizza" class="blackRectangle">
+        <div id="burgers" class="blackRectangle">
             <div class="info"></div>
-            <div class="infoText">PIZZA</div>
+            <div class="infoText">BURGERS</div>
         </div>
-        <div id="pizza" class="blackRectangle">
+        <div id="sushi" class="blackRectangle">
             <div class="info"></div>
-            <div class="infoText">PIZZA</div>
+            <div class="infoText">SUSHI</div>
         </div>
 
 

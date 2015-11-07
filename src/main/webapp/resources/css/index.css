@@ -2,7 +2,9 @@
     display:flex;
     text-align: center;
     height: 300px;
+    width: 100%;
     background-image: url(../img/pizza_1920x300.jpg);
+    background-position:center;
 }
 #forDishes{
     margin:auto;
@@ -13,17 +15,18 @@
 .info{
     width: 130px;
     height: 130px;
-    margin-top: 15px;
+    margin-top: 20px;
     margin: 10px;
     display: inline-block;
     vertical-align: middle;
     background: url(../img/pizza.svg);
     background-size: contain;
 }
+
 .infoText{
     color: white;
-    font-size: 40pt;
-    font-family: sans-serif ;
+    font-size: 30pt;
+    font-family: sans-serif;
     display: inline-block;
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
@@ -89,9 +92,29 @@
     padding-top: 20px;
 }
 .form-inline{
+    /*display: flex;*/
     background-color: rgb(50, 163, 37);
     /*background-color: rgb(66, 64, 62);*/
     height: 70px;
+}
+.head{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1200px;
+    height: 70px;
+    margin: 0px;
+}
+.logo{
+    width: 270px;
+    height: 60px;
+    margin:5px;
+    display: inline;
+    float: left;
+    vertical-align: middle;
+    background: url(../img/logo.svg),no-repeat;
+    background-size: contain;
+
 }
 .form-inline label{
     margin: 18px;
