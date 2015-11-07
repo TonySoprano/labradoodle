@@ -92,9 +92,7 @@
     padding-top: 20px;
 }
 .form-inline{
-    /*display: flex;*/
     background-color: rgb(50, 163, 37);
-    /*background-color: rgb(66, 64, 62);*/
     height: 70px;
 }
 .head{
