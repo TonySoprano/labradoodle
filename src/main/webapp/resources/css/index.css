@@ -47,3 +47,13 @@
     float: right;
     padding-top: 20px;
 }
+.form-inline{
+    background-color: gainsboro;
+    height: 40px;
+}
+.form-inline label{
+    margin: 10px;
+}
+.form-control{
+    margin-bottom: 6px;
+}

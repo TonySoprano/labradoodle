@@ -34,6 +34,11 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     }
 
     @Override
+    public List<Restaurant> getByCity(String city){
+        return entityManager.createNamedQuery("getAllRestorantsByCity").getResultList();
+    }
+
+    @Override
     public void delete(int id) {
         entityManager.createNamedQuery("deleteRestaurantById").setParameter("id", id).getResultList();
     }
