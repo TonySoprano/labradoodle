@@ -76,9 +76,9 @@ public class HomeController {
      * @return List of DishesDto
      */
     @ResponseBody
-    @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
-    public List<DishDto> getHotDishes(){
-        List<DishDto> dishesDtos = appService.getHotDishes();
+    @RequestMapping(value = "/get/hotdishes/{cladr}",method = RequestMethod.GET)
+    public List<DishDto> getHotDishes(@PathVariable(value = "cladr") String cladr){
+        List<DishDto> dishesDtos = appService.getHotDishes(cladr);
         return dishesDtos;
     }
 }

@@ -51,7 +51,7 @@ public class AppServiceImplTest {
     }
 
 
-    //This method creates a List with 20 Dishes for testing method "testGetFirst20Dishes1"
+    //This method creates a List with 20 Dishes for testing method "testGetHotDishes1"
     private List<Dish> createListDishesDto(){
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){

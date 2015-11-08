@@ -29,13 +29,7 @@ public class Restaurant implements Serializable {
 
     private String name;
 
-    private String city;
-
-    private String district;
-
-    private String street;
-
-    private String building;
+    private String address;
 
     private String phone;
 
@@ -64,38 +58,11 @@ public class Restaurant implements Serializable {
     }
 
     public String getCity() {
-        return city;
+        return address;
     }
 
-    public Restaurant setCity(String city) {
-        this.city = city;
-        return this;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public Restaurant setDistrict(String district) {
-        this.district = district;
-        return this;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public Restaurant setStreet(String street) {
-        this.street = street;
-        return this;
-    }
-
-    public String getBuilding() {
-        return building;
-    }
-
-    public Restaurant setBuilding(String building) {
-        this.building = building;
+    public Restaurant setCity(String address) {
+        this.address = address;
         return this;
     }
 

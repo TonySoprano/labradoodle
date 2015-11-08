@@ -23,16 +23,7 @@ public class RestaurantDto implements Serializable {
     private String name;
 
     @JsonProperty
-    private String city;
-
-    @JsonProperty
-    private String district;
-
-    @JsonProperty
-    private String street;
-
-    @JsonProperty
-    private Integer building;
+    private String address;
 
     @JsonProperty
     private String phone;
@@ -67,38 +58,11 @@ public class RestaurantDto implements Serializable {
     }
 
     public String getCity() {
-        return city;
+        return address;
     }
 
-    public RestaurantDto setCity(String city) {
-        this.city = city;
-        return this;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public RestaurantDto setDistrict(String district) {
-        this.district = district;
-        return this;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public RestaurantDto setStreet(String street) {
-        this.street = street;
-        return this;
-    }
-
-    public Integer getBuilding() {
-        return building;
-    }
-
-    public RestaurantDto setBuilding(Integer building) {
-        this.building = building;
+    public RestaurantDto setCity(String address) {
+        this.address = address;
         return this;
     }
 
@@ -147,10 +111,7 @@ public class RestaurantDto implements Serializable {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (city != null ? !city.equals(that.city) : that.city != null) return false;
-        if (district != null ? !district.equals(that.district) : that.district != null) return false;
-        if (street != null ? !street.equals(that.street) : that.street != null) return false;
-        if (building != null ? !building.equals(that.building) : that.building != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
         if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
         if (openTime != null ? !openTime.equals(that.openTime) : that.openTime != null) return false;
         if (closeTime != null ? !closeTime.equals(that.closeTime) : that.closeTime != null) return false;
@@ -162,10 +123,7 @@ public class RestaurantDto implements Serializable {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (district != null ? district.hashCode() : 0);
-        result = 31 * result + (street != null ? street.hashCode() : 0);
-        result = 31 * result + (building != null ? building.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
         result = 31 * result + (openTime != null ? openTime.hashCode() : 0);
         result = 31 * result + (closeTime != null ? closeTime.hashCode() : 0);
