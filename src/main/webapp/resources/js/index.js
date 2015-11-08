@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     //get type of dishes
     $.ajax({
-        url: $hostRoot + "/get/typesofdishes",
+        url: $hostRoot + "get/typesofdishes",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     //get kladr by alex barkovsky
     $.ajax({
-        url: $hostRoot + "/get/kladr",
+        url: $hostRoot + "get/kladr",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -89,7 +89,7 @@ addEvents = function () {
         var type = $(this).attr('index');
 
         $.ajax({
-            url: $hostRoot + "/get/dishes/" + type,
+            url: $hostRoot + "get/dishes/" + type,
             type: 'get',
             dataType: 'json',
             contentType: 'application/json',
@@ -120,7 +120,7 @@ $('.circle').on('click', function() {
     var id = $(this).attr('index');
 
     $.ajax({
-        url: $hostRoot + "/get_dish/" + id,
+        url: $hostRoot + "get_dish/" + id,
         type: 'get',
         success: function (data) {
 
@@ -139,7 +139,7 @@ $('.circle').on('click', function() {
 var loadLocationData = function() {
 
     $.ajax({
-        url: $hostRoot + "/get/cities",
+        url: $hostRoot + "get/cities",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
