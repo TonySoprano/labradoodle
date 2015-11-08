@@ -48,6 +48,48 @@ public class RestaurantDtoTest {
         assertTrue(restaurantDto.getName().equals("Loft"));
     }
 
+ /*   @Test
+    public void testSetDistrict(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setDistrict("Govtneviy");
+        assertEquals("Govtneviy", restaurantDto.getDistrict());
+    }
+
+    @Test
+    public void testGetDistrict(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setDistrict("Govtneviy");
+        assertTrue(restaurantDto.getDistrict().equals("Govtneviy"));
+    }
+
+    @Test
+    public void testSetStreet(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setStreet("Lenina");
+        assertEquals("Lenina", restaurantDto.getStreet());
+    }
+
+    @Test
+    public void testGetStreet(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setStreet("Lenina");
+        assertTrue(restaurantDto.getStreet().equals("Lenina"));
+    }
+
+    @Test
+    public void testSetBuilding(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setBuilding(2);
+        assertEquals((Integer) 2, restaurantDto.getBuilding());
+    }
+
+    @Test
+    public void testGetBuilding(){
+        restaurantDto = new RestaurantDto();
+        restaurantDto.setBuilding(2);
+        assertTrue(restaurantDto.getBuilding().equals((Integer) 2));
+    }
+
     @Test
     public void testSetPhone(){
         restaurantDto = new RestaurantDto();
@@ -104,4 +146,14 @@ public class RestaurantDtoTest {
         assertTrue(restaurantDto.getEmail().equals("www@gmail.com"));
     }
 
+    @Test
+    public void testRestaurantsDto() throws JsonProcessingException, IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        RestaurantDto restaurantDto = new RestaurantDto().setBuilding(3).setCity("Lviv").setCloseTime("12.00").
+                setDistrict("Jovtneviy").setEmail("volik.anton@gmail.ru").setId(3).setName("Casta").setOpenTime("12.00-5.00").setPhone("0675666513").setStreet("ul.Lenina 23");
+        Writer writer = new StringWriter();
+        mapper.writeValue(writer, restaurantDto);
+        RestaurantDto restaurantDtoTest = mapper.readValue(writer.toString(),RestaurantDto.class);
+        assertEquals(restaurantDto, restaurantDtoTest);
+    }*/
 }

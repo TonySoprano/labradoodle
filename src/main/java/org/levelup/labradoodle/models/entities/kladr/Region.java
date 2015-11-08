@@ -15,7 +15,7 @@ public class Region {
     private String region_id;
 
     @OneToMany(mappedBy = "region_id")
-    private Collection<City> city= new ArrayList<City>();
+    private Collection<City> city = new ArrayList<City>();
 
     @Column
     private String region;
