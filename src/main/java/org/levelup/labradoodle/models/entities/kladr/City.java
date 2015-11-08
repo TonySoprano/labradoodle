@@ -16,15 +16,15 @@ public class City {
     @Id
     private Integer city_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "region_id")
     public  Region region_id ;
 
     @OneToMany(mappedBy = "city_id")
     private Collection<Street> street = new ArrayList<Street>();
 
-    @OneToMany(mappedBy = "city")
-    private Collection<Restaurant> restaurants = new ArrayList<>();
+//    @OneToMany(mappedBy = "city")
+//    private Collection<Restaurant> restaurants = new ArrayList<>();
 
     @Column
     private String city;

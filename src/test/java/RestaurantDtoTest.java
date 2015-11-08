@@ -48,20 +48,6 @@ public class RestaurantDtoTest {
         assertTrue(restaurantDto.getName().equals("Loft"));
     }
 
-    @Test
-    public void testSetCity(){
-        restaurantDto = new RestaurantDto();
-        restaurantDto.setCity("Dnipropetrovsk");
-        assertEquals("Dnipropetrovsk", restaurantDto.getCity());
-    }
-
-    @Test
-    public void testGetCity(){
-        restaurantDto = new RestaurantDto();
-        restaurantDto.setCity("Dnipropetrovsk");
-        assertTrue(restaurantDto.getCity().equals("Dnipropetrovsk"));
-    }
-
  /*   @Test
     public void testSetDistrict(){
         restaurantDto = new RestaurantDto();

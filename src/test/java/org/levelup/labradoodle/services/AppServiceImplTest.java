@@ -35,20 +35,20 @@ public class AppServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    @Test
-    public void testGetHotDishes1() {
-        when(dishRepository.getHotDishes()).thenReturn(createListDishesDto());
-        List<DishDto> response = appService.getHotDishes();
-        assertion.assertNotNull(response);
-        assertion.assertEquals(response.size(), 20);
-    }
+//    @Test
+//    public void testGetHotDishes1() {
+//        when(dishRepository.getHotDishes()).thenReturn(createListDishesDto());
+//        List<DishDto> response = appService.getHotDishes();
+//        assertion.assertNotNull(response);
+//        assertion.assertEquals(response.size(), 20);
+//    }
 
-    @Test
-    public void testGetHotDishes2() {
-        doThrow(new RuntimeException()).when(dishRepository).getHotDishes();
-        appService.getHotDishes();
-        verify(dishRepository, times(1)).getHotDishes();
-    }
+//    @Test
+//    public void testGetHotDishes2() {
+//        doThrow(new RuntimeException()).when(dishRepository).getHotDishes();
+//        appService.getHotDishes();
+//        verify(dishRepository, times(1)).getHotDishes();
+//    }
 
 
     //This method creates a List with 20 Dishes for testing method "testGetHotDishes1"

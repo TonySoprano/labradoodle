@@ -57,11 +57,11 @@ public class RestaurantDto implements Serializable {
         return this;
     }
 
-    public String getCity() {
+    public String getAddress() {
         return address;
     }
 
-    public RestaurantDto setCity(String address) {
+    public RestaurantDto setAddress(String address) {
         this.address = address;
         return this;
     }
