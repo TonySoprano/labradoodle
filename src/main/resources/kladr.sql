@@ -20,6 +20,7 @@ INSERT INTO Region(region_id,region) VALUES ('SMM','Сумская_област�
 INSERT INTO Region(region_id,region) VALUES ('TRN','Тернопольская_область');
 INSERT INTO Region(region_id,region) VALUES ('ZPR','Запорожская_область');
 INSERT INTO Region(region_id,region) VALUES ('GTM','Житомирская_область');
+INSERT INTO Region(region_id,region) VALUES ('VLN','Волынская_область');
 -- Input of cities
 INSERT INTO City(city_id,city,region_id) VALUES ('VNC','Винница','VNC');
 INSERT INTO City(city_id,city,region_id) VALUES ('DNK','Днепропетровск','DNK');
