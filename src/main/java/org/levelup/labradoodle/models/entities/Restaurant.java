@@ -12,12 +12,6 @@ import java.util.List;
  */
 @Entity
 @Table(name = "restaurants")
-@NamedQueries({
-        @NamedQuery(name = "getAllRestaurants", query = "SELECT a FROM Restaurant a"),
-        @NamedQuery(name = "getRestaurantById", query = "SELECT a FROM Restaurant a WHERE a.id = :id"),
-        @NamedQuery(name= "getAllRestorantsByCity", query = "SELECT a FROM Restaurant a WHERE a.city= :city "),
-        @NamedQuery(name = "deleteRestaurantById", query = "DELETE FROM Restaurant a WHERE a.id = :id")
-})
 public class Restaurant implements Serializable {
 
     @Id
@@ -57,11 +51,11 @@ public class Restaurant implements Serializable {
         return this;
     }
 
-    public String getCity() {
+    public String getAddress() {
         return address;
     }
 
-    public Restaurant setCity(String address) {
+    public Restaurant setAddress(String address) {
         this.address = address;
         return this;
     }
