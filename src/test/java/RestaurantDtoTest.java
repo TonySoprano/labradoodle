@@ -62,7 +62,7 @@ public class RestaurantDtoTest {
         assertTrue(restaurantDto.getCity().equals("Dnipropetrovsk"));
     }
 
-    @Test
+ /*   @Test
     public void testSetDistrict(){
         restaurantDto = new RestaurantDto();
         restaurantDto.setDistrict("Govtneviy");
@@ -169,5 +169,5 @@ public class RestaurantDtoTest {
         mapper.writeValue(writer, restaurantDto);
         RestaurantDto restaurantDtoTest = mapper.readValue(writer.toString(),RestaurantDto.class);
         assertEquals(restaurantDto, restaurantDtoTest);
-    }
+    }*/
 }

@@ -7,6 +7,7 @@ import org.levelup.labradoodle.repositories.DishRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -75,10 +76,10 @@ public class AppServiceImpl implements AppService {
      * @return List of dishes with min  deadline
      */
     @Override
-    public List<DishDto> getHotDishes() {
+    public List<DishDto> getHotDishes(String cladr) {
         List<DishDto> dishesDtos = new ArrayList<>();
         try{
-            for (Dish dish: dishRepository.getHotDishes()){
+            for (Dish dish: dishRepository.getHotDishes(cladr)){
                 dishesDtos.add(new DishDto()
                         .setId(dish.getId())
                         .setName(dish.getName())
