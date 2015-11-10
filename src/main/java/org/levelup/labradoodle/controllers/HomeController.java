@@ -1,17 +1,18 @@
 package org.levelup.labradoodle.controllers;
 
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.kladr.RegionDto;
 import org.levelup.labradoodle.services.AppService;
+import org.levelup.labradoodle.services.CladrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class {@link HomeController}
@@ -26,6 +27,8 @@ public class HomeController {
     @Autowired
     private AppService appService;
 
+    @Autowired
+    private CladrService cladrService;
 
     @RequestMapping(value = "/")
     public String index() {
@@ -80,5 +83,17 @@ public class HomeController {
     public List<DishDto> getHotDishes(@PathVariable(value = "cladr") String cladr){
         List<DishDto> dishesDtos = appService.getHotDishes(cladr);
         return dishesDtos;
+    }
+
+    /**
+     * This method return List of Dishes (WEB model) from DB by deadline.
+     * @author Barkovskiy Alexandr
+     * @return List of DishesDto
+     */
+    @ResponseBody
+    @RequestMapping(value = "/get/cladrinfo",method = RequestMethod.GET)
+    public List<?> cladrInfo(@RequestParam String cladr){
+        List<?> cladrInfo = cladrService.getCladrInfo(cladr);
+        return cladrInfo;
     }
 }

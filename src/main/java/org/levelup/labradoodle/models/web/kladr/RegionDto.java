@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Created by toha on 26.08.15.
  */
-//Dto of region table
 public class RegionDto {
 
     @JsonProperty
@@ -19,15 +18,17 @@ public class RegionDto {
         return region_id;
     }
 
-    public void setId(String region_id) {
+    public RegionDto setId(String region_id) {
         this.region_id = region_id;
+        return this;
     }
 
     public String getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public RegionDto setRegion(String region) {
         this.region = region;
+        return this;
     }
 }

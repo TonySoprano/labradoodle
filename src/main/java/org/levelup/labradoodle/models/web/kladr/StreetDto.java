@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Created by toha on 26.08.15.
  */
-//Dto of street table
 public class StreetDto {
 
     @JsonProperty
@@ -22,24 +21,27 @@ public class StreetDto {
         return street_id;
     }
 
-    public void setStreet_id(String street_id) {
+    public StreetDto setStreet_id(String street_id) {
         this.street_id = street_id;
+        return this;
     }
 
     public CityDto getCity_id() {
         return city_id;
     }
 
-    public void setCity_id(CityDto city_id) {
+    public StreetDto setCity_id(CityDto city_id) {
         this.city_id = city_id;
+        return this;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public StreetDto setStreet(String street) {
         this.street = street;
+        return this;
     }
 
 }

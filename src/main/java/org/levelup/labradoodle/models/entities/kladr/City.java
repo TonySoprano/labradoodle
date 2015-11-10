@@ -33,23 +33,26 @@ public class City {
         return city_id;
     }
 
-    public void setId(String city_id) {
+    public City setId(String city_id) {
         this.city_id = city_id;
+        return this;
     }
 
     public Region getRegion_id() {
         return region_id;
     }
 
-    public void setRegion_id(Region region_id) {
+    public City setRegion_id(Region region_id) {
         this.region_id = region_id;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public City setCity(String city) {
         this.city = city;
+        return this;
     }
 }

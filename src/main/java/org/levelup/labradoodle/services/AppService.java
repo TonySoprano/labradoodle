@@ -5,6 +5,7 @@ import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class {@link org.levelup.labradoodle.services.AppService}
@@ -31,7 +32,9 @@ public interface AppService {
     /**
      * @author Barkovskiy Alexandr
      * This method get frirst 20 Dish with min deadLine from BD and converting it to WEB model
+     * @param cladr
      * @return List of Dishes
      */
     List<DishDto> getHotDishes(String cladr);
+
 }

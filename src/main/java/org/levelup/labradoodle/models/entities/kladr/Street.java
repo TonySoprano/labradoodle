@@ -24,23 +24,26 @@ public class Street {
         return street_id;
     }
 
-    public void setStreet_id(String street_id) {
+    public Street setStreet_id(String street_id) {
         this.street_id = street_id;
+        return this;
     }
 
     public City getCity_id() {
         return city_id;
     }
 
-    public void setCity_id(City city_id) {
+    public Street setCity_id(City city_id) {
         this.city_id = city_id;
+        return this;
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public Street setStreet(String street) {
         this.street = street;
+        return this;
     }
 }

@@ -7,7 +7,6 @@ import org.levelup.labradoodle.models.entities.kladr.Region;
  * Created by toha on 26.08.15.
  */
 
-//Dto of city table
 public class CityDto {
 
     @JsonProperty
@@ -23,24 +22,27 @@ public class CityDto {
         return id;
     }
 
-    public void setId(Integer id) {
+    public CityDto setId(Integer id) {
         this.id = id;
+        return this;
     }
 
     public Region getRegion_id() {
         return region_id;
     }
 
-    public void setRegion_id(Region region_id) {
+    public CityDto setRegion_id(Region region_id) {
         this.region_id = region_id;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public CityDto setCity(String city) {
         this.city = city;
+        return this;
     }
 
 }

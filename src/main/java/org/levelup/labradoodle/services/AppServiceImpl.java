@@ -72,7 +72,6 @@ public class AppServiceImpl implements AppService {
 
     /**
      *@author Barkovskiy Alexandr
-     *
      * @return List of dishes with min  deadline
      */
     @Override
@@ -95,4 +94,5 @@ public class AppServiceImpl implements AppService {
         }
         return dishesDtos;
     }
+
 }
