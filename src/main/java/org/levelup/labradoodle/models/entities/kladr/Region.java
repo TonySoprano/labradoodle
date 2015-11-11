@@ -8,6 +8,7 @@ import java.util.Collection;
  * @author Barkovskiy Alexandr
  */
 @Entity
+@NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")
 public class Region {
 
     @Id

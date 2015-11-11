@@ -1,5 +1,6 @@
 package org.levelup.labradoodle.services;
 
+import org.levelup.labradoodle.models.entities.kladr.City;
 import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.web.kladr.CityDto;
 import org.levelup.labradoodle.models.web.kladr.RegionDto;
@@ -33,17 +34,17 @@ public class CladrServiceImpl implements CladrService {
     public List<?> getCladrInfo(String cladr) {
         List<?> cladrInfo = new ArrayList<>();
         switch (cladr.length()){
-            case 1: cladrInfo = getRegions();
-                    break;
             case 3: cladrInfo = getCities(cladr);
                     break;
             case 6: cladrInfo = getStreets(cladr);
+                    break;
+            default: cladrInfo = getRegions();
         }
-        return null;
+        return cladrInfo;
     }
 
-    private List<RegionDto> getRegions() {
-        List<RegionDto> regionDtoList = new ArrayList<>();
+    private List<?> getRegions() {
+        List<Object> regionDtoList = new ArrayList<>();
         try {
             for (Region region: cladrRepository.getRegions()){
                 regionDtoList.add(new RegionDto()
@@ -57,12 +58,23 @@ public class CladrServiceImpl implements CladrService {
     }
 
 
-    private List<CityDto> getCities(String cladr) {
-        return null;
+    private List<Object> getCities(String cladr) {
+        List<Object> cityDtoList = new ArrayList<>();
+        try {
+            for (City city: cladrRepository.getCities(cladr)){
+                cityDtoList.add(new CityDto()
+                    .setId(city.getId())
+                    .setCity(city.getCity())
+                    .setRegion_id(city.getRegion_id()));
+            }
+        }catch (Exception e){
+            System.out.println(e); // This is a place for logger
+        }
+        return cityDtoList;
     }
 
 
-    private List<StreetDto> getStreets(String cladr) {
+    private List<Object> getStreets(String cladr) {
         return null;
     }
 }

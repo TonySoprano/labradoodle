@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Class {@link HomeController}
@@ -88,7 +89,7 @@ public class HomeController {
     /**
      * This method return List of Dishes (WEB model) from DB by deadline.
      * @author Barkovskiy Alexandr
-     * @return List of DishesDto
+     * @return List of i
      */
     @ResponseBody
     @RequestMapping(value = "/get/cladrinfo",method = RequestMethod.GET)

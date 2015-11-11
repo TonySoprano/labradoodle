@@ -14,7 +14,7 @@ import java.util.List;
  * Class {@link org.levelup.labradoodle.repositories}
  *
  * @author Alexandr Barkovskiy
- * @verison 1.0
+ * @version 1.0
  * @since 09.11.15
  */
 @Repository
@@ -26,12 +26,15 @@ public class CladrRepositoryImpl implements CladrRepository {
 
     @Override
     public List<Region> getRegions() {
-       return entityManager.createNativeQuery("SELECT a FROM Region a").getResultList();
+       return entityManager.createNamedQuery("getAllRegions").getResultList();
     }
 
     @Override
     public List<City> getCities(String cladr) {
-        return null;
+        return entityManager.createQuery(
+                    "SELECT a FROM City a WHERE a.region_id LIKE :cladr")
+                    .setParameter("cladr","DNK")
+                    .getResultList();
     }
 
     @Override

@@ -4,13 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.levelup.labradoodle.models.entities.kladr.Region;
 
 /**
- * Created by toha on 26.08.15.
+ * Class {@link org.levelup.labradoodle.models.web.kladr.CityDto}
+ *
+ * @author Alexandr Barkovskiy
+ * @verison 2.0
+ * @since 10.11.15
  */
 
 public class CityDto {
 
     @JsonProperty
-    private Integer id;
+    private String id;
 
     @JsonProperty
     public Region region_id ;
@@ -18,11 +22,11 @@ public class CityDto {
     @JsonProperty
     private String city;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public CityDto setId(Integer id) {
+    public CityDto setId(String id) {
         this.id = id;
         return this;
     }
