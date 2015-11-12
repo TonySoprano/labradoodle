@@ -56,9 +56,9 @@ public class AppServiceImplTest {
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
             dishesList.add(new Dish()
-                        .setId(i)
+                        .setDishId(i)
                         .setName("SomeDish")
-                        .setPrice_new(20)
+                        .setPriceNew(20)
                         .setTypesOfDishes(TypesOfDishes.BURGERS)
                         .setDescription("BLALALA"));
         }

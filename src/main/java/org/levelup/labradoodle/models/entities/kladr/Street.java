@@ -13,7 +13,7 @@ public class Street {
     @GeneratedValue
     private String street_id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="city_id")
     public  City city_id ;
 

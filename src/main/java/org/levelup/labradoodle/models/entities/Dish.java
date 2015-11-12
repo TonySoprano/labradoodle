@@ -2,12 +2,12 @@ package org.levelup.labradoodle.models.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author Revuk Alex
- * @version 1.0
- * @since 17.08.2015
+ * @version 2.0
+ * @since 12.11.2015
  */
 @Entity
 @Table(name = "dishes")
@@ -16,15 +16,16 @@ import java.sql.Date;
         @NamedQuery(name = "getDishById", query = "SELECT a FROM Dish a WHERE a.id = :id"),
         @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dish a WHERE a.id = :id"),
         @NamedQuery(name = "getDishByType", query = "SELECT a FROM Dish a WHERE a.typesOfDishes = :typesOfDishes"),
-        @NamedQuery(name = "getHotDishes",query = "SELECT a FROM Dish a, Restaurant b WHERE b.address LIKE :cladr ORDER BY a.deadline")
+        //@NamedQuery(name = "getHotDishes",query = "SELECT a FROM Dish a WHERE a.restaurant_id.address LIKE :cladr ORDER BY a.deadline")
 })
 public class Dish implements Serializable {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    @Column(name = "dish_id")
+    private Integer dishId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
@@ -42,12 +43,21 @@ public class Dish implements Serializable {
 
     private String description;
 
-    public Integer getId() {
-        return id;
+    public Integer getDishId() {
+        return dishId;
     }
 
-    public Dish setId(Integer id) {
-        this.id = id;
+    public Dish setDishId(Integer dishId) {
+        this.dishId = dishId;
+        return this;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public Dish setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
         return this;
     }
 
@@ -73,8 +83,8 @@ public class Dish implements Serializable {
         return priceOriginal;
     }
 
-    public Dish setPrice_original(Integer price_original) {
-        this.priceOriginal = price_original;
+    public Dish setPriceOriginal(Integer priceOriginal) {
+        this.priceOriginal = priceOriginal;
         return this;
     }
 
@@ -82,8 +92,8 @@ public class Dish implements Serializable {
         return priceNew;
     }
 
-    public Dish setPrice_new(Integer price_new) {
-        this.priceNew = price_new;
+    public Dish setPriceNew(Integer priceNew) {
+        this.priceNew = priceNew;
         return this;
     }
 
@@ -112,23 +122,5 @@ public class Dish implements Serializable {
     public Dish setDescription(String description) {
         this.description = description;
         return this;
-    }
-
-    public Dish setPriceOriginal(Integer priceOriginal) {
-        this.priceOriginal = priceOriginal;
-        return this;
-    }
-
-    public Dish setPriceNew(Integer priceNew) {
-        this.priceNew = priceNew;
-        return this;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
     }
 }

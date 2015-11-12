@@ -19,7 +19,7 @@ public class DishDtoTest {
     @Test
     public void testSetId() {
         ObjectMapper mapper = new ObjectMapper();
-        DishDto dishDto = new DishDto().setId(1);
+        DishDto dishDto = new DishDto().setDishId(1);
         try {
             System.out.println(mapper.writeValueAsString(dishDto));
         } catch (JsonProcessingException ex) {
@@ -30,8 +30,8 @@ public class DishDtoTest {
     @Test
     public void testGetId() throws IOException {
         DishDto dishDto = new DishDto();
-        dishDto.setId(1);
-        assertEquals((Integer) 1, dishDto.getId());
+        dishDto.setDishId(1);
+        assertEquals((Integer) 1, dishDto.getDishId());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class DishDtoTest {
     @Test
     public void testSetPrice_Original() {
         ObjectMapper mapper = new ObjectMapper();
-        DishDto dishDto = new DishDto().setPrice_Original(100);
+        DishDto dishDto = new DishDto().setPriceOriginal(100);
         try {
             System.out.println(mapper.writeValueAsString(dishDto));
         } catch (JsonProcessingException ex) {
@@ -66,14 +66,14 @@ public class DishDtoTest {
     @Test
     public void testGetPriceOriginal() throws IOException {
         DishDto dishDto = new DishDto();
-        dishDto.setPrice_Original(100);
+        dishDto.setPriceOriginal(100);
         assertEquals((Integer) 100, dishDto.getPriceOriginal());
     }
 
     @Test
     public void testSetPrice_New() {
         ObjectMapper mapper = new ObjectMapper();
-        DishDto dishDto = new DishDto().setPrice_new(100);
+        DishDto dishDto = new DishDto().setPriceNew(100);
         try {
             System.out.println(mapper.writeValueAsString(dishDto));
         } catch (JsonProcessingException ex) {
@@ -84,7 +84,7 @@ public class DishDtoTest {
     @Test
     public void testGetPriceNew() throws IOException {
         DishDto dishDto = new DishDto();
-        dishDto.setPrice_new(100);
+        dishDto.setPriceNew(100);
         assertEquals((Integer) 100, dishDto.getPriceNew());
     }
 
@@ -127,7 +127,7 @@ public class DishDtoTest {
     @Test
     public void testDishes() throws JsonProcessingException, IOException{
         ObjectMapper mapper = new ObjectMapper();
-        DishDto dishDto = new DishDto().setDescription("Gamburger").setPrice_new(100).setName("Gamburger").setId(3).setPhoto("photo").setPrice_Original(100);
+        DishDto dishDto = new DishDto().setDescription("Gamburger").setPriceNew(100).setName("Gamburger").setDishId(3).setPhoto("photo").setPriceOriginal(100);
         Writer writer = new StringWriter();
         mapper.writeValue(writer, dishDto);
         DishDto dishDtoTest = mapper.readValue(writer.toString(),DishDto.class);

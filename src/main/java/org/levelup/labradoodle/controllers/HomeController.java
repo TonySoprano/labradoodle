@@ -1,5 +1,6 @@
 package org.levelup.labradoodle.controllers;
 
+import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.web.DishDto;
@@ -49,7 +50,7 @@ public class HomeController {
 //    return appService.getDishById(id);
 
         //Temp mock for front ( for proton)
-        return new DishDto().setDescription("Dish description").setId(1).setName("Dish name").setPrice_Original(20).setPrice_new(10).setTypesOfDishes(TypesOfDishes.BURGERS);
+        return new DishDto().setDescription("Dish description").setDishId(1).setName("Dish name").setPriceOriginal(20).setPriceNew(10).setTypesOfDishes(TypesOfDishes.BURGERS);
     }
 
     /**
@@ -75,21 +76,26 @@ public class HomeController {
     }
 
     /**
-     * This method return List of Dishes (WEB model) from DB by deadline. 
+     * This method return List of Dishes (WEB model) from DB by deadline depending on request param.
      * @author Barkovskiy Alexandr
+     * @param cladr - Sting address filter
      * @return List of DishesDto
      */
     @ResponseBody
-    @RequestMapping(value = "/get/hotdishes/{cladr}",method = RequestMethod.GET)
-    public List<DishDto> getHotDishes(@PathVariable(value = "cladr") String cladr){
-        List<DishDto> dishesDtos = appService.getHotDishes(cladr);
-        return dishesDtos;
+    @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
+    public List<DishDto> getHotDishes(@RequestParam String cladr){
+       // List<DishDto> dishesDtos = appService.getHotDishes(cladr);
+        //return dishesDtos;
+        List<DishDto> list = new ArrayList<>();
+        list.add(new DishDto().setDishId(1).setRestaurant(new Restaurant().setName("PUZO")));
+        return list;
     }
 
     /**
-     * This method return List of Dishes (WEB model) from DB by deadline.
+     * This method return List WEB models of (Region,City,Street) depending on request param.
      * @author Barkovskiy Alexandr
-     * @return List of i
+     * @param cladr - Sting address filter
+     * @return List of Objects
      */
     @ResponseBody
     @RequestMapping(value = "/get/cladrinfo",method = RequestMethod.GET)

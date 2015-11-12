@@ -16,7 +16,7 @@ public interface CladrRepository {
 
     List<Region> getRegions();
 
-    List <City> getCities(String cladr);
+    List <City> getCities(String regionCladr);
 
-    List <Street> getStreets(String cladr);
+    List <Street> getStreets(String regionCladr,String cityCladr);
 }

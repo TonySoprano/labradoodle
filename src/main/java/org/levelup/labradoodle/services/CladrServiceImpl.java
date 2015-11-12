@@ -2,6 +2,7 @@ package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.entities.kladr.City;
 import org.levelup.labradoodle.models.entities.kladr.Region;
+import org.levelup.labradoodle.models.entities.kladr.Street;
 import org.levelup.labradoodle.models.web.kladr.CityDto;
 import org.levelup.labradoodle.models.web.kladr.RegionDto;
 import org.levelup.labradoodle.models.web.kladr.StreetDto;
@@ -75,6 +76,20 @@ public class CladrServiceImpl implements CladrService {
 
 
     private List<Object> getStreets(String cladr) {
-        return null;
+        List<Object> streetDtoList = new ArrayList<>();
+        String  regionCladr = cladr.substring(0,3),
+                cityCladr = cladr.substring(3,6);
+
+        try {
+            for (Street street : cladrRepository.getStreets(regionCladr,cityCladr)) {
+                streetDtoList.add(new StreetDto()
+                    .setStreet_id(street.getStreet_id())
+                    .setStreet(street.getStreet())
+                    .setCity_id(street.getCity_id()));
+            }
+        }catch (Exception e){
+            System.out.println(e); // This is a place for logger
+        }
+        return streetDtoList;
     }
 }

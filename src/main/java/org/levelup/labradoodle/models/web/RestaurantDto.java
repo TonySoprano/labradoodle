@@ -7,17 +7,19 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
 
 /**
- * Created by toha on 17.08.15.
+ * Class {@link org.levelup.labradoodle.models.web.RestaurantDto}
+ * Restaurants transfer object
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 12.11.15
  */
 
-//Restorants transfer object
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class RestaurantDto implements Serializable {
 
-
     @JsonProperty
-    private Integer id;
+    private Integer restaurantId;
 
     @JsonProperty
     private String name;
@@ -37,15 +39,12 @@ public class RestaurantDto implements Serializable {
     @JsonProperty
     private String email;
 
-    @JsonProperty
-    public Integer getId() {
-        return id;
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
-    @JsonProperty
-    public RestaurantDto setId(Integer id) {
-        this.id = id;
-        return this;
+    public void setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public String getName() {
@@ -109,7 +108,7 @@ public class RestaurantDto implements Serializable {
 
         RestaurantDto that = (RestaurantDto) o;
 
-        if (!id.equals(that.id)) return false;
+        if (!restaurantId.equals(that.restaurantId)) return false;
         if (!name.equals(that.name)) return false;
         if (!address.equals(that.address)) return false;
         if (!phone.equals(that.phone)) return false;
@@ -121,7 +120,7 @@ public class RestaurantDto implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
+        int result = restaurantId.hashCode();
         result = 31 * result + name.hashCode();
         result = 31 * result + address.hashCode();
         result = 31 * result + phone.hashCode();

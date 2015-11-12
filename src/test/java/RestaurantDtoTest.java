@@ -23,15 +23,15 @@ public class RestaurantDtoTest {
     @Test
     public void testSetId(){
         restaurantDto = new RestaurantDto();
-        restaurantDto.setId(2);
-        assertEquals((Integer) 2, restaurantDto.getId());
+        restaurantDto.setRestaurantId(2);
+        assertEquals((Integer) 2, restaurantDto.getRestaurantId());
     }
 
     @Test
     public void setGetId(){
         restaurantDto = new RestaurantDto();
-        restaurantDto.setId(2);
-        assertTrue(restaurantDto.getId().equals(2));
+        restaurantDto.setRestaurantId(2);
+        assertTrue(restaurantDto.getRestaurantId().equals(2));
     }
 
     @Test
