@@ -2,7 +2,9 @@ package org.levelup.labradoodle.controllers;
 
 import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.kladr.RegionDto;
 import org.levelup.labradoodle.services.AppService;
 import org.levelup.labradoodle.services.CladrService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * Class {@link HomeController}
@@ -27,7 +31,6 @@ public class HomeController {
 
     @Autowired
     private CladrService cladrService;
-
 
     @RequestMapping(value = "/")
     public String index() {
