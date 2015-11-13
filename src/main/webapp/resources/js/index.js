@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     //get kladr by alex barkovsky
     $.ajax({
-        url: $hostRoot + "get/kladr",
+        url: $hostRoot + "/get/cladrinfo",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
