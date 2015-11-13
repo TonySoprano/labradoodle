@@ -56,11 +56,11 @@ public class AppServiceImplTest {
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
             dishesList.add(new Dish()
-                        .setId(i)
-                        .setName("SomeDish")
-                        .setPrice_new(20)
-                        .setTypesOfDishes(TypesOfDishes.BURGERS)
-                        .setDescription("BLALALA"));
+                    .setDishId(i)
+                    .setName("SomeDish")
+                    .setPriceNew(20)
+                    .setTypesOfDishes(TypesOfDishes.BURGERS)
+                    .setDescription("BLALALA"));
         }
         return dishesList;
     }

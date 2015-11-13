@@ -1,87 +1,58 @@
 package org.levelup.labradoodle.models.web;
 
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by toha on 18.08.15.
+ * Class {@link org.levelup.labradoodle.models.web.DishDto}
+ * Dish transfer object
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 12.11.15
  */
 
-//Dishes transfer object
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class DishDto implements Serializable {
+public class DishDto {
 
-    @JsonProperty
-    private Integer id;
+    private Integer dishId;
 
-    @JsonProperty
+    private Restaurant restaurant;
+
     private TypesOfDishes typesOfDishes;
 
-    @JsonProperty
     private String name;
 
-    @JsonProperty
     private Integer priceOriginal;
 
-    @JsonProperty
     private Integer priceNew;
 
-    @JsonProperty
     private Date deadline;
 
-    @JsonProperty
     private String photo;
 
-    @JsonProperty
-    private String Description;
+    private String description;
 
-    @JsonProperty
-    public Integer getId() {
-        return id;
+    public Integer getDishId() {
+        return dishId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        DishDto dishDto = (DishDto) o;
-
-        if (Description != null ? !Description.equals(dishDto.Description) : dishDto.Description != null)
-            return false;
-        if (deadline != null ? !deadline.equals(dishDto.deadline) : dishDto.deadline != null) return false;
-        if (id != null ? !id.equals(dishDto.id) : dishDto.id != null) return false;
-        if (name != null ? !name.equals(dishDto.name) : dishDto.name != null) return false;
-        if (photo != null ? !photo.equals(dishDto.photo) : dishDto.photo != null) return false;
-        if (priceNew != null ? !priceNew.equals(dishDto.priceNew) : dishDto.priceNew != null) return false;
-        if (priceOriginal != null ? !priceOriginal.equals(dishDto.priceOriginal) : dishDto.priceOriginal != null)
-            return false;
-        if (typesOfDishes != dishDto.typesOfDishes) return false;
-
-        return true;
+    public DishDto setDishId(Integer dishId) {
+        this.dishId = dishId;
+        return this;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (typesOfDishes != null ? typesOfDishes.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (priceOriginal != null ? priceOriginal.hashCode() : 0);
-        result = 31 * result + (priceNew != null ? priceNew.hashCode() : 0);
-        result = 31 * result + (deadline != null ? deadline.hashCode() : 0);
-        result = 31 * result + (photo != null ? photo.hashCode() : 0);
-        result = 31 * result + (Description != null ? Description.hashCode() : 0);
-        return result;
+    public Restaurant getRestaurant() {
+        return restaurant;
     }
 
-    public DishDto setId(Integer id) {
-        this.id = id;
+    public DishDto setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
         return this;
     }
 
@@ -107,8 +78,8 @@ public class DishDto implements Serializable {
         return priceOriginal;
     }
 
-    public DishDto setPrice_Original(Integer priceo_riginal) {
-        this.priceOriginal = priceo_riginal;
+    public DishDto setPriceOriginal(Integer priceOriginal) {
+        this.priceOriginal = priceOriginal;
         return this;
     }
 
@@ -116,8 +87,8 @@ public class DishDto implements Serializable {
         return priceNew;
     }
 
-    public DishDto setPrice_new(Integer price_new) {
-        this.priceNew = price_new;
+    public DishDto setPriceNew(Integer priceNew) {
+        this.priceNew = priceNew;
         return this;
     }
 
@@ -140,20 +111,13 @@ public class DishDto implements Serializable {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public DishDto setDescription(String description) {
-        Description = description;
+        this.description = description;
         return this;
     }
-
-    @Override
-    public String toString(){
-        return "DishDto {"+
-                "photo='\""+'\''+"}";
-    }
-
 }
 
 

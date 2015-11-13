@@ -7,17 +7,19 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
 
 /**
- * Created by toha on 17.08.15.
+ * Class {@link org.levelup.labradoodle.models.web.RestaurantDto}
+ * Restaurants transfer object
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 12.11.15
  */
 
-//Restorants transfer object
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class RestaurantDto implements Serializable {
 
-
     @JsonProperty
-    private Integer id;
+    private Integer restaurantId;
 
     @JsonProperty
     private String name;
@@ -37,15 +39,12 @@ public class RestaurantDto implements Serializable {
     @JsonProperty
     private String email;
 
-    @JsonProperty
-    public Integer getId() {
-        return id;
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
-    @JsonProperty
-    public RestaurantDto setId(Integer id) {
-        this.id = id;
-        return this;
+    public void setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public String getName() {
@@ -109,25 +108,25 @@ public class RestaurantDto implements Serializable {
 
         RestaurantDto that = (RestaurantDto) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (openTime != null ? !openTime.equals(that.openTime) : that.openTime != null) return false;
-        if (closeTime != null ? !closeTime.equals(that.closeTime) : that.closeTime != null) return false;
-        return !(email != null ? !email.equals(that.email) : that.email != null);
+        if (!restaurantId.equals(that.restaurantId)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!address.equals(that.address)) return false;
+        if (!phone.equals(that.phone)) return false;
+        if (!openTime.equals(that.openTime)) return false;
+        if (!closeTime.equals(that.closeTime)) return false;
+        return email.equals(that.email);
 
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (openTime != null ? openTime.hashCode() : 0);
-        result = 31 * result + (closeTime != null ? closeTime.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
+        int result = restaurantId.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + address.hashCode();
+        result = 31 * result + phone.hashCode();
+        result = 31 * result + openTime.hashCode();
+        result = 31 * result + closeTime.hashCode();
+        result = 31 * result + email.hashCode();
         return result;
     }
 }

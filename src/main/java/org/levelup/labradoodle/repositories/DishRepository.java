@@ -29,6 +29,6 @@ public interface DishRepository {
 
     List<Dish> geByType(TypesOfDishes typesOfDishes);
 
-    List<Dish> getHotDishes (String cladr);
+    List<Dish> getHotDishes(String cladr);
 
 }

@@ -31,7 +31,8 @@ public interface AppService {
     /**
      * @author Barkovskiy Alexandr
      * This method get frirst 20 Dish with min deadLine from BD and converting it to WEB model
-     * @return List of Dishes
+     * @param cladr - String address filter
+     * @return List of DishDto
      */
     List<DishDto> getHotDishes(String cladr);
 }

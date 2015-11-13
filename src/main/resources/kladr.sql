@@ -39,9 +39,9 @@ INSERT INTO City(city_id,city,region_id) VALUES ('PLT','Полтава','PLT');
 INSERT INTO City(city_id,city,region_id) VALUES ('RVN','Ровно','RVN');
 INSERT INTO City(city_id,city,region_id) VALUES ('SMM','Сумы','SMM');
 INSERT INTO City(city_id,city,region_id) VALUES ('TRN','Тернополь','TRN');
--- INSERT INTO City(city_id,city,region_id) VALUES ('ZKP','Uzhhorod','ZKP');
+INSERT INTO City(city_id,city,region_id) VALUES ('ZKP','Uzhhorod','ZKP');
 INSERT INTO City(city_id,city,region_id) VALUES ('KHK','Харьков','KHK');
--- INSERT INTO City(city_id,city,region_id) VALUES ('SMM','Sumy','SMM');
+INSERT INTO City(city_id,city,region_id) VALUES ('SMM','Sumy','SMM');
 INSERT INTO City(city_id,city,region_id) VALUES ('HRS','Херсон','HRS');
 INSERT INTO City(city_id,city,region_id) VALUES ('HMC','Хмельницкий','HMC');
 INSERT INTO City(city_id,city,region_id) VALUES ('CHK','Черкасы','CHK');
@@ -55,4 +55,4 @@ INSERT INTO Street(street_id,street,city_id) VALUES ('DZR','Дзержинско
 INSERT INTO Street(street_id,street,city_id) VALUES ('PTR','Потаржинского','DNK');
 INSERT INTO Street(street_id,street,city_id) VALUES ('POB','Победа','DNK');
 INSERT INTO Street(street_id,street,city_id) VALUES ('KMR','Комунар','DNK');
-INSERT INTO Street(street_id,street,city_id) VALUES ('DMS','Комсомольская','DNK');
+INSERT INTO Street(street_id,street,city_id) VALUES ('KMS','Комсомольская','DNK');

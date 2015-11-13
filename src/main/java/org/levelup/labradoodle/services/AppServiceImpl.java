@@ -41,10 +41,10 @@ public class AppServiceImpl implements AppService {
                 .setTypesOfDishes(dish.getTypesOfDishes())
                 .setDescription(dish.getDescription())
                 .setName(dish.getName())
-                .setId(dish.getId())
+                .setDishId(dish.getDishId())
                 .setPhoto(dish.getPhoto())
-                .setPrice_new(dish.getPriceNew())
-                .setPrice_Original(dish.getPriceOriginal());
+                .setPriceNew(dish.getPriceNew())
+                .setPriceOriginal(dish.getPriceOriginal());
         return dishDto;
     }
 
@@ -60,11 +60,11 @@ public class AppServiceImpl implements AppService {
             dishDtos.add(new DishDto()
                     .setDeadline(dish.getDeadline())
                     .setDescription(dish.getDescription())
-                    .setId(dish.getId())
+                    .setDishId(dish.getDishId())
                     .setName(dish.getName())
                     .setPhoto(dish.getPhoto())
-                    .setPrice_new(dish.getPriceNew())
-                    .setPrice_Original(dish.getPriceOriginal())
+                    .setPriceNew(dish.getPriceNew())
+                    .setPriceOriginal(dish.getPriceOriginal())
                     .setTypesOfDishes(dish.getTypesOfDishes()));
         }
         return dishDtos;
@@ -72,8 +72,8 @@ public class AppServiceImpl implements AppService {
 
     /**
      *@author Barkovskiy Alexandr
-     *
-     * @return List of dishes with min  deadline
+     * @return List of DishDto with min  deadline
+     * @param cladr - String address filter
      */
     @Override
     public List<DishDto> getHotDishes(String cladr) {
@@ -81,18 +81,20 @@ public class AppServiceImpl implements AppService {
         try{
             for (Dish dish: dishRepository.getHotDishes(cladr)){
                 dishesDtos.add(new DishDto()
-                        .setId(dish.getId())
+                        .setDishId(dish.getDishId())
                         .setName(dish.getName())
                         .setDeadline(dish.getDeadline())
                         .setDescription(dish.getDescription())
                         .setPhoto(dish.getPhoto())
-                        .setPrice_new(dish.getPriceNew())
-                        .setPrice_Original(dish.getPriceOriginal())
-                        .setTypesOfDishes(dish.getTypesOfDishes()));
+                        .setPriceNew(dish.getPriceNew())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setTypesOfDishes(dish.getTypesOfDishes())
+                        .setRestaurant(dish.getRestaurant()));
             }
         }catch (Exception e){
             System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
         }
         return dishesDtos;
     }
+
 }
