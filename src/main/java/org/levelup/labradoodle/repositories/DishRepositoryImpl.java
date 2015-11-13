@@ -60,7 +60,7 @@ public class DishRepositoryImpl implements DishRepository {
 
     @Override
     public List<Dish> getHotDishes(String cladr) {
-/* return entityManager.createNamedQuery("getHotDishes")
+       /* return entityManager.createNamedQuery("getHotDishes")
                             .setParameter("cladr",cladr + "%")
                             .setMaxResults(20)
                             .getResultList();*/

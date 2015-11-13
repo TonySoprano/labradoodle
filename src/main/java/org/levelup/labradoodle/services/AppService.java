@@ -5,6 +5,7 @@ import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class {@link org.levelup.labradoodle.services.AppService}
@@ -35,4 +36,5 @@ public interface AppService {
      * @return List of DishDto
      */
     List<DishDto> getHotDishes(String cladr);
+
 }
