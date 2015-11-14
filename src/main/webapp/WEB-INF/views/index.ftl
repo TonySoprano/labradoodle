@@ -76,12 +76,122 @@
 
 
 
+
     <#--<div id="circleDishesTypes">-->
         <#--<div id="dishesTypes-preloader">-->
             <#--<i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>-->
         <#--</div>-->
     <#--</div>-->
 </div>
+<div id="HotDeals">
+    <h1 class="infoText2">Hot Deals</h1>
+</div>
+<div id="HotDishes">
+    <div id="HotDishesInside">
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 </body>
 </html>
