@@ -47,7 +47,7 @@
     height: 230px;
 }
 .blackRectangle:hover{
-    background: rgba(32, 50, 5, 0.8);
+    background: rgba(51, 209, 19, 0.62);
     box-shadow: 0 0 25px rgba(255, 249, 255, 0.6);
 }
 
