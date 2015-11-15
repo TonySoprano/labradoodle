@@ -1,14 +1,13 @@
 package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.entities.Dish;
-import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
-import org.levelup.labradoodle.repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,8 +23,6 @@ public class AppServiceImpl implements AppService {
 
     @Autowired
     private DishRepository dishRepository;
-    @Autowired
-    private RestaurantRepository restaurantRepository;
 
     /**
      * This method get Dish from BD and converting it to WEB model
@@ -44,10 +41,10 @@ public class AppServiceImpl implements AppService {
                 .setTypesOfDishes(dish.getTypesOfDishes())
                 .setDescription(dish.getDescription())
                 .setName(dish.getName())
-                .setId(dish.getId())
+                .setDishId(dish.getDishId())
                 .setPhoto(dish.getPhoto())
-                .setPrice_new(dish.getPriceNew())
-                .setPrice_Original(dish.getPriceOriginal());
+                .setPriceNew(dish.getPriceNew())
+                .setPriceOriginal(dish.getPriceOriginal());
         return dishDto;
     }
 
@@ -63,45 +60,41 @@ public class AppServiceImpl implements AppService {
             dishDtos.add(new DishDto()
                     .setDeadline(dish.getDeadline())
                     .setDescription(dish.getDescription())
-                    .setId(dish.getId())
+                    .setDishId(dish.getDishId())
                     .setName(dish.getName())
                     .setPhoto(dish.getPhoto())
-                    .setPrice_new(dish.getPriceNew())
-                    .setPrice_Original(dish.getPriceOriginal())
+                    .setPriceNew(dish.getPriceNew())
+                    .setPriceOriginal(dish.getPriceOriginal())
                     .setTypesOfDishes(dish.getTypesOfDishes()));
         }
         return dishDtos;
     }
+
     /**
-     *
-     * Method return List Dishes of restourant in select city
-     * (should at least)
+     *@author Barkovskiy Alexandr
+     * @return List of DishDto with min  deadline
+     * @param cladr - String address filter
      */
     @Override
-    public List<DishDto> getDishesByCity(String city){
-        List<DishDto> DishDtoByCity=new ArrayList<>(30);
-        List<Dish> tempDish=new ArrayList<>();
+    public List<DishDto> getHotDishes(String cladr) {
+        List<DishDto> dishesDtos = new ArrayList<>();
         try{
-            List <Restaurant> restaurantsInCity=restaurantRepository.getByCity(city);
-            for (Restaurant rest: restaurantsInCity){
-                int i=rest.getId();
-                tempDish.addAll(dishRepository.getDishesByRestaurant(i));
-                for (Dish dish : tempDish) {
-                    DishDtoByCity.add(new DishDto()
-                            .setDeadline(dish.getDeadline())
-                            .setDescription(dish.getDescription())
-                            .setId(dish.getId())
-                            .setName(dish.getName())
-                            .setPhoto(dish.getPhoto())
-                            .setPrice_new(dish.getPriceNew())
-                            .setPrice_Original(dish.getPriceOriginal())
-                            .setTypesOfDishes(dish.getTypesOfDishes()));
-                }
-                tempDish.clear();
+            for (Dish dish: dishRepository.getHotDishes(cladr)){
+                dishesDtos.add(new DishDto()
+                        .setDishId(dish.getDishId())
+                        .setName(dish.getName())
+                        .setDeadline(dish.getDeadline())
+                        .setDescription(dish.getDescription())
+                        .setPhoto(dish.getPhoto())
+                        .setPriceNew(dish.getPriceNew())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setTypesOfDishes(dish.getTypesOfDishes())
+                        .setRestaurant(dish.getRestaurant()));
             }
+        }catch (Exception e){
+            System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
         }
-        catch (Exception e) {
-        }
-        return DishDtoByCity;
+        return dishesDtos;
     }
+
 }

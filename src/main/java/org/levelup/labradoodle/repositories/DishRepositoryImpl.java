@@ -58,4 +58,15 @@ public class DishRepositoryImpl implements DishRepository {
         return entityManager.createNamedQuery("getDishByType").setParameter("typesOfDishes", typesOfDishes).getResultList();
     }
 
+    @Override
+    public List<Dish> getHotDishes(String cladr) {
+       /* return entityManager.createNamedQuery("getHotDishes")
+                            .setParameter("cladr",cladr + "%")
+                            .setMaxResults(20)
+                            .getResultList();*/
+        return entityManager.createQuery(
+                "SELECT a FROM Dish a WHERE a.restaurant = 1")
+                //.setParameter("cladr",cladr)
+                .getResultList();
+    }
 }

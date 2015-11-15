@@ -14,42 +14,45 @@ import java.util.Collection;
 public class City {
 
     @Id
-    private Integer city_id;
+    private String city_id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="region_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "region_id")
     public  Region region_id ;
 
     @OneToMany(mappedBy = "city_id")
-    private Collection<Street> street= new ArrayList<Street>();
+    private Collection<Street> street = new ArrayList<Street>();
 
-    @OneToMany(mappedBy = "city")
-    private Collection<Restaurant> restaurants=new ArrayList<>();
+//    @OneToMany(mappedBy = "city")
+//    private Collection<Restaurant> restaurants = new ArrayList<>();
 
     @Column
     private String city;
 
-    public Integer getId() {
+    public String getId() {
         return city_id;
     }
 
-    public void setId(Integer city_id) {
+    public City setId(String city_id) {
         this.city_id = city_id;
+        return this;
     }
 
     public Region getRegion_id() {
         return region_id;
     }
 
-    public void setRegion_id(Region region_id) {
+    public City setRegion_id(Region region_id) {
         this.region_id = region_id;
+        return this;
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public City setCity(String city) {
         this.city = city;
+        return this;
     }
 }

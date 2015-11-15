@@ -73,15 +73,6 @@
 
 
     </div>
-
-
-
-
-    <#--<div id="circleDishesTypes">-->
-        <#--<div id="dishesTypes-preloader">-->
-            <#--<i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>-->
-        <#--</div>-->
-    <#--</div>-->
 </div>
 <div id="HotDeals">
     <h1 class="infoText2">Hot Deals</h1>
@@ -190,8 +181,21 @@
         </div>
 
     </div>
+    <div class="block2">
+        <a href=" ">
+            <img src="https://tpc.googlesyndication.com/simgad/14368965802840480494" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+    <div class="block3">
+        <a href=" " >
+            <img src="https://tpc.googlesyndication.com/simgad/2125599233914660053" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
+    <div class="block4">
+        <a href=" " >
+            <img src="https://tpc.googlesyndication.com/simgad/6661425047524397169" border="0" width="460" height="230" alt="" class="img_ad">
+        </a>
+    </div>
 </div>
-
-
 </body>
 </html>

@@ -9,13 +9,14 @@ import java.util.Collection;
  */
 //Table Region
 @Entity
+@NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")
 public class Region {
 
     @Id
     private String region_id;
 
     @OneToMany(mappedBy = "region_id")
-    private Collection<City> city= new ArrayList<City>();
+    private Collection<City> city = new ArrayList<City>();
 
     @Column
     private String region;
@@ -35,4 +36,6 @@ public class Region {
     public void setRegion(String region) {
         this.region = region;
     }
+
+
 }

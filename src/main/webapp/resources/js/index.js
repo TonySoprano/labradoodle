@@ -7,9 +7,11 @@ $(document).ready(function () {
 });
 
 //function in start page
-var onStart = function() {
+    var onStart = function() {
+
+    //get type of dishes
     $.ajax({
-        url: $hostRoot + "/get/typesofdishes",
+        url: $hostRoot + "get/typesofdishes",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -31,6 +33,55 @@ var onStart = function() {
         }
 
     });
+
+    //get kladr by alex barkovsky
+    $.ajax({
+        url: $hostRoot + "get/cladrinfo?cladr=1",
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        //data: JSON.stringify(data),
+        success: function (data) {
+            var regions = "";
+            for (var i = 0; i < data.length; i++) {
+                var region = data[i];
+                regions += "<option id= \"" + region.region + "\" index= \""+ region.region_id + "\" class=region >" + region.region +"</option>";
+                }
+                $('#region-select').html(regions);
+            },
+            error: function (error) {
+                console.log(error)
+            }
+
+        });
+
+    //add block with hot dishes
+    $.ajax({
+        url: $hostRoot + "get/hotdishes",
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (data) {
+
+            //remove hot dishes preloader
+            $('#hotDishes-preloader').hide();
+
+            //add hot disshes
+            //for (i = 0; i < data.length; i++) {
+            //    var type = data[i].toLowerCase();
+
+                //temporary code block dishes
+                $('#blocks')
+                        .append('<div class="block1"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/10150932345484726920" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
+                        '<div class="block2"> <a href=" "> <img src="https://tpc.googlesyndication.com/simgad/14368965802840480494" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
+                        '<div class="block3"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/2125599233914660053" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
+                        '<div class="block4"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/6661425047524397169" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div>')
+                //}
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
 };
 addEvents = function () {
     $('#circleDishesTypes').on('click', '.type-of-dishes', function () {
@@ -38,7 +89,7 @@ addEvents = function () {
         var type = $(this).attr('index');
 
         $.ajax({
-            url: $hostRoot + "/get/dishes/" + type,
+            url: $hostRoot + "get/dishes/" + type,
             type: 'get',
             dataType: 'json',
             contentType: 'application/json',
@@ -62,6 +113,10 @@ addEvents = function () {
         });
 
     });
+    $('#region-select').on('click', '.region', function(){
+        var oblast = $(this).attr('index');
+        console.log(oblast);
+    })
 };
 
 $('.circle').on('click', function() {
@@ -69,7 +124,7 @@ $('.circle').on('click', function() {
     var id = $(this).attr('index');
 
     $.ajax({
-        url: $hostRoot + "/get_dish/" + id,
+        url: $hostRoot + "get_dish/" + id,
         type: 'get',
         success: function (data) {
 
@@ -86,28 +141,9 @@ $('.circle').on('click', function() {
     });
 });
 var loadLocationData = function() {
-    $.ajax({
-        url: $hostRoot + "/get/regions",
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        success: function (data) {
-            var regions = "";
-            for (var i = 0; i < data.length; i++) {
-                var region = data[i];
-                regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
 
-            }
-            $('#region-select').html(regions);
-        },
-        error: function (error) {
-            console.log(error)
-        }
-
-    });
     $.ajax({
-        url: $hostRoot + "/get/cities",
+        url: $hostRoot + "get/cities",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',

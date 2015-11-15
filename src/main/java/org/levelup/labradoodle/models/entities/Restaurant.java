@@ -3,6 +3,7 @@ package org.levelup.labradoodle.models.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,30 +13,19 @@ import java.util.List;
  */
 @Entity
 @Table(name = "restaurants")
-@NamedQueries({
-        @NamedQuery(name = "getAllRestaurants", query = "SELECT a FROM Restaurant a"),
-        @NamedQuery(name = "getRestaurantById", query = "SELECT a FROM Restaurant a WHERE a.id = :id"),
-        @NamedQuery(name= "getAllRestorantsByCity", query = "SELECT a FROM Restaurant a WHERE a.city= :city "),
-        @NamedQuery(name = "deleteRestaurantById", query = "DELETE FROM Restaurant a WHERE a.id = :id")
-})
 public class Restaurant implements Serializable {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    @Column(name = "restaurant_id")
+    private Integer restaurantId;
 
-    @OneToMany(mappedBy="restaurant", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="restaurant")
     private List<Dish> dishes;
 
     private String name;
 
-    private String city;
-
-    private String district;
-
-    private String street;
-
-    private String building;
+    private String address;
 
     private String phone;
 
@@ -45,12 +35,21 @@ public class Restaurant implements Serializable {
 
     private String email;
 
-    public Integer getId() {
-        return id;
+    public Integer getRestaurantId() {
+        return restaurantId;
     }
 
-    public Restaurant setId(Integer id) {
-        this.id = id;
+    public Restaurant setRestaurantId(Integer restaurantId) {
+        this.restaurantId = restaurantId;
+        return this;
+    }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public Restaurant setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
         return this;
     }
 
@@ -63,39 +62,12 @@ public class Restaurant implements Serializable {
         return this;
     }
 
-    public String getCity() {
-        return city;
+    public String getAddress() {
+        return address;
     }
 
-    public Restaurant setCity(String city) {
-        this.city = city;
-        return this;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public Restaurant setDistrict(String district) {
-        this.district = district;
-        return this;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public Restaurant setStreet(String street) {
-        this.street = street;
-        return this;
-    }
-
-    public String getBuilding() {
-        return building;
-    }
-
-    public Restaurant setBuilding(String building) {
-        this.building = building;
+    public Restaurant setAddress(String address) {
+        this.address = address;
         return this;
     }
 
@@ -133,13 +105,5 @@ public class Restaurant implements Serializable {
     public Restaurant setEmail(String email) {
         this.email = email;
         return this;
-    }
-
-    public List<Dish> getDishes() {
-        return dishes;
-    }
-
-    public void setDishes(List<Dish> dishes) {
-        this.dishes = dishes;
     }
 }

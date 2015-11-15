@@ -1,11 +1,11 @@
 package org.levelup.labradoodle.services;
 
 
-import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Class {@link org.levelup.labradoodle.services.AppService}
@@ -29,6 +29,12 @@ public interface AppService {
      */
     List<DishDto> getDishesByType(TypesOfDishes typesOfDishes);
 
-    List<DishDto> getDishesByCity(String city);
+    /**
+     * @author Barkovskiy Alexandr
+     * This method get frirst 20 Dish with min deadLine from BD and converting it to WEB model
+     * @param cladr - String address filter
+     * @return List of DishDto
+     */
+    List<DishDto> getHotDishes(String cladr);
 
 }
