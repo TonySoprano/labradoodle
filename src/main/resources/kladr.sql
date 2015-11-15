@@ -55,4 +55,4 @@ INSERT INTO Street(street_id,street,city_id) VALUES ('DZR','Дзержинско
 INSERT INTO Street(street_id,street,city_id) VALUES ('PTR','Потаржинского','DNK');
 INSERT INTO Street(street_id,street,city_id) VALUES ('POB','Победа','DNK');
 INSERT INTO Street(street_id,street,city_id) VALUES ('KMR','Комунар','DNK');
-INSERT INTO Street(street_id,street,city_id) VALUES ('KMS','Комсомольская','DNK');
+INSERT INTO Street(street_id,street,city_id) VALUES ('DMS','Комсомольская','DNK');
