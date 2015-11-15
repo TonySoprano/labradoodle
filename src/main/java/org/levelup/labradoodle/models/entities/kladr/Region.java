@@ -9,6 +9,7 @@ import java.util.Collection;
  */
 //Table Region
 @Entity
+@NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")
 public class Region {
 
     @Id
