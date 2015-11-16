@@ -84,11 +84,8 @@ public class HomeController {
     @ResponseBody
     @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
     public List<DishDto> getHotDishes(@RequestParam String cladr){
-       // List<DishDto> dishesDtos = appService.getHotDishes(cladr);
-        //return dishesDtos;
-        List<DishDto> list = new ArrayList<>();
-        list.add(new DishDto().setDishId(1).setRestaurant(new Restaurant().setName("PUZO")));
-        return list;
+        List<DishDto> dishesDtos = appService.getHotDishes(cladr);
+        return dishesDtos;
     }
 
     /**

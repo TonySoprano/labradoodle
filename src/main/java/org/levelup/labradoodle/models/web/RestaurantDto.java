@@ -14,8 +14,7 @@ import java.io.Serializable;
  * @since 12.11.15
  */
 
-@JsonAutoDetect
-@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+
 public class RestaurantDto implements Serializable {
 
     @JsonProperty

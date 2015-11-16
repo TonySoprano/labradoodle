@@ -60,13 +60,10 @@ public class DishRepositoryImpl implements DishRepository {
 
     @Override
     public List<Dish> getHotDishes(String cladr) {
-       /* return entityManager.createNamedQuery("getHotDishes")
-                            .setParameter("cladr",cladr + "%")
-                            .setMaxResults(20)
-                            .getResultList();*/
         return entityManager.createQuery(
-                    "SELECT a FROM Dish a WHERE a.restaurant = 1")
-                    //.setParameter("cladr",cladr)
+                    "SELECT a FROM Dish a WHERE a.restaurant.address LIKE :cladr ORDER BY a.deadline")
+                    .setParameter("cladr",cladr+"%")
+                    .setMaxResults(20)
                     .getResultList();
     }
 }

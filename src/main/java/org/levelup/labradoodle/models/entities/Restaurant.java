@@ -20,7 +20,7 @@ public class Restaurant implements Serializable {
     @Column(name = "restaurant_id")
     private Integer restaurantId;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="restaurant")
+    @OneToMany(mappedBy="restaurant")
     private List<Dish> dishes;
 
     private String name;
@@ -43,7 +43,7 @@ public class Restaurant implements Serializable {
         this.restaurantId = restaurantId;
         return this;
     }
-
+/*
     public List<Dish> getDishes() {
         return dishes;
     }
@@ -51,7 +51,7 @@ public class Restaurant implements Serializable {
     public Restaurant setDishes(List<Dish> dishes) {
         this.dishes = dishes;
         return this;
-    }
+    }*/
 
     public String getName() {
         return name;
