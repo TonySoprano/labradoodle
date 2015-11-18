@@ -92,8 +92,5 @@ public class CladrServiceImpl implements CladrService {
         }
         return streetDtoList;
     }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> working_with_cladr_all_layers

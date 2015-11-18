@@ -20,13 +20,11 @@ $(document).ready(function () {
             //remove dishes types preloader
             $('#dishesTypes-preloader').hide();
 
-            //add circle with available dishes type
-            //for (i = 0; i < data.length; i++) {
-            //    var type = data[i].toLowerCase();
-            //        $('#circleDishesTypes')
-            //            .addClass('container center-block')
-            //            .append('<div class="circle type-of-dishes" index="'+ type +'" style="background: url(../img/'+ type +'.jpg) center no-repeat; background-size: 150%;"></div>');
-            //}
+            //add available dishes type
+            for (i = 0; i < data.length; i++) {
+                var type = data[i].toLowerCase();
+                    $('#forDishes').append('<div id="'+type+'" class="blackRectangle"><div class="info"></div> <div class="infoText">'+type.toUpperCase()+'</div></div>');
+            }
         },
         error: function (error) {
             console.log(error)
@@ -36,18 +34,17 @@ $(document).ready(function () {
 
     //get kladr by alex barkovsky
     $.ajax({
-        url: $hostRoot + "get/cladrinfo?cladr=1",
+        url: $hostRoot + "get/cladrinfo?cladr=",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
-        //data: JSON.stringify(data),
         success: function (data) {
             var regions = "";
             for (var i = 0; i < data.length; i++) {
                 var region = data[i];
                 regions += "<option id= \"" + region.region + "\" index= \""+ region.region_id + "\" class=region >" + region.region +"</option>";
                 }
-                $('#region-select').html(regions);
+                $('#region-select').html('<option disabled selected>Выберите область</option>' + regions);
             },
             error: function (error) {
                 console.log(error)
@@ -57,7 +54,7 @@ $(document).ready(function () {
 
     //add block with hot dishes
     $.ajax({
-        url: $hostRoot + "get/hotdishes",
+        url: $hostRoot + "get/hotdishes?cladr=",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -71,11 +68,8 @@ $(document).ready(function () {
             //    var type = data[i].toLowerCase();
 
                 //temporary code block dishes
-                $('#blocks')
-                        .append('<div class="block1"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/10150932345484726920" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
-                        '<div class="block2"> <a href=" "> <img src="https://tpc.googlesyndication.com/simgad/14368965802840480494" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
-                        '<div class="block3"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/2125599233914660053" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div> ' +
-                        '<div class="block4"> <a href=" " > <img src="https://tpc.googlesyndication.com/simgad/6661425047524397169" border="0" width="460" height="230" alt="" class="img_ad"> </a> </div>')
+                $('#HotDishesInside')
+                        .append('<div class="dishes"><div class="dishesinfo"><div class="dishesinfotext">Caesar salad</div></div>')
                 //}
             },
             error: function (error) {
@@ -113,53 +107,77 @@ addEvents = function () {
         });
 
     });
-    $('#region-select').on('click', '.region', function(){
-        var oblast = $(this).attr('index');
-        console.log(oblast);
-    })
-};
-
-$('.circle').on('click', function() {
-
-    var id = $(this).attr('index');
-
-    $.ajax({
-        url: $hostRoot + "get_dish/" + id,
-        type: 'get',
-        success: function (data) {
-
-                //remove dishes by type
-                $('.circle').remove();
-
-                $('#circleDishesTypes')
-                    .addClass('container center-block')
-                    .append('<div><img src="'+ data.photo +'"><img>"'+ data.TypeDishes + ' '+ data.Name +' '+ data.Description +' '+data.Price_Original +' '+ data.Price_new +'"</div>');
-            },
-            error: function (error) {
-                console.log(error)
-            }
-    });
-});
-var loadLocationData = function() {
-
-    $.ajax({
-        url: $hostRoot + "get/cities",
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        success: function (data) {
-            var cities = "";
-            for (var i = 0; i < data.length; i++) {
-                var city = data[i];
-                cities += "<option id= \"" + city.id + "\">" + city.city +"</option>";
-
-            }
-            $('#region-select').html(cities);
-        },
-        error: function (error) {
-            console.log(error)
+    var oblast = "";
+    $('#region-select').change(function () {
+        oblast = $('select option:selected').attr('index');
+        if (typeof oblast == 'undefined') {
+            $('#city-select').html('<option disabled>Выберите город</option>');
+        } else {
+            var cladr = oblast;
+            $.ajax({
+                url: $hostRoot + "get/cladrinfo?cladr=" + oblast,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    var cities = "";
+                    for (var i = 0; i < data.length; i++) {
+                        var city = data[i];
+                        cities += "<option id= \"" + city.city + "\" index= \"" + city.id + "\" class=city >" + city.city + "</option>";
+                    }
+                    $('#city-select').html('<option disabled selected>Выберите город</option>' + cities);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
         }
-
     });
+    var city = "";
+    $('#city-select').change(function () {
+        city = $('select option:selected').attr('index');
+        if (typeof city == 'undefined') {
+            $('#street-select').html('<option disabled>Выберите улицу</option>');
+        } else {
+            $.ajax({
+                url: $hostRoot + "get/cladrinfo?cladr=" + oblast + city,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    var streets = "";
+                    for (var i = 0; i < data.length; i++) {
+                        var street = data[i];
+                        streets += "<option id= \"" + street.street + "\" index= \"" + street.street_id + "\" class=city >" + street.street + "</option>";
+                    }
+                    $('#street-select').html('<option disabled selected>Выберите улицу</option>' + streets);
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
+
+            $('.circle').on('click', function () {
+
+                var id = $(this).attr('index');
+
+                $.ajax({
+                    url: $hostRoot + "get_dish/" + id,
+                    type: 'get',
+                    success: function (data) {
+
+                        //remove dishes by type
+                        $('.circle').remove();
+
+                        $('#circleDishesTypes')
+                            .addClass('container center-block')
+                            .append('<div><img src="' + data.photo + '"><img>"' + data.TypeDishes + ' ' + data.Name + ' ' + data.Description + ' ' + data.Price_Original + ' ' + data.Price_new + '"</div>');
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                });
+            });
+        }
+    })
 };
