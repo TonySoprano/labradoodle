@@ -3,6 +3,7 @@ package org.levelup.labradoodle.models.web;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.levelup.labradoodle.models.entities.Restaurant;
@@ -18,34 +19,27 @@ import java.util.Date;
  * @since 12.11.15
  */
 
-
+@JsonAutoDetect
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DishDto {
 
-    @JsonProperty
     private Integer dishId;
 
-    @JsonProperty
     private Restaurant restaurant;
 
-    @JsonProperty
     private TypesOfDishes typesOfDishes;
 
-    @JsonProperty
     private String name;
 
-    @JsonProperty
     private Integer priceOriginal;
 
-    @JsonProperty
     private Integer priceNew;
 
-    @JsonProperty
     private Date deadline;
 
-    @JsonProperty
     private String photo;
 
-    @JsonProperty
     private String description;
 
     public Integer getDishId() {

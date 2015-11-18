@@ -18,7 +18,9 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 /**
- * Created by Alexandr Barkovskiy on 01.09.2015.
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 17.11.15
  */
 public class AppServiceImplTest {
 
@@ -35,23 +37,26 @@ public class AppServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    public void testGetHotDishes1() {
-//        when(dishRepository.getHotDishes()).thenReturn(createListDishesDto());
-//        List<DishDto> response = appService.getHotDishes();
-//        assertion.assertNotNull(response);
-//        assertion.assertEquals(response.size(), 20);
-//    }
+    @Test
+    public void testGetHotDishes1() {
+        when(dishRepository.getHotDishes(anyString())).thenReturn(createListDishesDto());
+        List<DishDto> response = appService.getHotDishes("DNLDNKLNN");
+        assertion.assertNotNull(response);
+        assertion.assertEquals(response.size(), 20);
+    }
 
-//    @Test
-//    public void testGetHotDishes2() {
-//        doThrow(new RuntimeException()).when(dishRepository).getHotDishes();
-//        appService.getHotDishes();
-//        verify(dishRepository, times(1)).getHotDishes();
-//    }
+    @Test
+    public void testGetHotDishes2() {
+        doThrow(new RuntimeException()).when(dishRepository).getHotDishes(anyString());
+        appService.getHotDishes(anyString());
+        verify(dishRepository, times(1)).getHotDishes(anyString());
+    }
 
 
-    //This method creates a List with 20 Dishes for testing method "testGetHotDishes1"
+    /**
+     * This method creates a List with 20 Dishes for testing method "testGetHotDishes1"
+     * @return List<Dish>
+     */
     private List<Dish> createListDishesDto(){
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
