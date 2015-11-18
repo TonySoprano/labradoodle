@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by toha on 26.08.15.
+ * @author Barkovskiy Alexandr
  */
-//Table Region
 @Entity
+@NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")
 public class Region {
 
     @Id
@@ -24,16 +24,18 @@ public class Region {
         return region_id;
     }
 
-    public void setId(String region_id) {
+    public Region setId(String region_id) {
         this.region_id = region_id;
+        return  this;
     }
 
     public String getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public Region setRegion(String region) {
         this.region = region;
+        return this;
     }
 
 

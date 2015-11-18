@@ -38,3 +38,4 @@ public interface AppService {
     List<DishDto> getHotDishes(String cladr);
 
 }
+

@@ -2,9 +2,13 @@ package org.levelup.labradoodle.models.web;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
+
 
 import java.util.Date;
 
@@ -19,6 +23,7 @@ import java.util.Date;
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class DishDto {
+
 
     private Integer dishId;
 
@@ -119,3 +124,5 @@ public class DishDto {
         return this;
     }
 }
+
+

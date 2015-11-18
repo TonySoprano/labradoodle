@@ -36,9 +36,9 @@ public class CladrServiceImpl implements CladrService {
         List<?> cladrInfo = new ArrayList<>();
         switch (cladr.length()){
             case 3: cladrInfo = getCities(cladr);
-                break;
+                    break;
             case 6: cladrInfo = getStreets(cladr);
-                break;
+                    break;
             default: cladrInfo = getRegions();
         }
         return cladrInfo;
@@ -64,9 +64,9 @@ public class CladrServiceImpl implements CladrService {
         try {
             for (City city: cladrRepository.getCities(cladr)){
                 cityDtoList.add(new CityDto()
-                        .setId(city.getId())
-                        .setCity(city.getCity())
-                        .setRegion_id(city.getRegion_id()));
+                    .setId(city.getId())
+                    .setCity(city.getCity())
+                    .setRegion_id(city.getRegion_id()));
             }
         }catch (Exception e){
             System.out.println(e); // This is a place for logger
@@ -83,13 +83,17 @@ public class CladrServiceImpl implements CladrService {
         try {
             for (Street street : cladrRepository.getStreets(regionCladr,cityCladr)) {
                 streetDtoList.add(new StreetDto()
-                        .setStreet_id(street.getStreet_id())
-                        .setStreet(street.getStreet())
-                        .setCity_id(street.getCity_id()));
+                    .setStreet_id(street.getStreet_id())
+                    .setStreet(street.getStreet())
+                    .setCity_id(street.getCity_id()));
             }
         }catch (Exception e){
             System.out.println(e); // This is a place for logger
         }
         return streetDtoList;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> working_with_cladr_all_layers

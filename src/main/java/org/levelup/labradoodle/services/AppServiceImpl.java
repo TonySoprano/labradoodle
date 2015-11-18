@@ -96,5 +96,4 @@ public class AppServiceImpl implements AppService {
         }
         return dishesDtos;
     }
-
 }
