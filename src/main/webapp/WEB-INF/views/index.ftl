@@ -22,33 +22,163 @@
 <body>
 <!-- Location -->
 <form class="form-inline" align="center">
-    <label for="sel1">Местоположение: </label>
-    <select class="form-control" id="region-select">
-        <option disabled selected>Выбрать область</option>
-    </select>
-    <select class="form-control" id="city-select">
-        <option>Выбрать город</option>
-    </select>
-    <select class="form-control" disabled="disabled" id="street-select">
-        <option>Выбрать улицу</option>
-    </select>
+    <div class="head">
+        <svg class="logo"></svg>
+        <label for="sel1"></label>
+        <select class="form-control" id="region-select">
+            <option>Please, select your region</option>
+            <option>Киевская область</option>
+            <option>Донецкая область</option>
+            <option>Днепропетровская область</option>
+            <option>Одесская область</option>
+        </select>
+        <select class="form-control" id="city-select">
+            <option>Киев</option>
+            <option>Днепропетровск</option>
+            <option>Одесса</option>
+            <option>Донецк</option>
+        </select>
+        <select class="form-control" disabled="disabled" id="street-select">
+            <option>Бажана</option>
+            <option>Институтская</option>
+            <option>Херутская</option>
+            <option>Проститутская</option>
+        </select>
+    </div>
 </form>
-<hr>
 
-<div id="dishesTypes">Доступные блюда</div>
 
-<div id="circleDishesTypes">
-    <div id="dishesTypes-preloader">
-        <i class="fa fa-circle-o-notch fa-pulse fa-4x"></i>
+<div id="dishesTypes">
+    <div id="forDishes">
+        <div id="pizza" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div id="chine" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">CHINE</div>
+        </div>
+        <div id="fish" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">FISH</div>
+        </div>
+        <div id="burgers" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">BURGERS</div>
+        </div>
+        <div id="sushi" class="blackRectangle">
+            <div class="info"></div>
+            <div class="infoText">SUSHI</div>
+        </div>
+
+
     </div>
 </div>
-<br></br>
-<div id="dishesTypes">Горящие блюда</div>
-<div id="blocks" >
-    <div id="hotDishes-preloader">
-        <i class="fa fa-spinner fa-pulse fa-4x"></i>
-    </div>
+<div id="HotDeals">
+    <h1 class="infoText2">Hot Deals</h1>
 </div>
+<div id="HotDishes">
+    <div id="HotDishesInside">
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+            </div>
+        </div>
 
 
 </body>

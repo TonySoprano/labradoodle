@@ -21,12 +21,12 @@ $(document).ready(function () {
             $('#dishesTypes-preloader').hide();
 
             //add circle with available dishes type
-            for (i = 0; i < data.length; i++) {
-                var type = data[i].toLowerCase();
-                    $('#circleDishesTypes')
-                        .addClass('container center-block')
-                        .append('<div class="circle type-of-dishes" index="'+ type +'" style="background: url(../img/'+ type +'.jpg) center no-repeat; background-size: 150%;"></div>');
-            }
+            //for (i = 0; i < data.length; i++) {
+            //    var type = data[i].toLowerCase();
+            //        $('#circleDishesTypes')
+            //            .addClass('container center-block')
+            //            .append('<div class="circle type-of-dishes" index="'+ type +'" style="background: url(../img/'+ type +'.jpg) center no-repeat; background-size: 150%;"></div>');
+            //}
         },
         error: function (error) {
             console.log(error)
@@ -36,16 +36,16 @@ $(document).ready(function () {
 
     //get kladr by alex barkovsky
     $.ajax({
-        url: $hostRoot + "/get/cladrinfo",
+        url: $hostRoot + "get/cladrinfo?cladr=1",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify(data),
+        //data: JSON.stringify(data),
         success: function (data) {
             var regions = "";
             for (var i = 0; i < data.length; i++) {
                 var region = data[i];
-                regions += "<option id= \"" + region.id + "\">" + region.region +"</option>";
+                regions += "<option id= \"" + region.region + "\" index= \""+ region.region_id + "\" class=region >" + region.region +"</option>";
                 }
                 $('#region-select').html(regions);
             },
@@ -113,6 +113,10 @@ addEvents = function () {
         });
 
     });
+    $('#region-select').on('click', '.region', function(){
+        var oblast = $(this).attr('index');
+        console.log(oblast);
+    })
 };
 
 $('.circle').on('click', function() {
