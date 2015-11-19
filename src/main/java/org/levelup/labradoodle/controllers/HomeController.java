@@ -54,14 +54,15 @@ public class HomeController {
     }
 
     /**
-     * I am not sure this method is not correct because maybe sending parameter has not valid type
-     * @param typesOfDishes
+     * This method return List of Dishes (WEB model) from DB sorted by type.
+     * @param type,cladr - type of Dishes & address filter
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/get/dishes/{type}", method = RequestMethod.GET)
-    public List<DishDto> getDishesByType(@PathVariable(value = "type") TypesOfDishes typesOfDishes) {
-        return appService.getDishesByType(typesOfDishes);
+    @RequestMapping(value = "/get/dishes/bytype", method = RequestMethod.GET)
+    public List<DishDto> getDishesByType(@RequestParam ("type") String type, @RequestParam String cladr) {
+        TypesOfDishes typesOfDishes = TypesOfDishes.valueOf(type.toUpperCase());
+        return appService.getDishesByType(typesOfDishes,cladr);
     }
 
     //temporary plug for types of dishes

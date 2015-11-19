@@ -54,8 +54,11 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public List<Dish> geByType(TypesOfDishes typesOfDishes) {
-        return entityManager.createNamedQuery("getDishByType").setParameter("typesOfDishes", typesOfDishes).getResultList();
+    public List<Dish> getByType(TypesOfDishes typesOfDishes, String cladr) {
+        return entityManager.createNamedQuery("getDishByType")
+                            .setParameter("typesOfDishes", typesOfDishes)
+                            .setParameter("cladr", cladr+"%")
+                            .getResultList();
     }
 
     /**

@@ -24,10 +24,10 @@ public interface AppService {
 
     /**
      *
-     * @param typesOfDishes
+     * @param typesOfDishes,cladr
      * @return All dishes with current type
      */
-    List<DishDto> getDishesByType(TypesOfDishes typesOfDishes);
+    List<DishDto> getDishesByType(TypesOfDishes typesOfDishes, String cladr);
 
     /**
      * @author Barkovskiy Alexandr

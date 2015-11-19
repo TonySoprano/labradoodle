@@ -51,12 +51,12 @@ public class AppServiceImpl implements AppService {
     /**
      *
      * @param typesOfDishes - ( burger, fish, pizza, etc.)
-     * @return All dishes with current type
+     * @return All dishes with current type sorted by cladr (address filter)
      */
     @Override
-    public List<DishDto> getDishesByType(TypesOfDishes typesOfDishes) {
+    public List<DishDto> getDishesByType(TypesOfDishes typesOfDishes, String cladr) {
         ArrayList<DishDto> dishDtos = new ArrayList<>();
-        for (Dish dish : dishRepository.geByType(typesOfDishes)) {
+        for (Dish dish : dishRepository.getByType(typesOfDishes, cladr)) {
             dishDtos.add(new DishDto()
                     .setDeadline(dish.getDeadline())
                     .setDescription(dish.getDescription())
@@ -65,7 +65,8 @@ public class AppServiceImpl implements AppService {
                     .setPhoto(dish.getPhoto())
                     .setPriceNew(dish.getPriceNew())
                     .setPriceOriginal(dish.getPriceOriginal())
-                    .setTypesOfDishes(dish.getTypesOfDishes()));
+                    .setTypesOfDishes(dish.getTypesOfDishes())
+                    .setRestaurant(dish.getRestaurant()));
         }
         return dishDtos;
     }
