@@ -14,29 +14,29 @@ import org.levelup.labradoodle.models.entities.kladr.Region;
 public class CityDto {
 
     @JsonProperty
-    private String id;
+    private String cityId;
 
     @JsonProperty
-    public Region region_id ;
+    public Region region;
 
     @JsonProperty
     private String city;
 
-    public String getId() {
-        return id;
+    public String getCityId() {
+        return cityId;
     }
 
-    public CityDto setId(String id) {
-        this.id = id;
+    public CityDto setCityId(String cityId) {
+        this.cityId = cityId;
         return this;
     }
 
-    public Region getRegion_id() {
-        return region_id;
+    public Region getRegion() {
+        return region;
     }
 
-    public CityDto setRegion_id(Region region_id) {
-        this.region_id = region_id;
+    public CityDto setRegion(Region region) {
+        this.region = region;
         return this;
     }
 

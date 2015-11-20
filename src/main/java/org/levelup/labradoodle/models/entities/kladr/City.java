@@ -5,6 +5,7 @@ import org.levelup.labradoodle.models.entities.Restaurant;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by toha on 26.08.15.
@@ -14,36 +15,34 @@ import java.util.Collection;
 public class City {
 
     @Id
-    private String city_id;
+    @Column(name = "city_id")
+    private String cityId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "region_id")
-    public  Region region_id ;
+    private   Region region;
 
-    @OneToMany(mappedBy = "city_id")
-    private Collection<Street> street = new ArrayList<Street>();
-
-//    @OneToMany(mappedBy = "city")
-//    private Collection<Restaurant> restaurants = new ArrayList<>();
+    @OneToMany(mappedBy = "city")
+    private List<Street> street = new ArrayList<Street>();
 
     @Column
     private String city;
 
-    public String getId() {
-        return city_id;
+    public String getCityId() {
+        return cityId;
     }
 
-    public City setId(String city_id) {
-        this.city_id = city_id;
+    public City setCityId(String cityId) {
+        this.cityId = cityId;
         return this;
     }
 
-    public Region getRegion_id() {
-        return region_id;
+    public Region getRegion() {
+        return region;
     }
 
-    public City setRegion_id(Region region_id) {
-        this.region_id = region_id;
+    public City setRegion(Region region) {
+        this.region = region;
         return this;
     }
 

@@ -45,8 +45,10 @@ public class AppServiceImpl implements AppService {
                 .setPhoto(dish.getPhoto())
                 .setPriceNew(dish.getPriceNew())
                 .setPriceOriginal(dish.getPriceOriginal());
+
         return dishDto;
     }
+
 
     /**
      *
@@ -56,18 +58,24 @@ public class AppServiceImpl implements AppService {
     @Override
     public List<DishDto> getDishesByType(TypesOfDishes typesOfDishes, String cladr) {
         ArrayList<DishDto> dishDtos = new ArrayList<>();
-        for (Dish dish : dishRepository.getByType(typesOfDishes, cladr)) {
-            dishDtos.add(new DishDto()
-                    .setDeadline(dish.getDeadline())
-                    .setDescription(dish.getDescription())
-                    .setDishId(dish.getDishId())
-                    .setName(dish.getName())
-                    .setPhoto(dish.getPhoto())
-                    .setPriceNew(dish.getPriceNew())
-                    .setPriceOriginal(dish.getPriceOriginal())
-                    .setTypesOfDishes(dish.getTypesOfDishes())
-                    .setRestaurant(dish.getRestaurant()));
+        try {
+            for (Dish dish : dishRepository.getByType(typesOfDishes, cladr)) {
+                dishDtos.add(new DishDto()
+                        .setDeadline(dish.getDeadline())
+                        .setDescription(dish.getDescription())
+                        .setDishId(dish.getDishId())
+                        .setName(dish.getName())
+                        .setPhoto(dish.getPhoto())
+                        .setPriceNew(dish.getPriceNew())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setTypesOfDishes(dish.getTypesOfDishes())
+                        .setRestaurant(dish.getRestaurant()));
+            }
+        }catch (Exception e){
+            System.out.println(e); //Place for logger
+            return new ArrayList<DishDto>();
         }
+
         return dishDtos;
     }
 
@@ -94,6 +102,7 @@ public class AppServiceImpl implements AppService {
             }
         }catch (Exception e){
             System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
+            return new ArrayList<DishDto>();
         }
         return dishesDtos;
     }

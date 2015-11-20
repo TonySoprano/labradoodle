@@ -3,6 +3,7 @@ package org.levelup.labradoodle.models.entities.kladr;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author Barkovskiy Alexandr
@@ -12,20 +13,21 @@ import java.util.Collection;
 public class Region {
 
     @Id
-    private String region_id;
+    @Column(name = "region_id")
+    private String regionId;
 
-    @OneToMany(mappedBy = "region_id")
-    private Collection<City> city = new ArrayList<City>();
+    @OneToMany(mappedBy = "region")
+    private List<City> cities = new ArrayList<City>();
 
     @Column
     private String region;
 
     public String getId() {
-        return region_id;
+        return regionId;
     }
 
-    public Region setId(String region_id) {
-        this.region_id = region_id;
+    public Region setId(String regionId) {
+        this.regionId = regionId;
         return  this;
     }
 

@@ -9,17 +9,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class RegionDto {
 
     @JsonProperty
-    private String region_id;
+    private String regionId;
 
     @JsonProperty
     private String region;
 
     public String getId() {
-        return region_id;
+        return regionId;
     }
 
-    public RegionDto setId(String region_id) {
-        this.region_id = region_id;
+    public RegionDto setId(String regionId) {
+        this.regionId = regionId;
         return this;
     }
 

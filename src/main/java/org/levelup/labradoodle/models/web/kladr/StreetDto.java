@@ -10,29 +10,29 @@ import org.levelup.labradoodle.models.entities.kladr.City;
 public class StreetDto {
 
     @JsonProperty
-    private String street_id;
+    private String streetId;
 
     @JsonProperty
-    public City city_id ;
+    public City city;
 
     @JsonProperty
     private String street;
 
-    public String getStreet_id() {
-        return street_id;
+    public String getStreetId() {
+        return streetId;
     }
 
-    public StreetDto setStreet_id(String street_id) {
-        this.street_id = street_id;
+    public StreetDto setStreetId(String streetId) {
+        this.streetId = streetId;
         return this;
     }
 
-    public City getCity_id() {
-        return city_id;
+    public City getCity() {
+        return city;
     }
 
-    public StreetDto setCity_id(City city_id) {
-        this.city_id = city_id;
+    public StreetDto setCity(City city) {
+        this.city = city;
         return this;
     }
 

@@ -43,18 +43,37 @@ public class AppServiceImplTest {
         List<DishDto> response = appService.getHotDishes("DNLDNKLNN");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(), 20);
+        verify(dishRepository,times(1)).getHotDishes(anyString());
     }
 
     @Test
     public void testGetHotDishes2() {
         doThrow(new RuntimeException()).when(dishRepository).getHotDishes(anyString());
-        appService.getHotDishes(anyString());
+        List<DishDto> response = appService.getHotDishes(anyString());
+        assertion.assertNotNull(response);
+        assertion.assertEquals(response.size(),0);
         verify(dishRepository, times(1)).getHotDishes(anyString());
     }
 
+   @Test
+   public void testGetDishesByType1(){
+       doThrow(new RuntimeException()).when(dishRepository.getByType(any(TypesOfDishes.class), anyString()));
+       List<DishDto> response = appService.getDishesByType(any(TypesOfDishes.class), anyString());
+       assertion.assertNotNull(response);
+       assertion.assertEquals(response.size(),0);
+       verify(dishRepository, times(1)).getByType(any(TypesOfDishes.class), anyString());
+   }
+
+    @Test
+    public void testGetDishesByType2(){
+        when(dishRepository.getByType(any(TypesOfDishes.class),anyString())).thenReturn(createListDishesDto());
+        List<DishDto> response = appService.getDishesByType(any(TypesOfDishes.class), anyString());
+        assertion.assertNotNull(response);
+        verify(dishRepository,times(1)).getByType(any(TypesOfDishes.class), anyString());
+    }
 
     /**
-     * This method creates a List with 20 Dishes for testing method "testGetHotDishes1"
+     * This method creates a List with 20 Dishes for tests
      * @return List<Dish>
      */
     private List<Dish> createListDishesDto(){
@@ -69,4 +88,5 @@ public class AppServiceImplTest {
         }
         return dishesList;
     }
+
 }

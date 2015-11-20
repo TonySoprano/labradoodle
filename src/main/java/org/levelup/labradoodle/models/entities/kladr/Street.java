@@ -10,31 +10,31 @@ import javax.persistence.*;
 public class Street {
 
     @Id
-    @GeneratedValue
-    private String street_id;
+    @Column(name = "street_id")
+    private String streetId;
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="city_id")
-    public  City city_id ;
+    public  City city;
 
     @Column
     private String street;
 
-    public String getStreet_id() {
-        return street_id;
+    public String getStreetId() {
+        return streetId;
     }
 
-    public Street setStreet_id(String street_id) {
-        this.street_id = street_id;
+    public Street setStreetId(String streetId) {
+        this.streetId = streetId;
         return this;
     }
 
-    public City getCity_id() {
-        return city_id;
+    public City getCity() {
+        return city;
     }
 
-    public Street setCity_id(City city_id) {
-        this.city_id = city_id;
+    public Street setCity(City city) {
+        this.city = city;
         return this;
     }
 

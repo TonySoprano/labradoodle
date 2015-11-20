@@ -21,6 +21,9 @@ INSERT INTO Region(region_id,region) VALUES ('TRN','Тернопольская_�
 INSERT INTO Region(region_id,region) VALUES ('ZPR','Запорожская_область');
 INSERT INTO Region(region_id,region) VALUES ('GTM','Житомирская_область');
 INSERT INTO Region(region_id,region) VALUES ('VLN','Волынская_область');
+INSERT INTO Region(region_id,region) VALUES ('VNC','Виннецкая_область');
+INSERT INTO Region(region_id,region) VALUES ('ZKP','Закарпатская_область');
+
 -- Input of cities
 INSERT INTO City(city_id,city,region_id) VALUES ('VNC','Винница','VNC');
 INSERT INTO City(city_id,city,region_id) VALUES ('DNK','Днепропетровск','DNK');
@@ -41,7 +44,6 @@ INSERT INTO City(city_id,city,region_id) VALUES ('SMM','Сумы','SMM');
 INSERT INTO City(city_id,city,region_id) VALUES ('TRN','Тернополь','TRN');
 INSERT INTO City(city_id,city,region_id) VALUES ('ZKP','Uzhhorod','ZKP');
 INSERT INTO City(city_id,city,region_id) VALUES ('KHK','Харьков','KHK');
-INSERT INTO City(city_id,city,region_id) VALUES ('SMM','Sumy','SMM');
 INSERT INTO City(city_id,city,region_id) VALUES ('HRS','Херсон','HRS');
 INSERT INTO City(city_id,city,region_id) VALUES ('HMC','Хмельницкий','HMC');
 INSERT INTO City(city_id,city,region_id) VALUES ('CHK','Черкасы','CHK');

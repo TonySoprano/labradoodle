@@ -35,7 +35,7 @@ public class CladrRepositoryImpl implements CladrRepository {
     @Override
     public List<City> getCities(String regionCladr) {
         return entityManager.createQuery(
-                            "SELECT a FROM City a  WHERE a.region_id.id LIKE :cladr")
+                            "SELECT a FROM City a  WHERE a.region.regionId LIKE :cladr")
                             .setParameter("cladr", regionCladr)
                             .getResultList();
     }
@@ -43,9 +43,8 @@ public class CladrRepositoryImpl implements CladrRepository {
     @Override
     public List<Street> getStreets(String regionCladr, String cityCladr) {
         return entityManager.createQuery(
-                            "SELECT a FROM Street a WHERE a.city_id.id LIKE :cityCladr AND a.city_id.region_id.id LIKE :regionCladr")
+                            "SELECT a FROM Street a WHERE a.city.cityId LIKE :cityCladr")
                             .setParameter("cityCladr", cityCladr)
-                            .setParameter("regionCladr", regionCladr)
                             .getResultList();
     }
 }
