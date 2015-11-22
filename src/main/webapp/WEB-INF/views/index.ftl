@@ -40,24 +40,24 @@
 
 <div id="dishesTypes">
     <div id="forDishes">
-        <div id="pizza" class="blackRectangle">
-            <div class="info"></div>
+        <div class="blackRectangle">
+            <div id="pizza"></div>
             <div class="infoText">PIZZA</div>
         </div>
-        <div id="chine" class="blackRectangle">
-            <div class="info"></div>
+        <div class="blackRectangle">
+            <div id="chine"></div>
             <div class="infoText">CHINE</div>
         </div>
-        <div id="fish" class="blackRectangle">
-            <div class="info"></div>
+        <div class="blackRectangle">
+            <div id="fish"></div>
             <div class="infoText">FISH</div>
         </div>
-        <div id="burgers" class="blackRectangle">
-            <div class="info"></div>
+        <div class="blackRectangle">
+            <div id="burgers"></div>
             <div class="infoText">BURGERS</div>
         </div>
-        <div id="sushi" class="blackRectangle">
-            <div class="info"></div>
+        <div class="blackRectangle">
+            <div id="sushi"></div>
             <div class="infoText">SUSHI</div>
         </div>
 

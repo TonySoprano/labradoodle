@@ -12,21 +12,66 @@
     width: 1200px;
     display: flex;
 }
-.info{
+/*.info{*/
+    /*width: 130px;*/
+    /*height: 130px;*/
+    /*margin-top: 20px;*/
+    /*margin: 10px;*/
+    /*display: inline-block;*/
+    /*vertical-align: middle;*/
+    /*background: url(../img/pizza.svg);*/
+    /*background-size: contain;*/
+/*}*/
+#pizza{
     width: 130px;
     height: 130px;
     margin-top: 20px;
-    margin: 10px;
     display: inline-block;
-    vertical-align: middle;
     background: url(../img/pizza.svg);
     background-size: contain;
 }
+#chine{
+    width: 130px;
+    height: 130px;
+    margin-top: 25px;
+    display: inline-block;
+    background: url(../img/chine.svg),no-repeat;
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+}
+#fish{
+    width: 150px;
+    height: 130px;
+    margin-top: 40px;
+    display: inline-block;
+    background: url(../img/fish.svg);
+    background-repeat: no-repeat;
+}
+#burgers{
+    width: 150px;
+    height: 130px;
+    margin-top: 35px;
+    display: inline-block;
+    background: url(../img/burger.svg),no-repeat;
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+}
+#sushi{
+    width: 150px;
+    height: 130px;
+    margin-top: 30px;
+    display: inline-block;
+    background: url(../img/sushi.svg);
+    background-repeat: no-repeat;
+}
 .infoText{
     color: white;
-    font-size: 30pt;
+    font-size: 26pt;
     font-family: sans-serif;
-    display: inline-block;
+    position: absolute;
+    bottom: 17px;
+    width: 220px;
+    height: 50px;
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
