@@ -70,72 +70,19 @@
 <div id="HotDishes">
     <div id="HotDishesInside">
         <div class="dishes">
-        <div class="deadline">1:40</div>
-        <div class="dishesinfo">
-            <div class="dishesinfotext">Caesar salad</div>
-            <div class="dishesinfoOLDPrice">120</div>
-            <div class="dishesinfoNEWPrice">109</div>
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
         </div>
+
+
+
+
+
+
     </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-        <div class="dishes">
-            <div class="deadline">1:40</div>
-            <div class="dishesinfo">
-                <div class="dishesinfotext">Caesar salad</div>
-                <div class="dishesinfoOLDPrice">120</div>
-                <div class="dishesinfoNEWPrice">109</div>
-            </div>
-        </div>
-
-
-
-
 </body>
 </html>
