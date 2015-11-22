@@ -77,6 +77,50 @@
                 <div class="dishesinfoNEWPrice">109</div>
             </div>
         </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+
+
+        <a href="#openModal">Открыть описание блюда</a>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div class="modalImage"></div>
+                <div class="modalInfoHeader">Caesar salad</div>
+                <div class="modaldeadline">1:40</div>
+                <div class="modalInfo">
+                    <p class="modalInfoText">Caesar salad. The salad's creation is generally attributed to restaurateur Caesar Cardini,
+                        an Italian immigrant who operated restaurants in Mexico and the United States. Cardini was living
+                        in San Diego but also working in Tijuana where he avoided the restrictions of Prohibition.
+                        </p>
+                </div>
+                <div class="modalOLDPrice">120</div>
+                <div class="modalNEWPrice">109</div>
+                <a href="#close" title="Закрыть" class="close">X</a>
+        </div>
+
+
 
 
 

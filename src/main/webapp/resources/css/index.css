@@ -124,17 +124,23 @@
     margin-bottom: 6px;
 }
 #HotDeals{
+    margin-top: 20px;
+    margin-bottom: 20px;
     display:flex;
+    align-items: center;
     text-align: center;
-    height: 100px;
+    height: 70px;
     width: 100%;
+    background-color: orange;
 }
 .infoText2{
+    color: white;
     margin: auto;
     display: flex;
     font-size: 50pt;
     font-family: sans-serif;
     vertical-align: middle;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 #HotDishes{
     display:flex;
@@ -234,4 +240,139 @@
     background-color: rgba(255, 0, 5, 0.8);
     border-bottom-right-radius: 8px;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+}
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 650px;
+    height: 500px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    /*background: -moz-linear-gradient(#fff, #999);*/
+    /*background: -webkit-linear-gradient(#fff, #999);*/
+    /*background: -o-linear-gradient(#fff, #999);*/
+}
+.close {
+    background-color: white;
+    color: rgba(0, 189, 27, 0.75);
+    /*color: #FFFFFF;*/
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #fbfdff; }
+.modalImage{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /*display: inline-block;*/
+    width: 650px;
+    height: 400px;
+    background-image: url(../img/caesar.jpg);
+    background-size: 700px;
+    background-position: center;
+}
+.modalInfo{
+    padding: 10px;
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    width: 550px;
+    height: 100px;
+}
+.modalInfoText{
+    font-size: 11pt;
+    font-family: sans-serif;
+    vertical-align: middle;
+    text-align: left;
+}
+.modalOLDPrice{
+    position: absolute;
+    top: 400px;
+    padding-top: 9px;
+    right: 0px;
+    width: 100px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13pt;
+    font-family: sans-serif;
+    vertical-align: middle;
+    text-decoration: line-through;
+    background-color: rgba(193, 19, 0, 0.61);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.73), 0 0 1em rgba(0, 0, 0, 0.55);
+}
+.modalNEWPrice{
+    position: absolute;
+    padding-top: 5px;
+    top: 440px;
+    right: 0px;
+    width: 100px;
+    height: 60px;
+    color: #ffffff;
+    font-size: 28pt;
+    font-family: sans-serif;
+    vertical-align: middle;
+    background-color: rgba(220, 0, 5, 1);
+    border-bottom-right-radius: 8px;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+}
+.modalInfoHeader{
+    position: absolute;
+    top:360px;
+    left:0px;
+    width: 650px;
+    height: 40px;
+    color: white;
+    font-size: 18pt;
+    font-family: sans-serif;
+    vertical-align: middle;
+    background: rgba(15, 15, 15, 0.71);
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+}
+.modaldeadline{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 12pt;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+    background-color: rgba(255, 0, 5, 0.67);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
