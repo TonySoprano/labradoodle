@@ -65,7 +65,6 @@ public class HomeController {
         return appService.getDishesByType(typesOfDishes,cladr);
     }
 
-    //temporary plug for types of dishes
     @ResponseBody
     @RequestMapping(value = "/get/typesofdishes", method = RequestMethod.GET)
     public List<TypesOfDishes> getDishesType() {

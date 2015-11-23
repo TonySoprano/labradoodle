@@ -42,7 +42,7 @@ $(document).ready(function () {
             var regions = "";
             for (var i = 0; i < data.length; i++) {
                 var region = data[i];
-                regions += "<option id= \"" + region.region + "\" index= \""+ region.region_id + "\" class=region >" + region.region +"</option>";
+                regions += "<option id= \"" + region.region + "\" index= \""+ region.regionId + "\" class=region >" + region.region +"</option>";
                 }
                 $('#region-select').html('<option disabled selected>Выберите область</option>' + regions);
             },
@@ -78,35 +78,7 @@ $(document).ready(function () {
         });
 };
 addEvents = function () {
-    $('#circleDishesTypes').on('click', '.type-of-dishes', function () {
 
-        var type = $(this).attr('index');
-
-        $.ajax({
-            url: $hostRoot + "get/dishes/" + type,
-            type: 'get',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {
-
-                //remove dishes type
-                $('.circle').hide();
-
-                //remove hot offers
-                $('#blocks').hide();
-
-                for (i = 0; i < data.length; i++) {
-                    $('#circleDishesTypes')
-                        .addClass('container center-block')
-                        .append('<div class="circle" index="' + data.id + '" style="background: url(../img/' + data[i].photo + ') center no-repeat; background-size: 150%;"></div>');
-                }
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-
-    });
     var oblast = "";
     $('#region-select').change(function () {
         oblast = $('select option:selected').attr('index');
@@ -123,7 +95,7 @@ addEvents = function () {
                     var cities = "";
                     for (var i = 0; i < data.length; i++) {
                         var city = data[i];
-                        cities += "<option id= \"" + city.city + "\" index= \"" + city.id + "\" class=city >" + city.city + "</option>";
+                        cities += "<option id= \"" + city.city + "\" index= \"" + city.cityId + "\" class=city >" + city.city + "</option>";
                     }
                     $('#city-select').html('<option disabled selected>Выберите город</option>' + cities);
                 },
@@ -148,7 +120,7 @@ addEvents = function () {
                     var streets = "";
                     for (var i = 0; i < data.length; i++) {
                         var street = data[i];
-                        streets += "<option id= \"" + street.street + "\" index= \"" + street.street_id + "\" class=city >" + street.street + "</option>";
+                        streets += "<option id= \"" + street.street + "\" index= \"" + street.streetId + "\" class=city >" + street.street + "</option>";
                     }
                     $('#street-select').html('<option disabled selected>Выберите улицу</option>' + streets);
                 },
@@ -157,27 +129,6 @@ addEvents = function () {
                 }
             });
 
-            $('.circle').on('click', function () {
-
-                var id = $(this).attr('index');
-
-                $.ajax({
-                    url: $hostRoot + "get_dish/" + id,
-                    type: 'get',
-                    success: function (data) {
-
-                        //remove dishes by type
-                        $('.circle').remove();
-
-                        $('#circleDishesTypes')
-                            .addClass('container center-block')
-                            .append('<div><img src="' + data.photo + '"><img>"' + data.TypeDishes + ' ' + data.Name + ' ' + data.Description + ' ' + data.Price_Original + ' ' + data.Price_new + '"</div>');
-                    },
-                    error: function (error) {
-                        console.log(error)
-                    }
-                });
-            });
         }
     })
 };
