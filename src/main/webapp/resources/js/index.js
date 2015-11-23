@@ -78,14 +78,13 @@ $(document).ready(function () {
         });
 };
 addEvents = function () {
-
     var oblast = "";
     $('#region-select').change(function () {
-        oblast = $('select option:selected').attr('index');
+        oblast = $('#region-select option:selected').attr('index');
         if (typeof oblast == 'undefined') {
             $('#city-select').html('<option disabled>Выберите город</option>');
         } else {
-            var cladr = oblast;
+            console.log(oblast);
             $.ajax({
                 url: $hostRoot + "get/cladrinfo?cladr=" + oblast,
                 type: 'get',
@@ -105,12 +104,14 @@ addEvents = function () {
             });
         }
     });
+
     var city = "";
     $('#city-select').change(function () {
-        city = $('select option:selected').attr('index');
+        city = $('#city-select option:selected').attr('index');
         if (typeof city == 'undefined') {
             $('#street-select').html('<option disabled>Выберите улицу</option>');
         } else {
+            console.log(city);
             $.ajax({
                 url: $hostRoot + "get/cladrinfo?cladr=" + oblast + city,
                 type: 'get',
@@ -120,7 +121,7 @@ addEvents = function () {
                     var streets = "";
                     for (var i = 0; i < data.length; i++) {
                         var street = data[i];
-                        streets += "<option id= \"" + street.street + "\" index= \"" + street.streetId + "\" class=city >" + street.street + "</option>";
+                        streets += "<option id= \"" + street.street + "\" index= \"" + street.streetId + "\" class=street >" + street.street + "</option>";
                     }
                     $('#street-select').html('<option disabled selected>Выберите улицу</option>' + streets);
                 },
@@ -128,7 +129,22 @@ addEvents = function () {
                     console.log(error)
                 }
             });
-
         }
+    });
+    var street = "";
+    $('#street-select').change(function() {
+        street = $('#street-select option:selected').attr('index');
+        console.log(street);
+    });
+
+
+    $('#dishesTypes').on('click', '.blackRectangle', function() {
+        var typeOfDishes = $(this).attr('id');
+        console.log(typeOfDishes);
+        console.log(oblast + city + street);
+
+        //$.ajax({
+        //    url: $hostRoot + "/get/dishes/bytype" + typeOfDishes +
+        //});
     })
 };
