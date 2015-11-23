@@ -23,7 +23,7 @@ $(document).ready(function () {
             //add available dishes type
             for (i = 0; i < data.length; i++) {
                 var type = data[i].toLowerCase();
-                    $('#forDishes').append('<div id="'+type+'" class="blackRectangle"><div class="info"></div> <div class="infoText">'+type.toUpperCase()+'</div></div>');
+                $('#forDishes').append('<div class="blackRectangle"><div id="'+type+'"></div><div class="infoText">'+type.toUpperCase()+'</div></div>');
             }
         },
         error: function (error) {
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
                 //temporary code block dishes
                 $('#HotDishesInside')
-                        .append('<div class="dishes"><div class="dishesinfo"><div class="dishesinfotext">Caesar salad</div></div>')
+                        .append('<a href="#openModal"><div class="dishes"><div class="deadline">1:40</div><div class="dishesinfo"><div class="dishesinfotext">Caesar salad</div><div class="dishesinfoOLDPrice">120</div><div class="dishesinfoNEWPrice">109</div></div></div></a>');
                 //}
             },
             error: function (error) {
@@ -137,14 +137,23 @@ addEvents = function () {
         console.log(street);
     });
 
-
     $('#dishesTypes').on('click', '.blackRectangle', function() {
-        var typeOfDishes = $(this).attr('id');
+        var typeOfDishes = $(this).children().attr('id');
         console.log(typeOfDishes);
-        console.log(oblast + city + street);
+        var fullCladr = oblast + city + street;
+        console.log(fullCladr);
 
-        //$.ajax({
-        //    url: $hostRoot + "/get/dishes/bytype" + typeOfDishes +
-        //});
-    })
+        $.ajax({
+            url: $hostRoot + "get/dishes/bytype?type=" + typeOfDishes + "&cladr=" + fullCladr,
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
 };
