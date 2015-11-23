@@ -41,26 +41,26 @@
 <div id="dishesTypes">
     <div id="forDishes">
         <i id="dishesTypes-preloader" class="fa fa-spinner fa-pulse fa-4x"></i>
-        <#--<div id="pizza" class="blackRectangle">-->
-            <#--<div class="info"></div>-->
-            <#--<div class="infoText">PIZZA</div>-->
-        <#--</div>-->
-        <#--<div id="chine" class="blackRectangle">-->
-            <#--<div class="info"></div>-->
-            <#--<div class="infoText">CHINE</div>-->
-        <#--</div>-->
-        <#--<div id="fish" class="blackRectangle">-->
-            <#--<div class="info"></div>-->
-            <#--<div class="infoText">FISH</div>-->
-        <#--</div>-->
-        <#--<div id="burgers" class="blackRectangle">-->
-            <#--<div class="info"></div>-->
-            <#--<div class="infoText">BURGERS</div>-->
-        <#--</div>-->
-        <#--<div id="sushi" class="blackRectangle">-->
-            <#--<div class="info"></div>-->
-            <#--<div class="infoText">SUSHI</div>-->
-        <#--</div>-->
+        <div class="blackRectangle">
+            <div id="pizza"></div>
+            <div class="infoText">PIZZA</div>
+        </div>
+        <div class="blackRectangle">
+            <div id="chine"></div>
+            <div class="infoText">CHINE</div>
+        </div>
+        <div class="blackRectangle">
+            <div id="fish"></div>
+            <div class="infoText">FISH</div>
+        </div>
+        <div class="blackRectangle">
+            <div id="burgers"></div>
+            <div class="infoText">BURGERS</div>
+        </div>
+        <div class="blackRectangle">
+            <div id="sushi"></div>
+            <div class="infoText">SUSHI</div>
+        </div>
 
 
     </div>
@@ -73,108 +73,64 @@
         <div id="hotDishes-preloader">
             <i class="fa fa-spinner fa-pulse fa-4x"></i>
         </div>
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<div class="dishes">-->
-            <#--<div class="dishesinfo">-->
-                <#--<div class="dishesinfotext">Caesar salad</div>-->
-            <#--</div>-->
-        <#--</div>-->
-    </div>
-</div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
+        <div class="dishes">
+            <div class="deadline">1:40</div>
+            <div class="dishesinfo">
+                <div class="dishesinfotext">Caesar salad</div>
+                <div class="dishesinfoOLDPrice">120</div>
+                <div class="dishesinfoNEWPrice">109</div>
+            </div>
+        </div>
 
+
+        <a href="#openModal">Открыть описание блюда</a>
+        <div id="openModal" class="modalDialog">
+            <div>
+                <div class="modalImage"></div>
+                <div class="modalInfoHeader">Caesar salad</div>
+                <div class="modaldeadline">1:40</div>
+                <div class="modalInfo">
+                    <p class="modalInfoText">Caesar salad. The salad's creation is generally attributed to restaurateur Caesar Cardini,
+                        an Italian immigrant who operated restaurants in Mexico and the United States. Cardini was living
+                        in San Diego but also working in Tijuana where he avoided the restrictions of Prohibition.
+                        </p>
+                </div>
+                <div class="modalOLDPrice">120</div>
+                <div class="modalNEWPrice">109</div>
+                <a href="#close" title="Закрыть" class="close">X</a>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
 </body>
 </html>
