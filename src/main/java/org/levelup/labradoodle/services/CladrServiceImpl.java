@@ -50,7 +50,7 @@ public class CladrServiceImpl implements CladrService {
             for (Region region: cladrRepository.getRegions()){
                 regionDtoList.add(new RegionDto()
                         .setId(region.getId())
-                        .setRegion(region.getName()));
+                        .setRegion(region.getRegion()));
             }
         }catch (Exception e){
             System.out.println(e); //This is a place for logger
@@ -64,8 +64,8 @@ public class CladrServiceImpl implements CladrService {
         try {
             for (City city: cladrRepository.getCities(cladr)){
                 cityDtoList.add(new CityDto()
-                    .setCityId(city.getId())
-                    .setCity(city.getName())
+                    .setCityId(city.getCityId())
+                    .setCity(city.getCity())
                     .setRegion(city.getRegion()));
             }
         }catch (Exception e){
@@ -83,8 +83,8 @@ public class CladrServiceImpl implements CladrService {
         try {
             for (Street street : cladrRepository.getStreets(regionCladr,cityCladr)) {
                 streetDtoList.add(new StreetDto()
-                    .setStreetId(street.getId())
-                    .setStreet(street.getName())
+                    .setStreetId(street.getStreetId())
+                    .setStreet(street.getStreet())
                     .setCity(street.getCity()));
             }
         }catch (Exception e){

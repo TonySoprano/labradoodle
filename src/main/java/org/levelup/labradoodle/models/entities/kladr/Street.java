@@ -3,31 +3,29 @@ package org.levelup.labradoodle.models.entities.kladr;
 import javax.persistence.*;
 
 /**
- * Class {@link org.levelup.labradoodle.models.entities.kladr.Street}
-
- * @author Alexandr Barkovskiy
- * @version 2.0
- * @since 22.11.15
+ * Created by toha on 26.08.15.
  */
+//Table street
 @Entity
 public class Street {
 
     @Id
-    private String id;
+    @Column(name = "street_id")
+    private String streetId;
 
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="id")
+    @JoinColumn(name="city_id")
     public  City city;
 
     @Column
-    private String name;
+    private String street;
 
-    public String getId() {
-        return id;
+    public String getStreetId() {
+        return streetId;
     }
 
-    public Street seId(String id) {
-        this.id = id;
+    public Street setStreetId(String streetId) {
+        this.streetId = streetId;
         return this;
     }
 
@@ -40,12 +38,12 @@ public class Street {
         return this;
     }
 
-    public String getName() {
-        return name;
+    public String getStreet() {
+        return street;
     }
 
-    public Street setName(String name) {
-        this.name = name;
+    public Street setStreet(String street) {
+        this.street = street;
         return this;
     }
 }
