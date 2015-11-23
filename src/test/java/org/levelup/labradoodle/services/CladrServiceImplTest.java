@@ -102,7 +102,7 @@ public class CladrServiceImplTest {
      */
     private List<Region> createRegion(){
         List<Region> regionList = new ArrayList<>();
-        regionList.add(new Region().setId("DNK").setRegion(anyString()));
+        regionList.add(new Region().setId("DNK").setName(anyString()));
         return regionList;
     }
 
@@ -113,8 +113,8 @@ public class CladrServiceImplTest {
     private List<City> createCities(){
         List<City> cityList = new ArrayList<>();
         cityList.add(new City()
-                .setCityId("DNK")
-                .setCity(anyString())
+                .setId("DNK")
+                .setName(anyString())
                 .setRegion(createRegion().get(0)));
         return cityList;
     }
@@ -126,8 +126,8 @@ public class CladrServiceImplTest {
     private List<Street> createStreets(){
         List<Street> streetList = new ArrayList<>();
         streetList.add(new Street()
-                            .setStreetId("LNN")
-                            .setStreet(anyString())
+                            .seId("LNN")
+                            .setName(anyString())
                             .setCity(createCities().get(0)));
         return streetList;
     }

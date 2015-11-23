@@ -6,37 +6,40 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author Barkovskiy Alexandr
+ * Class {@link org.levelup.labradoodle.models.entities.kladr.Region}
+
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 22.11.15
  */
 @Entity
 @NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")
 public class Region {
 
     @Id
-    @Column(name = "region_id")
-    private String regionId;
+    private String id;
 
     @OneToMany(mappedBy = "region")
     private List<City> cities = new ArrayList<City>();
 
     @Column
-    private String region;
+    private String name;
 
     public String getId() {
-        return regionId;
+        return id;
     }
 
-    public Region setId(String regionId) {
-        this.regionId = regionId;
+    public Region setId(String id) {
+        this.id = id;
         return  this;
     }
 
-    public String getRegion() {
-        return region;
+    public String getName() {
+        return name;
     }
 
-    public Region setRegion(String region) {
-        this.region = region;
+    public Region setName(String name) {
+        this.name = name;
         return this;
     }
 

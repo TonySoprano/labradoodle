@@ -1,39 +1,39 @@
 package org.levelup.labradoodle.models.entities.kladr;
 
-import org.levelup.labradoodle.models.entities.Restaurant;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by toha on 26.08.15.
+ * Class {@link org.levelup.labradoodle.models.entities.kladr.City}
+
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 22.11.15
  */
-//Table City
 @Entity
 public class City {
 
     @Id
-    @Column(name = "city_id")
-    private String cityId;
+    private String id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "region_id")
+    @JoinColumn(name = "id")
     private   Region region;
 
     @OneToMany(mappedBy = "city")
     private List<Street> street = new ArrayList<Street>();
 
     @Column
-    private String city;
+    private String name;
 
-    public String getCityId() {
-        return cityId;
+    public String getId() {
+        return id;
     }
 
-    public City setCityId(String cityId) {
-        this.cityId = cityId;
+    public City setId(String id) {
+        this.id = id;
         return this;
     }
 
@@ -46,12 +46,12 @@ public class City {
         return this;
     }
 
-    public String getCity() {
-        return city;
+    public String getName() {
+        return name;
     }
 
-    public City setCity(String city) {
-        this.city = city;
+    public City setName(String name) {
+        this.name = name;
         return this;
     }
 }
