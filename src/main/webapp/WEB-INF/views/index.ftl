@@ -43,6 +43,13 @@
         <i id="dishesTypes-preloader" class="fa fa-spinner fa-pulse fa-4x"></i>
     </div>
 </div>
+
+<div id="Dishes">
+    <div id="DishesInside">
+
+    </div>
+</div>
+
 <div id="HotDeals">
     <h1 class="infoText2">Hot Deals</h1>
 </div>
@@ -54,21 +61,21 @@
 
         <#--<a href="#openModal">Открыть описание блюда</a>-->
 
-        <div id="openModal" class="modalDialog">
-            <div>
-                <div class="modalImage"></div>
-                <div class="modalInfoHeader">Caesar salad</div>
-                <div class="modaldeadline">1:40</div>
-                <div class="modalInfo">
-                    <p class="modalInfoText">Caesar salad. The salad's creation is generally attributed to restaurateur Caesar Cardini,
-                        an Italian immigrant who operated restaurants in Mexico and the United States. Cardini was living
-                        in San Diego but also working in Tijuana where he avoided the restrictions of Prohibition.
-                        </p>
-                </div>
-                <div class="modalOLDPrice">120</div>
-                <div class="modalNEWPrice">109</div>
-                <a href="#close" title="Закрыть" class="close">X</a>
-            </div>
+        <#--<div id="openModal" class="modalDialog">-->
+            <#--<div>-->
+                <#--<div class="modalImage"></div>-->
+                <#--<div class="modalInfoHeader">Caesar salad</div>-->
+                <#--<div class="modaldeadline">1:40</div>-->
+                <#--<div class="modalInfo">-->
+                    <#--<p class="modalInfoText">Caesar salad. The salad's creation is generally attributed to restaurateur Caesar Cardini,-->
+                        <#--an Italian immigrant who operated restaurants in Mexico and the United States. Cardini was living-->
+                        <#--in San Diego but also working in Tijuana where he avoided the restrictions of Prohibition.-->
+                        <#--</p>-->
+                <#--</div>-->
+                <#--<div class="modalOLDPrice">120</div>-->
+                <#--<div class="modalNEWPrice">109</div>-->
+                <#--<a href="#close" title="Закрыть" class="close">X</a>-->
+            <#--</div>-->
         </div>
     </div>
 </body>

@@ -21,7 +21,7 @@ $(document).ready(function () {
             $('#dishesTypes-preloader').hide();
 
             //add available dishes type
-            for (i = 0; i < data.length; i++) {
+            for (var i = 0; i < data.length; i++) {
                 var type = data[i].toLowerCase();
                 $('#forDishes').append('<div class="blackRectangle"><div id="'+type+'"></div><div class="infoText">'+type.toUpperCase()+'</div></div>');
             }
@@ -64,13 +64,20 @@ $(document).ready(function () {
             $('#hotDishes-preloader').hide();
 
             //add hot disshes
-            //for (i = 0; i < data.length; i++) {
-            //    var type = data[i].toLowerCase();
-
+            for (var i = 0; i < data.length; i++) {
+                var type = data[i];
+                var date = new Date(type.deadline);
                 //temporary code block dishes
                 $('#HotDishesInside')
-                        .append('<a href="#openModal"><div class="dishes"><div class="deadline">1:40</div><div class="dishesinfo"><div class="dishesinfotext">Caesar salad</div><div class="dishesinfoOLDPrice">120</div><div class="dishesinfoNEWPrice">109</div></div></div></a>');
-                //}
+                        .append('<a href="#'+ type.dishId +'"><div class="dishes"><div class="deadline">'+ date.getHours() +':'+ date.getMinutes() +'</div><div class="dishesinfo"><div class="dishesinfotext">'+ type.name +'</div><div class="dishesinfoOLDPrice">'+ type.priceOriginal +'</div><div class="dishesinfoNEWPrice">'+ type.priceNew +'</div></div></div></a>')
+                        .append('<div id="'+ type.dishId +'" class="modalDialog"><div><div class="modalImage"></div>' +
+                    '<div class="modalInfoHeader">'+ type.name +'</div><div class="modaldeadline">'+ date.getHours() +':'+ date.getMinutes() +'</div>' +
+                    '<div class="modalInfo"><p class="modalInfoText">'+ type.description +'</p></div>' +
+                    '<div class="modalOLDPrice">'+ type.priceOriginal +'</div><div class="modalNEWPrice">'+ type.priceNew +'</div>' +
+                    '<a href="#close" title="Закрыть" class="close">X</a></div></div>');
+                }
+
+
             },
             error: function (error) {
                 console.log(error)
@@ -142,6 +149,7 @@ addEvents = function () {
         console.log(typeOfDishes);
         var fullCladr = oblast + city + street;
         console.log(fullCladr);
+        $('#DishesInside').html('');
 
         $.ajax({
             url: $hostRoot + "get/dishes/bytype?type=" + typeOfDishes + "&cladr=" + fullCladr,
@@ -149,7 +157,17 @@ addEvents = function () {
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    var type = data[i];
+                    var date = new Date(type.deadline);
+                    $('#DishesInside')
+                        .append('<a href="#' + type.dishId + '"><div class="dishes"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
+                        .append('<div id="' + type.dishId + '" class="modalDialog"><div><div class="modalImage"></div>' +
+                        '<div class="modalInfoHeader">' + type.name + '</div><div class="modaldeadline">' + date.getHours() + ':' + date.getMinutes() + '</div>' +
+                        '<div class="modalInfo"><p class="modalInfoText">' + type.description + '</p></div>' +
+                        '<div class="modalOLDPrice">' + type.priceOriginal + '</div><div class="modalNEWPrice">' + type.priceNew + '</div>' +
+                        '<a href="#close" title="Закрыть" class="close">X</a></div></div>');
+                }
             },
             error: function (error) {
                 console.log(error);

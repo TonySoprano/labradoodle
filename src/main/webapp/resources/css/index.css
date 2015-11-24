@@ -143,11 +143,26 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 #HotDishes{
+     display:flex;
+     text-align: center;
+     height: 700px;
+     width: 100%;
+ }
+#Dishes{
+    margin-top: 20px;
+    margin-bottom: 20px;
     display:flex;
     text-align: center;
-    height: 700px;
+    height: 250px;
     width: 100%;
-}#HotDishesInside{
+}
+#HotDishesInside{
+    display:table;
+    margin: auto;
+    height: 100%;
+    width: 1200px;
+}
+#DishesInside{
     display:table;
     margin: auto;
     height: 100%;
