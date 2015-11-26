@@ -4,6 +4,7 @@ import org.levelup.labradoodle.models.entities.kladr.City;
 import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.entities.kladr.Street;
 import org.levelup.labradoodle.models.web.kladr.CityDto;
+import org.levelup.labradoodle.models.web.kladr.KladrObjectDto;
 import org.levelup.labradoodle.models.web.kladr.RegionDto;
 import org.levelup.labradoodle.models.web.kladr.StreetDto;
 import org.levelup.labradoodle.repositories.KladrRepository;
@@ -36,8 +37,8 @@ public class KladrServiceImpl implements KladrService {
      * @return List of kladr objects (Region, City, Street)
      */
     @Override
-    public List<?> getKladrInfo(String kladr) {
-        List<?> kladrInfo;
+    public List<KladrObjectDto> getKladrInfo(String kladr) {
+        List<KladrObjectDto> kladrInfo;
         switch (kladr.length()){
             case 3: kladrInfo = getCities(kladr);
                     break;
@@ -49,8 +50,8 @@ public class KladrServiceImpl implements KladrService {
     }
 
     @Override
-    public List<?> getRegions() {
-        List<Object> regionDtoList = new ArrayList<>();
+    public List<KladrObjectDto> getRegions() {
+        List<KladrObjectDto> regionDtoList = new ArrayList<>();
         for (Region region: kladrRepository.getRegions()){
             regionDtoList.add(new RegionDto()
                     .setId(region.getId())
@@ -60,8 +61,8 @@ public class KladrServiceImpl implements KladrService {
     }
 
     @Override
-    public List<?> getCities(String kladr) {
-        List<Object> cityDtoList = new ArrayList<>();
+    public List<KladrObjectDto> getCities(String kladr) {
+        List<KladrObjectDto> cityDtoList = new ArrayList<>();
         try {
             for (City city: kladrRepository.getCities(kladr)){
                 cityDtoList.add(new CityDto()
@@ -77,8 +78,8 @@ public class KladrServiceImpl implements KladrService {
     }
 
     @Override
-    public List<?> getStreets(String kladr) {
-        List<Object> streetDtoList = new ArrayList<>();
+    public List<KladrObjectDto> getStreets(String kladr) {
+        List<KladrObjectDto> streetDtoList = new ArrayList<>();
         String  cityKladr = kladr.substring(3,6);
         try {
             for (Street street : kladrRepository.getStreets(cityKladr)) {

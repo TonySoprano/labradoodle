@@ -1,5 +1,7 @@
 package org.levelup.labradoodle.services;
 
+import org.levelup.labradoodle.models.web.kladr.KladrObjectDto;
+
 import java.util.List;
 
 /**
@@ -15,25 +17,25 @@ public interface KladrService {
      * @param kladr
      * @return List of kladr objects (Region, City, Street)
      */
-    List <?> getKladrInfo(String kladr);
+    List <KladrObjectDto> getKladrInfo(String kladr);
 
     /**
      * Method for internal work of the method getKladrInfo.
      * @return List<Region>
      */
-    List <?> getRegions();
+    List <KladrObjectDto> getRegions();
 
     /**
-     * This method for internal work of the method getKladrInfo.
+     * Method for internal work of the method getKladrInfo.
      * @param kladr
      * @return List<City>
      */
-    List <?> getCities(String kladr);
+    List <KladrObjectDto> getCities(String kladr);
 
     /**
-     * This method for internal work of the method getKladrInfo.
+     * Method for internal work of the method getKladrInfo.
      * @param kladr
      * @return List<Street>
      */
-    List <?> getStreets(String kladr);
+    List <KladrObjectDto> getStreets(String kladr);
 }

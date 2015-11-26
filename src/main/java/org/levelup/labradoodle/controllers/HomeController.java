@@ -2,6 +2,7 @@ package org.levelup.labradoodle.controllers;
 
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.kladr.KladrObjectDto;
 import org.levelup.labradoodle.services.DishService;
 import org.levelup.labradoodle.services.KladrService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,7 +91,7 @@ public class HomeController {
      */
     @ResponseBody
     @RequestMapping(value = "/get/kladrinfo",method = RequestMethod.GET)
-    public List<?> kladrInfo(@RequestParam String kladr){
+    public List<KladrObjectDto> kladrInfo(@RequestParam String kladr){
         return kladrService.getKladrInfo(kladr);
     }
 }

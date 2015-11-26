@@ -7,7 +7,7 @@ import org.levelup.labradoodle.models.entities.kladr.City;
 /**
  * Created by toha on 26.08.15.
  */
-public class StreetDto {
+public class StreetDto implements KladrObjectDto{
 
     @JsonProperty
     private String streetId;

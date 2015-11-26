@@ -31,7 +31,7 @@ public class DishServiceImpl implements DishService {
      * This method get Dish from BD and converting it to WEB model
      *
      * @param id - Dish id
-     * @return DishesDto
+     * @return DishDto
      */
     @Override
     public DishDto getDishById(int id) {
