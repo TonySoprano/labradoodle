@@ -62,8 +62,7 @@ public class DishServiceImpl implements DishService {
     public List<DishDto> getDishesByType(TypesOfDishes typesOfDishes, String cladr) {
         ArrayList<DishDto> dishDtos = new ArrayList<>();
         try {
-            throw new RuntimeException();
-          /*  for (Dish dish : dishRepository.getByType(typesOfDishes, cladr)) {
+            for (Dish dish : dishRepository.getByType(typesOfDishes, cladr)) {
                 dishDtos.add(new DishDto()
                         .setDeadline(dish.getDeadline())
                         .setDescription(dish.getDescription())
@@ -74,13 +73,12 @@ public class DishServiceImpl implements DishService {
                         .setPriceOriginal(dish.getPriceOriginal())
                         .setTypesOfDishes(dish.getTypesOfDishes())
                         .setRestaurant(dish.getRestaurant()));
-            }*/
+            }
         }catch (Exception e){
             LOGGER.error("{}",e.toString(),e);
             return dishDtos;
         }
-
-        //return dishDtos;
+        return dishDtos;
     }
 
     /**
@@ -105,8 +103,8 @@ public class DishServiceImpl implements DishService {
                         .setRestaurant(dish.getRestaurant()));
             }
         }catch (Exception e){
-            System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
-            return new ArrayList<DishDto>();
+            LOGGER.error("{}",e.toString(),e);
+            return dishesDtos;
         }
         return dishesDtos;
     }

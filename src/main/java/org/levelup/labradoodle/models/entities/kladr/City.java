@@ -1,16 +1,16 @@
 package org.levelup.labradoodle.models.entities.kladr;
 
-import org.levelup.labradoodle.models.entities.Restaurant;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
 /**
- * Created by toha on 26.08.15.
+ * Class {@link org.levelup.labradoodle.models.entities.kladr.City}
+ *
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 26.11.15
  */
-//Table City
 @Entity
 public class City {
 

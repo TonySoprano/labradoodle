@@ -3,7 +3,7 @@ package org.levelup.labradoodle.controllers;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.services.DishService;
-import org.levelup.labradoodle.services.CladrService;
+import org.levelup.labradoodle.services.KladrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +25,7 @@ public class HomeController {
     private DishService dishService;
 
     @Autowired
-    private CladrService cladrService;
+    private KladrService kladrService;
 
     @RequestMapping(value = "/")
     public String index() {
@@ -50,14 +50,14 @@ public class HomeController {
 
     /**
      * This method return List of Dishes (WEB model) from DB sorted by type.
-     * @param type,cladr - type of Dishes & address filter
+     * @param type,kladr - type of Dishes & address filter
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/get/dishes/bytype", method = RequestMethod.GET)
-    public List<DishDto> getDishesByType(@RequestParam ("type") String type, @RequestParam String cladr) {
+    public List<DishDto> getDishesByType(@RequestParam ("type") String type, @RequestParam String kladr) {
         TypesOfDishes typesOfDishes = TypesOfDishes.valueOf(type.toUpperCase());
-        return dishService.getDishesByType(typesOfDishes,cladr);
+        return dishService.getDishesByType(typesOfDishes,kladr);
     }
 
     @ResponseBody
@@ -73,26 +73,24 @@ public class HomeController {
     /**
      * This method return List of Dishes (WEB model) from DB by deadline depending on request param.
      * @author Barkovskiy Alexandr
-     * @param cladr - Sting address filter
+     * @param kladr - Sting address filter
      * @return List of DishesDto
      */
     @ResponseBody
     @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
-    public List<DishDto> getHotDishes(@RequestParam String cladr){
-        List<DishDto> dishesDtos = dishService.getHotDishes(cladr);
-        return dishesDtos;
+    public List<DishDto> getHotDishes(@RequestParam String kladr){
+        return dishService.getHotDishes(kladr);
     }
 
     /**
      * This method return List WEB models of (Region,City,Street) depending on request param.
      * @author Barkovskiy Alexandr
-     * @param cladr - Sting address filter
+     * @param kladr - Sting address filter
      * @return List of Objects
      */
     @ResponseBody
-    @RequestMapping(value = "/get/cladrinfo",method = RequestMethod.GET)
-    public List<?> cladrInfo(@RequestParam String cladr){
-        List<?> cladrInfo = cladrService.getCladrInfo(cladr);
-        return cladrInfo;
+    @RequestMapping(value = "/get/kladrinfo",method = RequestMethod.GET)
+    public List<?> kladrInfo(@RequestParam String kladr){
+        return kladrService.getKladrInfo(kladr);
     }
 }
