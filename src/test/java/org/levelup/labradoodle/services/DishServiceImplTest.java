@@ -22,7 +22,7 @@ import static org.mockito.Mockito.*;
  * @version 2.0
  * @since 17.11.15
  */
-public class AppServiceImplTest {
+public class DishServiceImplTest {
 
     private Assertion assertion = new LoggingAssert();
 
@@ -30,7 +30,7 @@ public class AppServiceImplTest {
     private DishRepository dishRepository;
 
     @InjectMocks
-    private AppServiceImpl appService;
+    private DishServiceImpl appService;
 
     @BeforeMethod
     public void init(){

@@ -1,11 +1,8 @@
 package org.levelup.labradoodle.controllers;
 
-import org.levelup.labradoodle.models.entities.Restaurant;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
-import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.web.DishDto;
-import org.levelup.labradoodle.models.web.kladr.RegionDto;
-import org.levelup.labradoodle.services.AppService;
+import org.levelup.labradoodle.services.DishService;
 import org.levelup.labradoodle.services.CladrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * Class {@link HomeController}
@@ -27,7 +22,7 @@ import java.util.Objects;
 public class HomeController {
 
     @Autowired
-    private AppService appService;
+    private DishService dishService;
 
     @Autowired
     private CladrService cladrService;
@@ -47,7 +42,7 @@ public class HomeController {
     @RequestMapping(value = "/get/dish/{id}", method = RequestMethod.GET)
     public DishDto getDishById(@PathVariable(value = "id") int id) {
 //    This line was be add to comment because DB not already connect
-//    return appService.getDishById(id);
+//    return dishService.getDishById(id);
 
         //Temp mock for front ( for proton)
         return new DishDto().setDescription("Dish description").setDishId(1).setName("Dish name").setPriceOriginal(20).setPriceNew(10).setTypesOfDishes(TypesOfDishes.BURGERS);
@@ -62,7 +57,7 @@ public class HomeController {
     @RequestMapping(value = "/get/dishes/bytype", method = RequestMethod.GET)
     public List<DishDto> getDishesByType(@RequestParam ("type") String type, @RequestParam String cladr) {
         TypesOfDishes typesOfDishes = TypesOfDishes.valueOf(type.toUpperCase());
-        return appService.getDishesByType(typesOfDishes,cladr);
+        return dishService.getDishesByType(typesOfDishes,cladr);
     }
 
     @ResponseBody
@@ -84,7 +79,7 @@ public class HomeController {
     @ResponseBody
     @RequestMapping(value = "/get/hotdishes",method = RequestMethod.GET)
     public List<DishDto> getHotDishes(@RequestParam String cladr){
-        List<DishDto> dishesDtos = appService.getHotDishes(cladr);
+        List<DishDto> dishesDtos = dishService.getHotDishes(cladr);
         return dishesDtos;
     }
 

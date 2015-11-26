@@ -2,6 +2,7 @@ package org.levelup.labradoodle.repositories;
 
 
 import org.levelup.labradoodle.models.entities.User;
+import org.levelup.labradoodle.services.DishService;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +11,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
- * Class {@link org.levelup.labradoodle.services.AppService}
+ * Class {@link DishService}
  * This class worked with User in DB
  *
  * @author Mosiienko Roman
