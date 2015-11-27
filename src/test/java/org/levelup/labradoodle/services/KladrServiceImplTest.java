@@ -3,7 +3,7 @@ package org.levelup.labradoodle.services;
 import org.levelup.labradoodle.models.entities.kladr.City;
 import org.levelup.labradoodle.models.entities.kladr.Region;
 import org.levelup.labradoodle.models.entities.kladr.Street;
-import org.levelup.labradoodle.repositories.CladrRepository;
+import org.levelup.labradoodle.repositories.KladrRepository;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -24,15 +24,15 @@ import static org.mockito.Mockito.*;
  * @version 1.0
  * @since 20.11.15
  */
-public class CladrServiceImplTest {
+public class KladrServiceImplTest {
 
     private Assertion assertion = new LoggingAssert();
 
     @Mock
-    private CladrRepository cladrRepository;
+    private KladrRepository kladrRepository;
 
     @InjectMocks
-    private CladrServiceImpl cladrService;
+    private KladrServiceImpl cladrService;
 
     @BeforeMethod
     public void init(){
@@ -41,59 +41,59 @@ public class CladrServiceImplTest {
 
     @Test
     public void testGetCladrInfo1()  {
-        when(cladrRepository.getRegions()).thenReturn(createRegion());
-        List<?> response = cladrService.getCladrInfo("DNK");
+        when(kladrRepository.getRegions()).thenReturn(createRegion());
+        List<?> response = cladrService.getKladrInfo("DNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),1);
         assertion.assertEquals(response,Region.class);
-        verify(cladrRepository, times(1)).getRegions();
+        verify(kladrRepository, times(1)).getRegions();
     }
 
     @Test
     public void testGetCladrInfo2()  {
-        doThrow(new RuntimeException()).when(cladrRepository.getRegions());
-        List<?> response = cladrService.getCladrInfo("DNK");
+        doThrow(new RuntimeException()).when(kladrRepository.getRegions());
+        List<?> response = cladrService.getKladrInfo("DNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),0);
-        verify(cladrRepository, times(1)).getRegions();
+        verify(kladrRepository, times(1)).getRegions();
     }
 
     @Test
     public void testGetCladrInfo3()  {
-        when(cladrRepository.getCities("DNK")).thenReturn(createCities());
-        List<?> response = cladrService.getCladrInfo("DNK");
+        when(kladrRepository.getCities("DNK")).thenReturn(createCities());
+        List<?> response = cladrService.getKladrInfo("DNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),1);
         assertion.assertEquals(response,City.class);
-        verify(cladrRepository, times(1)).getCities("DNK");
+        verify(kladrRepository, times(1)).getCities("DNK");
     }
 
     @Test
     public void testGetCladrInfo4()  {
-        doThrow(new RuntimeException()).when(cladrRepository.getCities("DNK"));
-        List<?> response = cladrService.getCladrInfo("DNK");
+        doThrow(new RuntimeException()).when(kladrRepository.getCities("DNK"));
+        List<?> response = cladrService.getKladrInfo("DNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),1);
-        verify(cladrRepository, times(1)).getCities("DNK");
+        verify(kladrRepository, times(1)).getCities("DNK");
     }
 
     @Test
     public void testGetCladrInfo5()  {
-        when(cladrRepository.getStreets("DNK", "DNK")).thenReturn(createStreets());
-        List<?> response = cladrService.getCladrInfo("DNKDNK");
+        when(kladrRepository.getStreets("DNK", "DNK")).thenReturn(createStreets());
+        List<?> response = cladrService.getKladrInfo("DNKDNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),1);
         assertion.assertEquals(response,Street.class);
-        verify(cladrRepository, times(1)).getCities("DNKDNK");
+        verify(kladrRepository, times(1)).getCities("DNKDNK");
     }
 
     @Test
     public void testGetCladrInfo6()  {
-        doThrow(new RuntimeException()).when(cladrRepository.getStreets("DNK","DNK"));
-        List<?> response = cladrService.getCladrInfo("DNKDNK");
+        doThrow(new RuntimeException()).when(kladrRepository.getStreets("DNK","DNK"));
+        List<?> response = cladrService.getKladrInfo("DNKDNK");
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),1);
-        verify(cladrRepository, times(0)).getCities("DNKSNK");
+        verify(kladrRepository, times(0)).getCities("DNKSNK");
     }
 
     /**

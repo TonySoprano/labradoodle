@@ -5,16 +5,15 @@ import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 
 import java.util.List;
-import java.util.Map;
 
 /**
- * Class {@link org.levelup.labradoodle.services.AppService}
+ * Class {@link DishService}
  *
  * @author Mosiienko Roman
  * @version 1.0
  * @since 24.08.15
  */
-public interface AppService {
+public interface DishService {
     /**
      * This method get Dish from BD and converting it to WEB model
      * @param id - Dish id

@@ -6,7 +6,11 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author Barkovskiy Alexandr
+ * Class {@link org.levelup.labradoodle.models.entities.kladr.Region}
+ *
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 26.11.15
  */
 @Entity
 @NamedQuery(name = "getAllRegions", query = "SELECT a FROM Region a")

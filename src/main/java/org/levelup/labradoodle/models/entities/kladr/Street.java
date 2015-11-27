@@ -3,9 +3,12 @@ package org.levelup.labradoodle.models.entities.kladr;
 import javax.persistence.*;
 
 /**
- * Created by toha on 26.08.15.
+ * Class {@link org.levelup.labradoodle.models.entities.kladr.Street}
+ *
+ * @author Alexandr Barkovskiy
+ * @version 2.0
+ * @since 26.11.15
  */
-//Table street
 @Entity
 public class Street {
 

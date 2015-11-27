@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Created by toha on 26.08.15.
  */
-public class RegionDto {
+public class RegionDto implements KladrObjectDto{
 
     @JsonProperty
     private String regionId;

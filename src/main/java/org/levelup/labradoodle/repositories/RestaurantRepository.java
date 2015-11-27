@@ -1,10 +1,12 @@
 package org.levelup.labradoodle.repositories;
 
 import org.levelup.labradoodle.models.entities.Restaurant;
+import org.levelup.labradoodle.services.DishService;
+
 import java.util.List;
 
 /**
- * Class {@link org.levelup.labradoodle.services.AppService}
+ * Class {@link DishService}
  * This interface worked with Restaurant in DB
  *
  * @author Mosiienko Roman

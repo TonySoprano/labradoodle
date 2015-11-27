@@ -4,14 +4,15 @@ import org.levelup.labradoodle.models.entities.Dish;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
- * Class {@link org.levelup.labradoodle.services.AppServiceImpl}
+ * Class {@link org.levelup.labradoodle.services.DishServiceImpl}
  * This class get models from DB and convert that to the WEB models
  *
  * @author Mosiienko Roman
@@ -19,7 +20,9 @@ import java.util.List;
  * @since 24.08.15
  */
 @Service
-public class AppServiceImpl implements AppService {
+public class DishServiceImpl implements DishService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DishServiceImpl.class);
 
     @Autowired
     private DishRepository dishRepository;
@@ -28,7 +31,7 @@ public class AppServiceImpl implements AppService {
      * This method get Dish from BD and converting it to WEB model
      *
      * @param id - Dish id
-     * @return DishesDto
+     * @return DishDto
      */
     @Override
     public DishDto getDishById(int id) {
@@ -72,10 +75,9 @@ public class AppServiceImpl implements AppService {
                         .setRestaurant(dish.getRestaurant()));
             }
         }catch (Exception e){
-            System.out.println(e); //Place for logger
-            return new ArrayList<DishDto>();
+            LOGGER.error("{}",e.toString(),e);
+            return dishDtos;
         }
-
         return dishDtos;
     }
 
@@ -101,8 +103,8 @@ public class AppServiceImpl implements AppService {
                         .setRestaurant(dish.getRestaurant()));
             }
         }catch (Exception e){
-            System.out.println(e);  //I don't know WERE should be our log-file, I'll add it later (Honestly!)
-            return new ArrayList<DishDto>();
+            LOGGER.error("{}",e.toString(),e);
+            return dishesDtos;
         }
         return dishesDtos;
     }

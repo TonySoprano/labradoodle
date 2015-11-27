@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn" strict="true" name="XMLConfigTest"
                packages="org.apache.logging.log4j.core,net.kencochrane.raven.log4j2">
+
+
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{1.} %X - %msg%n"/>
         </Console>
+
+        <RollingFile name="STDOUT_ROLL"
+                     fileName="stdout.log"
+                     filePattern="stdout.%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %-5level [%X{hash}][%X{ip}] %logger - %replace(%msg){'\n', ''}%n%xEx{20}</pattern>
+            </PatternLayout>
+            <TimeBasedTriggeringPolicy/>
+        </RollingFile>
+
+        <RollingFile name="STDERR_ROLL"
+                     fileName="stderr.log"
+                     filePattern="stderr.%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %-5level [%X{hash}][%X{ip}] %logger - %replace(%msg){'\n', ''}%n%xEx{20}</pattern>
+            </PatternLayout>
+            <TimeBasedTriggeringPolicy/>
+        </RollingFile>
     </Appenders>
+
     <Loggers>
-        <Logger name="org.levelup.labradoodle" level="INFO" additivity="false">
-            <AppenderRef ref="Console"/>
-        </Logger>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
         </Root>
+        <Logger name="org.levelup.labradoodle" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.springframework" level="ERROR">
+            <AppenderRef ref="STDERR_ROLL"/>
+        </Logger>
+
+
+        <Logger name="org.levelup.labradoodle.services.DishServiceImpl" level="ERROR">
+            <AppenderRef ref="STDERR_ROLL"/>
+        </Logger>
+
+        <Logger name="org.hibernate" level="ERROR">
+            <AppenderRef ref="STDERR_ROLL"/>
+        </Logger>
+        <Logger name="org.springframework.boot.context.embedded.jetty" level="ERROR">
+            <AppenderRef ref="STDERR_ROLL"/>
+        </Logger>
     </Loggers>
+
 </Configuration>
+

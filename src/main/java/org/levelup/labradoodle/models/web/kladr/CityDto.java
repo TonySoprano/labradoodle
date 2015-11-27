@@ -11,7 +11,7 @@ import org.levelup.labradoodle.models.entities.kladr.Region;
  * @since 10.11.15
  */
 
-public class CityDto {
+public class CityDto implements KladrObjectDto{
 
     @JsonProperty
     private String cityId;

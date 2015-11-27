@@ -2,11 +2,12 @@ package org.levelup.labradoodle.repositories;
 
 import org.levelup.labradoodle.models.entities.Dish;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
+import org.levelup.labradoodle.services.DishService;
 
 import java.util.List;
 
 /**
- * Class {@link org.levelup.labradoodle.services.AppService}
+ * Class {@link DishService}
  * This class worked with Dish in DB
  *
  * @author Mosiienko Roman
