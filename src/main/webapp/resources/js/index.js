@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     //get kladr by alex barkovsky
     $.ajax({
-        url: $hostRoot + "get/cladrinfo?cladr=",
+        url: $hostRoot + "get/kladrinfo?kladr=",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     //add block with hot dishes
     $.ajax({
-        url: $hostRoot + "get/hotdishes?cladr=",
+        url: $hostRoot + "get/hotdishes?kladr=",
         type: 'get',
         dataType: 'json',
         contentType: 'application/json',
@@ -91,9 +91,10 @@ addEvents = function () {
         if (typeof oblast == 'undefined') {
             $('#city-select').html('<option disabled>Выберите город</option>');
         } else {
+            $('#street-select').html('<option disabled>Выберите улицу</option>');
             console.log(oblast);
             $.ajax({
-                url: $hostRoot + "get/cladrinfo?cladr=" + oblast,
+                url: $hostRoot + "get/kladrinfo?kladr=" + oblast,
                 type: 'get',
                 dataType: 'json',
                 contentType: 'application/json',
@@ -120,7 +121,7 @@ addEvents = function () {
         } else {
             console.log(city);
             $.ajax({
-                url: $hostRoot + "get/cladrinfo?cladr=" + oblast + city,
+                url: $hostRoot + "get/kladrinfo?kladr=" + oblast + city,
                 type: 'get',
                 dataType: 'json',
                 contentType: 'application/json',
@@ -147,12 +148,12 @@ addEvents = function () {
     $('#dishesTypes').on('click', '.blackRectangle', function() {
         var typeOfDishes = $(this).children().attr('id');
         console.log(typeOfDishes);
-        var fullCladr = oblast + city + street;
-        console.log(fullCladr);
+        var fullKladr = oblast + city + street;
+        console.log(fullKladr);
         $('#DishesInside').html('');
 
         $.ajax({
-            url: $hostRoot + "get/dishes/bytype?type=" + typeOfDishes + "&cladr=" + fullCladr,
+            url: $hostRoot + "get/dishes/bytype?type=" + typeOfDishes + "&kladr=" + fullKladr,
             type: 'get',
             dataType: 'json',
             contentType: 'application/json',
