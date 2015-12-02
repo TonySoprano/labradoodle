@@ -1,20 +1,18 @@
-<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
-<#assign s=JspTaglibs["http://www.springframework.org/tags"]>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Успей поесть!</title>
-    <link href="<@c.url value="/resources/css/index.css" />" rel="stylesheet" media="screen"/>
-    <link href="<@c.url value="/resources/css/bootstrap.css" />" rel="stylesheet" media="screen"/>
-    <link href="<@c.url value="/resources/css/bootstrap-theme.css" />" rel="stylesheet" media="screen"/>
-    <link href="<@c.url value="/resources/css/font-awesome.css" />" rel="stylesheet" media="screen"/>
-    <script type="text/javascript" src="<@c.url value="/resources/js/lib/jquery-2.1.4.js"/>"></script>
-    <script type="text/javascript" src="<@c.url value="/resources/js/lib/bootstrap.js"/>"></script>
-    <script type="text/javascript" src="<@c.url value="/resources/js/index.js"/>"></script>
+    <link href="/css/spinners.css" media="screen" rel="stylesheet">
+    <link href="/css/font-awesome.css" media="screen" rel="stylesheet">
+    <link href="/css/bootstrap.css" media="screen" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" media="screen" rel="stylesheet">
+    <link href="/css/index.css" media="screen" rel="stylesheet">
+    <script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-        var $applicationRoot = "<@s.url value="/" />";
+        var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
         var $hostRoot = document.location.protocol + '//' + document.location.host + $applicationRoot;
     </script>
@@ -40,15 +38,14 @@
 
 <div id="dishesTypes">
     <div id="forDishes">
-        <i id="dishesTypes-preloader" class="fa fa-spinner fa-pulse fa-4x"></i>
+        <i id="dishesTypes-preloader" class="whirly-loader"></i>
     </div>
 </div>
 
-<div id="Dishes">
-    <div id="DishesInside">
-
-    </div>
-</div>
+<#--<div id="Dishes">-->
+    <#--<div id="DishesInside">-->
+    <#--</div>-->
+<#--</div>-->
 
 <div id="HotDeals">
     <h1 class="infoText2">Hot Deals</h1>
@@ -56,27 +53,9 @@
 <div id="HotDishes">
     <div id="HotDishesInside">
         <div id="hotDishes-preloader">
-            <i class="fa fa-spinner fa-pulse fa-4x"></i>
+            <i class="whirly-loader"></i>
         </div>
-
-        <#--<a href="#openModal">Открыть описание блюда</a>-->
-
-        <#--<div id="openModal" class="modalDialog">-->
-            <#--<div>-->
-                <#--<div class="modalImage"></div>-->
-                <#--<div class="modalInfoHeader">Caesar salad</div>-->
-                <#--<div class="modaldeadline">1:40</div>-->
-                <#--<div class="modalInfo">-->
-                    <#--<p class="modalInfoText">Caesar salad. The salad's creation is generally attributed to restaurateur Caesar Cardini,-->
-                        <#--an Italian immigrant who operated restaurants in Mexico and the United States. Cardini was living-->
-                        <#--in San Diego but also working in Tijuana where he avoided the restrictions of Prohibition.-->
-                        <#--</p>-->
-                <#--</div>-->
-                <#--<div class="modalOLDPrice">120</div>-->
-                <#--<div class="modalNEWPrice">109</div>-->
-                <#--<a href="#close" title="Закрыть" class="close">X</a>-->
-            <#--</div>-->
-        </div>
+    </div>
     </div>
 </body>
 </html>

@@ -42,15 +42,14 @@ $(document).ready(function () {
             var regions = "";
             for (var i = 0; i < data.length; i++) {
                 var region = data[i];
-                regions += "<option id= \"" + region.region + "\" index= \""+ region.regionId + "\" class=region >" + region.region +"</option>";
-                }
-                $('#region-select').html('<option disabled selected>Выберите область</option>' + regions);
-            },
-            error: function (error) {
-                console.log(error)
+                regions += "<option id= \"" + region.region + "\" index= \"" + region.regionId + "\" class=region >" + region.region + "</option>";
             }
-
-        });
+            $('#region-select').html('<option disabled selected>Выберите область</option>' + regions);
+        },
+        error: function (error) {
+            console.log(error)
+        }
+    });
 
     //add block with hot dishes
     $.ajax({
@@ -150,7 +149,9 @@ addEvents = function () {
         console.log(typeOfDishes);
         var fullKladr = oblast + city + street;
         console.log(fullKladr);
-        $('#DishesInside').html('');
+        //$('#DishesInside').html('');
+
+        $('#HotDishesInside').html('');
 
         $.ajax({
             url: $hostRoot + "get/dishes/bytype?type=" + typeOfDishes + "&kladr=" + fullKladr,
@@ -158,10 +159,16 @@ addEvents = function () {
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
+
+                $('#HotDeals h1').text('Sort dishes by ' + typeOfDishes);
+
+                $('hotDishes-preloader').hide();
+
                 for (var i = 0; i < data.length; i++) {
                     var type = data[i];
                     var date = new Date(type.deadline);
-                    $('#DishesInside')
+
+                    $('#HotDishesInside')
                         .append('<a href="#' + type.dishId + '"><div class="dishes"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
                         .append('<div id="' + type.dishId + '" class="modalDialog"><div><div class="modalImage"></div>' +
                         '<div class="modalInfoHeader">' + type.name + '</div><div class="modaldeadline">' + date.getHours() + ':' + date.getMinutes() + '</div>' +

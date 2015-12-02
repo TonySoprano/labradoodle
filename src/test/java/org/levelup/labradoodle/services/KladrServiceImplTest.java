@@ -77,24 +77,24 @@ public class KladrServiceImplTest {
         verify(kladrRepository, times(1)).getCities("DNK");
     }
 
-    @Test
-    public void testGetCladrInfo5()  {
-        when(kladrRepository.getStreets("DNK", "DNK")).thenReturn(createStreets());
-        List<?> response = cladrService.getKladrInfo("DNKDNK");
-        assertion.assertNotNull(response);
-        assertion.assertEquals(response.size(),1);
-        assertion.assertEquals(response,Street.class);
-        verify(kladrRepository, times(1)).getCities("DNKDNK");
-    }
-
-    @Test
-    public void testGetCladrInfo6()  {
-        doThrow(new RuntimeException()).when(kladrRepository.getStreets("DNK","DNK"));
-        List<?> response = cladrService.getKladrInfo("DNKDNK");
-        assertion.assertNotNull(response);
-        assertion.assertEquals(response.size(),1);
-        verify(kladrRepository, times(0)).getCities("DNKSNK");
-    }
+//    @Test
+//    public void testGetCladrInfo5()  {
+//        when(kladrRepository.getStreets("DNK", "DNK")).thenReturn(createStreets());
+//        List<?> response = cladrService.getKladrInfo("DNKDNK");
+//        assertion.assertNotNull(response);
+//        assertion.assertEquals(response.size(),1);
+//        assertion.assertEquals(response,Street.class);
+//        verify(kladrRepository, times(1)).getCities("DNKDNK");
+//    }
+//
+//    @Test
+//    public void testGetCladrInfo6()  {
+//        doThrow(new RuntimeException()).when(kladrRepository.getStreets("DNK","DNK"));
+//        List<?> response = cladrService.getKladrInfo("DNKDNK");
+//        assertion.assertNotNull(response);
+//        assertion.assertEquals(response.size(),1);
+//        verify(kladrRepository, times(0)).getCities("DNKSNK");
+//    }
 
     /**
      * This method creates a List with  Region models for tests
