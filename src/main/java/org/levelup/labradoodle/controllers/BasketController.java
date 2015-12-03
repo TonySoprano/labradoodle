@@ -35,7 +35,6 @@ public class BasketController {
     @RequestMapping(value = "/basket/add/dish", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public void addDishInBasket(HttpSession session,@RequestParam Integer id){
-        System.out.println(session.getId());
         if (session.getAttribute("basket") == null){
             Map basket = new HashMap();
             basket.put(id,1);
@@ -47,15 +46,24 @@ public class BasketController {
         }
     }
 
-    //@RequestMapping(value = "/basket/delete/dish",method = )
+    /**
+     * This method delete chosen dish to client's session attribute.
+     * @param id - Dish id
+     */
+    @RequestMapping(value = "/basket/delete/dish",method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void deleteDishFromBasket(HttpSession session, @RequestParam Integer id){
+        Object basket = session.getAttribute("basket");
+        session.setAttribute("basket",basketService.deleteDishFromBasket(basket,id));
+    }
 
+    /**
+     * This method delete chosen dish to client's session attribute.
+     * @return  List<DishDto>
+     */
     @ResponseBody
-    @RequestMapping(value = "/basket/get/all", method = RequestMethod.GET)
-    public List<DishDto> getBasket(HttpServletRequest request,HttpSession session){
-        Cookie[] cookies = request.getCookies();
-        System.out.println(session.getId());
-        List<DishDto> list = new ArrayList<>();
-        list.add(new DishDto().setDishId(1).setName("AFHD"));
-        return list;
+    @RequestMapping(value = "/basket/get/alldishes", method = RequestMethod.GET)
+    public List<DishDto> getBasket(HttpSession session){
+        return basketService.getBasket(session.getAttribute("basket"));
     }
 }
