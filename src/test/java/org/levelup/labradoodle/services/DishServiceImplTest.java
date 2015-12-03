@@ -22,6 +22,8 @@ import static org.mockito.Mockito.*;
  * @version 2.0
  * @since 17.11.15
  */
+
+/*
 public class DishServiceImplTest {
 
     private Assertion assertion = new LoggingAssert();
@@ -76,6 +78,7 @@ public class DishServiceImplTest {
      * This method creates a List with 20 Dishes for tests
      * @return List<Dish>
      */
+/*
     private List<Dish> createListDishesDto(){
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
@@ -90,3 +93,4 @@ public class DishServiceImplTest {
     }
 
 }
+*/
