@@ -24,6 +24,7 @@ import static org.mockito.Mockito.*;
  * @version 1.0
  * @since 20.11.15
  */
+/*
 public class KladrServiceImplTest {
 
     private Assertion assertion = new LoggingAssert();
@@ -100,6 +101,8 @@ public class KladrServiceImplTest {
      * This method creates a List with  Region models for tests
      * @return List<Region>
      */
+
+/*
     private List<Region> createRegion(){
         List<Region> regionList = new ArrayList<>();
         regionList.add(new Region().setId("DNK").setRegion(anyString()));
@@ -110,6 +113,8 @@ public class KladrServiceImplTest {
      * This method creates a List with  Cities models for tests
      * @return List<City>
      */
+
+/*
     private List<City> createCities(){
         List<City> cityList = new ArrayList<>();
         cityList.add(new City()
@@ -123,6 +128,8 @@ public class KladrServiceImplTest {
      * This method creates a List with  Region models for tests
      * @return List<Region>
      */
+
+/*
     private List<Street> createStreets(){
         List<Street> streetList = new ArrayList<>();
         streetList.add(new Street()
@@ -133,3 +140,4 @@ public class KladrServiceImplTest {
     }
 
 }
+*/
