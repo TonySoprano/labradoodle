@@ -66,4 +66,13 @@ public class BasketController {
     public List<DishDto> getBasket(HttpSession session){
         return basketService.getBasket(session.getAttribute("basket"));
     }
+
+    /**
+     * This method delete basket from client's session attribute
+     */
+    @RequestMapping(value = "/basket/clean",method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void cleanBasket(HttpSession session){
+        session.removeAttribute("basket");
+    }
 }
