@@ -42,11 +42,6 @@
     </div>
 </div>
 
-<#--<div id="Dishes">-->
-    <#--<div id="DishesInside">-->
-    <#--</div>-->
-<#--</div>-->
-
 <div id="HotDeals">
     <h1 class="infoText2">Hot Deals</h1>
 </div>
