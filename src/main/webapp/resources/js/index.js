@@ -68,13 +68,13 @@ var onStart = function() {
                 var date = new Date(type.deadline);
                 //temporary code block dishes
                 $('#HotDishesInside')
-                    .append('<a href="#'+ type.dishId +'"><div class="dishes" style="background-image: url(../img/'+ type.photo +');"><div class="deadline">'+ date.getHours() +':'+ date.getMinutes() +'</div><div class="dishesinfo"><div class="dishesinfotext">'+ type.name +'</div><div class="dishesinfoOLDPrice">'+ type.priceOriginal +'</div><div class="dishesinfoNEWPrice">'+ type.priceNew +'</div></div></div></a>')
-                    .append('<div id="'+ type.dishId +'" class="modalDialog"><div><div class="modalImage"></div>' +
+                        .append('<a href="#'+ type.dishId +'"><div class="dishes" style="background-image: url(../img/'+ type.photo +');"><div class="deadline">'+ date.getHours() +':'+ date.getMinutes() +'</div><div class="dishesinfo"><div class="dishesinfotext">'+ type.name +'</div><div class="dishesinfoOLDPrice">'+ type.priceOriginal +'</div><div class="dishesinfoNEWPrice">'+ type.priceNew +'</div></div></div></a>')
+                        .append('<div id="'+ type.dishId +'" class="modalDialog"><div><div class="modalImage"></div>' +
                     '<div class="modalInfoHeader">'+ type.name +'</div><div class="modaldeadline">'+ date.getHours() +':'+ date.getMinutes() +'</div>' +
                     '<div class="modalInfo"><p class="modalInfoText">'+ type.description +'</p></div>' +
                     '<div class="modalOLDPrice">'+ type.priceOriginal +'</div><div class="modalNEWPrice">'+ type.priceNew +'</div>' +
                     '<a href="#close" title="Закрыть" class="close">X</a></div></div>');
-            }
+                }
 
 
         },
