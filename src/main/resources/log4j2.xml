@@ -44,6 +44,10 @@
             <AppenderRef ref="STDERR_ROLL"/>
         </Logger>
 
+        <Logger name="org.levelup.labradoodle.services.BasketServiceImpl" level="ERROR">
+            <AppenderRef ref="STDERR_ROLL"/>
+        </Logger>
+
         <Logger name="org.hibernate" level="ERROR">
             <AppenderRef ref="STDERR_ROLL"/>
         </Logger>

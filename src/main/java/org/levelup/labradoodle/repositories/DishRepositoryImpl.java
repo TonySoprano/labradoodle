@@ -25,7 +25,7 @@ public class DishRepositoryImpl implements DishRepository {
     private EntityManager entityManager;
 
     @Override
-    public Dish getById(int id) {
+    public Dish getById(Integer id) {
         return (Dish) entityManager.createNamedQuery("getDishById").setParameter("id", id).getSingleResult();
     }
 

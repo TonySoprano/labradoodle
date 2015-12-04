@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface DishRepository {
 
-    Dish getById(int id);
+    Dish getById(Integer id);
 
     List<Dish> getDishesByRestaurant(int id);
 
