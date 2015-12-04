@@ -141,6 +141,7 @@ addEvents = function () {
             });
         }
     });
+
     //add listener to street
     var street = "";
     $('#street-select').change(function() {
