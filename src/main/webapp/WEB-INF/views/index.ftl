@@ -35,17 +35,11 @@
     </div>
 </form>
 
-
 <div id="dishesTypes">
     <div id="forDishes">
         <i id="dishesTypes-preloader" class="whirly-loader"></i>
     </div>
 </div>
-
-<#--<div id="Dishes">-->
-    <#--<div id="DishesInside">-->
-    <#--</div>-->
-<#--</div>-->
 
 <div id="HotDeals">
     <h1 class="infoText2">Hot Deals</h1>
