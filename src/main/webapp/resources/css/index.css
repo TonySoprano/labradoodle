@@ -12,7 +12,7 @@
     height: 300px;
     width: 100%;
     background-image: url(../img/pizza_1920x300.jpg);
-    background-position:center;
+    background-position: center;
 }
 #forDishes{
     margin:auto;
@@ -151,7 +151,7 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 #HotDishes{
-     display:flex;
+     display: flex;
      text-align: center;
      height: 700px;
      width: 100%;
@@ -165,13 +165,13 @@
     width: 100%;
 }
 #HotDishesInside{
-    display:table;
+    display: table;
     margin: auto;
     height: 100%;
     width: 1200px;
 }
 #DishesInside{
-    display:table;
+    display: table;
     margin: auto;
     height: 100%;
     width: 1200px;
