@@ -114,21 +114,30 @@
     height: 70px;
     margin: 0px;
 }
+/*.basketHref{*/
+    /*position: relative;*/
+    /*right: 0px;*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*margin: 5px;*/
+/*}*/
 .basket {
     position: absolute;
-    right: 0px;
-    width: 60px;
-    height: 60px;
+    right: 5px;
+    /*width: 60px;*/
+    /*height: 60px;*/
     margin: 5px;
-    display: inline;
-    float: right;
-    vertical-align: middle;
+    /*display: inline;*/
+    /*float: right;*/
+    /*vertical-align: middle;*/
     /*background: url(../img/basket.svg), no-repeat;*/
     /*background-repeat: no-repeat;*/
     /*background-size: contain;*/
+    fill: white;
 }
-.basket:hover {
-    fill: red;
+.basketHover { transition: 1s; }
+svg:hover .basketHover:hover {
+    fill: yellow;
 }
 .logo{
     width: 270px;
@@ -138,6 +147,7 @@
     float: left;
     vertical-align: middle;
     background: url(../img/logo.svg),no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
 
 }
