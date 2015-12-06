@@ -21,17 +21,24 @@
 <!-- Location -->
 <form class="form-inline" align="center">
     <div class="head">
-        <svg class="logo"></svg>
+        <a href="/">
+            <svg class="logo"></svg>
+        </a>
         <label for="sel1"></label>
-            <select class="form-control" id="region-select">
-                <option disabled selected>Выберите область</option>
-            </select>
-            <select class="form-control" id="city-select">
-                <option disabled selected>Выберите город</option>
-            </select>
-            <select class="form-control" id="street-select">
-                <option disabled selected>Выберите улицу</option>
-            </select>
+        <select class="form-control" id="region-select">
+            <option disabled selected>Выберите область</option>
+        </select>
+        <select class="form-control" id="city-select">
+            <option disabled selected>Выберите город</option>
+        </select>
+        <select class="form-control" id="street-select">
+            <option disabled selected>Выберите улицу</option>
+        </select>
+        <a href="#">
+            <img сlass="basket" src="../img/basket.svg">
+            </img>
+            <div class="basketCount">44</div>
+        </a>
     </div>
 </form>
 
@@ -50,6 +57,6 @@
             <i class="whirly-loader"></i>
         </div>
     </div>
-    </div>
+</div>
 </body>
 </html>
