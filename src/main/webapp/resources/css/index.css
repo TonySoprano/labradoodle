@@ -87,6 +87,10 @@
     background: rgba(15, 15, 15, 0.71);
     width: 220px;
     height: 230px;
+
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
 }
 .blackRectangle:hover{
     background: rgba(51, 209, 19, 0.62);
@@ -122,9 +126,9 @@
 }
 
 .logo{
-    width: 270px;
-    height: 60px;
-    margin:5px;
+    width: auto;
+    height: 54px;
+    margin: 8px;
     display: inline;
     float: left;
     vertical-align: middle;
@@ -217,10 +221,18 @@
     height: 250px;
     background-image: url(../img/caesar.jpg);
     background-position:center;
+
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
 }
 .dishes:hover{
-    box-shadow: 0 0 40px rgba(24, 255, 4, 0.97);
+    box-shadow: 0 0 20px rgba(24, 255, 4, 0.97);
     cursor: pointer;
+
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
 }
 .deadline{
     position: absolute;
