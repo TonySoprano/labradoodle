@@ -5,13 +5,14 @@
     left: 0;
     right: 0;
 }
-
 #dishesTypes {
-    display:flex;
     text-align: center;
-    height: 300px;
     width: 100%;
-    background-image: url(../img/pizza_1920x300.jpg);
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/pizza_1920x1440.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     background-position: center;
 }
 #forDishes{
@@ -20,16 +21,6 @@
     width: 1200px;
     display: flex;
 }
-/*.info{*/
-    /*width: 130px;*/
-    /*height: 130px;*/
-    /*margin-top: 20px;*/
-    /*margin: 10px;*/
-    /*display: inline-block;*/
-    /*vertical-align: middle;*/
-    /*background: url(../img/pizza.svg);*/
-    /*background-size: contain;*/
-/*}*/
 #pizza{
     width: 130px;
     height: 130px;
@@ -103,10 +94,12 @@
     cursor: pointer;
 }
 .form-inline{
+    width: 100%;
     background-color: rgb(50, 163, 37);
     height: 70px;
 }
 .head{
+    background-color: rgb(50, 163, 37);
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -114,31 +107,20 @@
     height: 70px;
     margin: 0px;
 }
-/*.basketHref{*/
-    /*position: relative;*/
-    /*right: 0px;*/
-    /*width: 60px;*/
-    /*height: 60px;*/
-    /*margin: 5px;*/
-/*}*/
 .basket {
     position: absolute;
     right: 5px;
-    /*width: 60px;*/
-    /*height: 60px;*/
-    margin: 5px;
-    /*display: inline;*/
-    /*float: right;*/
-    /*vertical-align: middle;*/
-    /*background: url(../img/basket.svg), no-repeat;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: contain;*/
-    fill: white;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: inline;
+    float: right;
+    vertical-align: middle;
+    background: url(../img/basket.svg), no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-.basketHover { transition: 1s; }
-svg:hover .basketHover:hover {
-    fill: yellow;
-}
+
 .logo{
     width: 270px;
     height: 60px;
@@ -181,15 +163,16 @@ svg:hover .basketHover:hover {
     display:flex;
     align-items: center;
     text-align: center;
-    height: 70px;
     width: 100%;
+    min-width: 1200px;
+    height: 70px;
     background-color: orange;
 }
 .infoText2{
     color: white;
     margin: auto;
     display: flex;
-    font-size: 50pt;
+    font-size: 45pt;
     font-family: sans-serif;
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
