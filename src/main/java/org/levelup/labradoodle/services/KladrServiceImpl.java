@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,10 +53,15 @@ public class KladrServiceImpl implements KladrService {
     @Override
     public List<KladrObjectDto> getRegions() {
         List<KladrObjectDto> regionDtoList = new ArrayList<>();
-        for (Region region: kladrRepository.getRegions()){
-            regionDtoList.add(new RegionDto()
-                    .setId(region.getId())
-                    .setRegion(region.getRegion()));
+        try {
+            for (Region region: kladrRepository.getRegions()){
+                regionDtoList.add(new RegionDto()
+                        .setId(region.getId())
+                        .setRegion(region.getRegion()));
+            }
+        }catch (Exception e){
+            LOGGER.error("{}",e.toString(),e);
+            return regionDtoList;
         }
         return regionDtoList;
     }
@@ -80,8 +86,8 @@ public class KladrServiceImpl implements KladrService {
     @Override
     public List<KladrObjectDto> getStreets(String kladr) {
         List<KladrObjectDto> streetDtoList = new ArrayList<>();
-        String  cityKladr = kladr.substring(3,6);
         try {
+            String  cityKladr = kladr.substring(3,6);
             for (Street street : kladrRepository.getStreets(cityKladr)) {
                 streetDtoList.add(new StreetDto()
                     .setStreetId(street.getStreetId())

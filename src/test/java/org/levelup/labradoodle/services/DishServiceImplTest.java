@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.LoggingAssert;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ import static org.mockito.Mockito.*;
  * @since 17.11.15
  */
 
-/*
+
 public class DishServiceImplTest {
 
     private Assertion assertion = new LoggingAssert();
@@ -40,7 +41,7 @@ public class DishServiceImplTest {
     }
 
     @Test
-    public void testGetHotDishes1() {
+    public void testGetHotDishesThatMethodReturnCorrectResponse() {
         when(dishRepository.getHotDishes(anyString())).thenReturn(createListDishesDto());
         List<DishDto> response = appService.getHotDishes("DNLDNKLNN");
         assertion.assertNotNull(response);
@@ -49,8 +50,8 @@ public class DishServiceImplTest {
     }
 
     @Test
-    public void testGetHotDishes2() {
-        doThrow(new RuntimeException()).when(dishRepository).getHotDishes(anyString());
+    public void testGetHotDishesThatExceptionInDB() {
+        when(dishRepository.getHotDishes(anyString())).thenThrow(SQLException.class);
         List<DishDto> response = appService.getHotDishes(anyString());
         assertion.assertNotNull(response);
         assertion.assertEquals(response.size(),0);
@@ -58,8 +59,8 @@ public class DishServiceImplTest {
     }
 
    @Test
-   public void testGetDishesByType1(){
-       doThrow(new RuntimeException()).when(dishRepository.getByType(any(TypesOfDishes.class), anyString()));
+   public void testGetDishesByTypeThatExceptionInDB(){
+       when(dishRepository.getByType(any(TypesOfDishes.class), anyString())).thenThrow(SQLException.class);
        List<DishDto> response = appService.getDishesByType(any(TypesOfDishes.class), anyString());
        assertion.assertNotNull(response);
        assertion.assertEquals(response.size(),0);
@@ -67,7 +68,7 @@ public class DishServiceImplTest {
    }
 
     @Test
-    public void testGetDishesByType2(){
+    public void testGetDishesByTypeThatMethodReturnCorrectResponse(){
         when(dishRepository.getByType(any(TypesOfDishes.class),anyString())).thenReturn(createListDishesDto());
         List<DishDto> response = appService.getDishesByType(any(TypesOfDishes.class), anyString());
         assertion.assertNotNull(response);
@@ -78,7 +79,7 @@ public class DishServiceImplTest {
      * This method creates a List with 20 Dishes for tests
      * @return List<Dish>
      */
-/*
+
     private List<Dish> createListDishesDto(){
         List<Dish> dishesList = new ArrayList<>();
         for (int i=0; i<20; i++){
@@ -93,4 +94,3 @@ public class DishServiceImplTest {
     }
 
 }
-*/
