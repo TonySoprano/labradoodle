@@ -114,6 +114,31 @@
     height: 70px;
     margin: 0px;
 }
+/*.basketHref{*/
+    /*position: relative;*/
+    /*right: 0px;*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*margin: 5px;*/
+/*}*/
+.basket {
+    position: absolute;
+    right: 5px;
+    /*width: 60px;*/
+    /*height: 60px;*/
+    margin: 5px;
+    /*display: inline;*/
+    /*float: right;*/
+    /*vertical-align: middle;*/
+    /*background: url(../img/basket.svg), no-repeat;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: contain;*/
+    fill: white;
+}
+.basketHover { transition: 1s; }
+svg:hover .basketHover:hover {
+    fill: yellow;
+}
 .logo{
     width: 270px;
     height: 60px;
@@ -122,14 +147,33 @@
     float: left;
     vertical-align: middle;
     background: url(../img/logo.svg),no-repeat;
+    background-repeat: no-repeat;
     background-size: contain;
 
 }
+.basketCount{
+    position: absolute;
+    top: 44px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    padding-top: 4px;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 15pt;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+    background-color: rgba(255, 0, 6, 0.83);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
 .form-inline label{
     margin: 18px;
 }
 .form-control{
-    margin-bottom: 6px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    /*vertical-align: middle;*/
 }
 #HotDeals{
     margin-top: 20px;
