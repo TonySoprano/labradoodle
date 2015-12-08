@@ -11,6 +11,7 @@
     <script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/basket.js"></script>
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
