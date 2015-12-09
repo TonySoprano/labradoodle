@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Успей поесть!</title>
     <link href="/css/spinners.css" media="screen" rel="stylesheet">
-    <link href="/css/font-awesome.css" media="screen" rel="stylesheet">
-    <link href="/css/bootstrap.css" media="screen" rel="stylesheet">
-    <link href="/css/bootstrap-theme.css" media="screen" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" media="screen" rel="stylesheet">
     <link href="/css/index.css" media="screen" rel="stylesheet">
-    <script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/index_functions.js"></script>
+    <script type="text/javascript" src="/js/index_onstart.js"></script>
+    <script type="text/javascript" src="/js/index_addevents.js"></script>
     <script type="text/javascript" src="/js/basket.js"></script>
     <script type="text/javascript">
         var $applicationRoot = '/';
@@ -37,7 +38,8 @@
         </select>
         <a href="#">
             <img class="basket" src="../img/basket.svg"></img>
-            <div class="basketCount">44</div>
+
+            <div class="basketCount">0</div>
         </a>
 
     </div>
@@ -50,7 +52,7 @@
 </div>
 
 <div id="HotDeals">
-    <h1 class="infoText2">Hot Deals</h1>
+    <h1 class="infoText2">HOT DEALS</h1>
 </div>
 <div id="HotDishes">
     <div id="HotDishesInside">

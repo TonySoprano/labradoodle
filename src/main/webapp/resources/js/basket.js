@@ -5,11 +5,36 @@ $(document).ready(function () {
     Events();
 });
 
-var Events = function() {
+var Events = function () {
 
-    $('.head').on('click', '.basket', function() {
+    //click by basket icon
+    $('.head').on('click', '.basket', function () {
         $('#HotDishesInside').html('');
-        $('#HotDeals h1').text('Basket');
-    })
+        $('#HotDeals h1').text('BASKET');
+    });
+
+    //load dishes in basket
+    //$.ajax({
+    //    url: $hostRoot + 'basket/get/alldishes',
+    //    type: 'get',
+    //    dataType: 'json',
+    //    contentType: 'application/json',
+    //    success: function (data) {
+    //
+    //
+    //    },
+    //    error: function (error) {
+    //        console.log(error)
+    //    }
+    //});
+
+    //click by add to basket
+    var basketCount = 0;
+    $('#HotDishesInside').on('click', '.deadline', function () {
+        $('.modalDialog').hide();
+        basketCount += 1;
+        $('.basketCount').text(basketCount);
+        console.log(basketCount);
+    });
 
 };
