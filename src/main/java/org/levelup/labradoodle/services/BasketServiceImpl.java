@@ -1,6 +1,7 @@
 package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.entities.Dish;
+import org.levelup.labradoodle.models.web.BasketDto;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.repositories.DishRepository;
 import org.slf4j.Logger;
@@ -52,27 +53,28 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public List<DishDto> getBasket(Object basketAttribute) {
-        List<DishDto> listDishDto = new ArrayList<>();
+    public List<BasketDto> getBasket(Object basketAttribute) {
+        List<BasketDto> basketDtoList = new ArrayList<>();
         Map<Integer,Integer> basket = (HashMap)basketAttribute;
         try {
             for (Map.Entry<Integer,Integer> entry: basket.entrySet()) {
-                Dish dish = dishRepository.getById(entry.getValue());
-                listDishDto.add(new DishDto()
-                        .setDishId(dish.getDishId())
-                        .setName(dish.getName())
-                        .setDeadline(dish.getDeadline())
-                        .setDescription(dish.getDescription())
-                        .setPhoto(dish.getPhoto())
-                        .setPriceNew(dish.getPriceNew())
-                        .setPriceOriginal(dish.getPriceOriginal())
-                        .setRestaurant(dish.getRestaurant())
-                        .setTypesOfDishes(dish.getTypesOfDishes()));
+                Dish dish = dishRepository.getById(entry.getKey());
+                basketDtoList.add(new BasketDto().setDishDto(new DishDto()
+                                                        .setDishId(dish.getDishId())
+                                                        .setName(dish.getName())
+                                                        .setDeadline(dish.getDeadline())
+                                                        .setDescription(dish.getDescription())
+                                                        .setPhoto(dish.getPhoto())
+                                                        .setPriceNew(dish.getPriceNew())
+                                                        .setPriceOriginal(dish.getPriceOriginal())
+                                                        .setRestaurant(dish.getRestaurant())
+                                                        .setTypesOfDishes(dish.getTypesOfDishes()))
+                                                .setCount(entry.getValue()));
             }
         }catch (Exception e){
             LOGGER.error("{}",e.toString(),e);
-            return listDishDto;
+            return basketDtoList;
         }
-        return listDishDto;
+        return basketDtoList;
     }
 }

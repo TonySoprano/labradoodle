@@ -1,5 +1,6 @@
 package org.levelup.labradoodle.controllers;
 
+import org.levelup.labradoodle.models.web.BasketDto;
 import org.levelup.labradoodle.models.web.DishDto;
 import org.levelup.labradoodle.services.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,7 @@ public class BasketController {
      */
     @ResponseBody
     @RequestMapping(value = "/basket/get/alldishes", method = RequestMethod.GET)
-    public List<DishDto> getBasket(HttpSession session){
+    public List<BasketDto> getBasket(HttpSession session){
         return basketService.getBasket(session.getAttribute("basket"));
     }
 

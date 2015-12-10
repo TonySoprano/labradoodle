@@ -1,5 +1,6 @@
 package org.levelup.labradoodle.services;
 
+import org.levelup.labradoodle.models.web.BasketDto;
 import org.levelup.labradoodle.models.web.DishDto;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public interface BasketService {
     /**
      * This return all dishes from user's basket
      * @param basket - Session attribute basket
-     * @return List<DishDto>
+     * @return List<BasketDto>
      */
-    List<DishDto> getBasket(Object basket);
+    List<BasketDto> getBasket(Object basket);
 }
