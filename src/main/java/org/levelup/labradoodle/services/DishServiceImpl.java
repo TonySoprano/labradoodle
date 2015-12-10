@@ -108,4 +108,9 @@ public class DishServiceImpl implements DishService {
         }
         return dishesDtos;
     }
+
+    @Override
+    public List<DishDto> getDishesByRestaurant(String restaurantId) {
+        return null;
+    }
 }

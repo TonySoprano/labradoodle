@@ -10,7 +10,8 @@
     <link href="/css/index.css" media="screen" rel="stylesheet">
     <script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/**"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
@@ -25,6 +26,8 @@
             <svg class="logo"></svg>
         </a>
         <label for="sel1"></label>
+
+
         <select class="form-control" id="region-select">
             <option disabled selected>Выберите область</option>
         </select>
@@ -64,6 +67,7 @@
             <div class="basketCount">44</div>
         </a>
 
+
     </div>
 </form>
 
@@ -83,5 +87,12 @@
         </div>
     </div>
 </div>
+
+<#-- Mock for cabinet -->>
+    <div class="cabinet">
+        <div class="enter">Вход </div>
+        <div class="registration">Регистрация</div>
+    </div>
+
 </body>
 </html>

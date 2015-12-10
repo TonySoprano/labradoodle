@@ -36,5 +36,13 @@ public interface DishService {
      */
     List<DishDto> getHotDishes(String cladr);
 
+    /**
+     * @author Barkovskiy Alexandr
+     * This method get all Dish from defenite resorant from BD and converting it to WEB model
+     * @param restaurantId - String address filter
+     * @return List of DishDto
+     */
+    List<DishDto> getDishesByRestaurant(String restaurantId);
+
 }
 
