@@ -63,3 +63,6 @@
 </div>
 </body>
 </html>
+<#--<div class="addBasket" title="В корзину">-->
+    <#--<div class="addBasketPlus"></div>-->
+<#--</div>-->

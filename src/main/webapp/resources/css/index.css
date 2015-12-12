@@ -230,9 +230,9 @@
     box-shadow: 0 0 20px rgba(24, 255, 4, 0.97);
     cursor: pointer;
 
-    -webkit-transform: scale(1.04);
-    -moz-transform: scale(1.04);
-    -o-transform: scale(1.04);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -o-transform: scale(1.01);
 }
 .deadline{
     position: absolute;
@@ -249,6 +249,33 @@
     background-color: rgba(255, 0, 5, 0.67);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
+
+.addBasket{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(104, 104, 101, 0.67);
+    border-radius: 15%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.54);
+}
+.addBasket:hover{
+    background-color: rgba(24, 255, 4, 0.79);
+    box-shadow: 0 0 8px rgba(96, 255, 71, 0.64);
+}
+.addBasketPlus{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 26px;
+    height: 26px;
+    opacity: 0.8;
+    background: url(../img/plus.svg),no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .dishesinfo{
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
