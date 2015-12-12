@@ -8,6 +8,8 @@ $(document).ready(function () {
 //function in start page
 var onStart = function () {
 
+    $('.basketCount').hide();
+
     //get type of dishes
     $.ajax({
         url: $hostRoot + "get/typesofdishes",

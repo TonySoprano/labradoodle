@@ -30,10 +30,10 @@ var Events = function () {
 
     //click by add to basket
     var basketCount = 0;
-    $('#HotDishesInside').on('click', '.deadline', function () {
+    $('#HotDishesInside').on('click', '.addBasket', function () {
         $('.modalDialog').hide();
         basketCount += 1;
-        $('.basketCount').text(basketCount);
+        $('.basketCount').text(basketCount).show();
         console.log(basketCount);
     });
 
