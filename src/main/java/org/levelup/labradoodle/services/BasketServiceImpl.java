@@ -3,6 +3,8 @@ package org.levelup.labradoodle.services;
 import org.levelup.labradoodle.models.entities.Dish;
 import org.levelup.labradoodle.models.web.BasketDto;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.response.BasketClientResponse;
+import org.levelup.labradoodle.models.web.response.ClientResponseStatus;
 import org.levelup.labradoodle.repositories.DishRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +35,9 @@ public class BasketServiceImpl implements BasketService {
             int countDish = (int)basket.get(dishId);
             countDish++;
             basket.put(dishId,countDish);
+        } else {
+            basket.put(dishId,1);
         }
-        else basket.put(dishId,1);
         return basket;
     }
 
@@ -77,4 +80,15 @@ public class BasketServiceImpl implements BasketService {
         }
         return basketDtoList;
     }
+
+    @Override
+    public Integer getCountDishes(Object basketAttribute) {
+        Map<Integer,Integer> basket = (HashMap)basketAttribute;
+        int count = 0;
+        for (Map.Entry<Integer,Integer> entry: basket.entrySet()) {
+            count+=entry.getValue();
+        }
+        return count;
+    }
+
 }

@@ -2,6 +2,7 @@ package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.web.BasketDto;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.response.BasketClientResponse;
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,7 @@ public interface BasketService {
      * @param basket,dishId - Session attribute basket & Dish id
      * @return Map
      */
-    Map addDishToBasket(Object basket, Integer dishId);
+     Map addDishToBasket(Object basket, Integer dishId);
 
     /**
      * This method delete dish from basket
@@ -35,4 +36,13 @@ public interface BasketService {
      * @return List<BasketDto>
      */
     List<BasketDto> getBasket(Object basket);
+
+    /**
+     * This method return count of Dishes in basket
+     * @param basket - Session attribute basket & Dish id
+     * @return Map
+     */
+    Integer getCountDishes(Object basket);
+
+
 }

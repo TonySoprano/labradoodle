@@ -1,17 +1,15 @@
 package org.levelup.labradoodle.controllers;
 
 import org.levelup.labradoodle.models.web.BasketDto;
-import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.response.BasketClientResponse;
+import org.levelup.labradoodle.models.web.response.ClientResponseStatus;
 import org.levelup.labradoodle.services.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,17 +32,25 @@ public class BasketController {
      * @param id - Dish id
      */
     @RequestMapping(value = "/basket/add/dish", method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void addDishInBasket(HttpSession session,@RequestParam Integer id){
+    @ResponseBody
+    public BasketClientResponse addDishInBasket(HttpSession session, @RequestParam Integer id){
+        if (id == null){
+            return new BasketClientResponse().setStatus(ClientResponseStatus.FAIL);
+        }
         if (session.getAttribute("basket") == null){
             Map basket = new HashMap();
             basket.put(id,1);
             session.setAttribute("basket",basket);
-        }
-        else {
+            return new BasketClientResponse()
+                            .setStatus(ClientResponseStatus.SUCCESS)
+                            .setCountDishes(1);
+        } else {
             Object basket = session.getAttribute("basket");
             session.setAttribute("basket",basketService.addDishToBasket(basket,id));
         }
+        return new BasketClientResponse()
+                        .setStatus(ClientResponseStatus.SUCCESS)
+                        .setCountDishes(basketService.getCountDishes(session.getAttribute("basket")));
     }
 
     /**
@@ -52,10 +58,16 @@ public class BasketController {
      * @param id - Dish id
      */
     @RequestMapping(value = "/basket/delete/dish",method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void deleteDishFromBasket(HttpSession session, @RequestParam Integer id){
+    @ResponseBody
+    public BasketClientResponse deleteDishFromBasket(HttpSession session, @RequestParam Integer id){
+        if (id == null){
+            return new BasketClientResponse().setStatus(ClientResponseStatus.FAIL);
+        }
         Object basket = session.getAttribute("basket");
         session.setAttribute("basket",basketService.deleteDishFromBasket(basket,id));
+        return new BasketClientResponse()
+                        .setStatus(ClientResponseStatus.SUCCESS)
+                        .setCountDishes(basketService.getCountDishes(session.getAttribute("basket")));
     }
 
     /**
