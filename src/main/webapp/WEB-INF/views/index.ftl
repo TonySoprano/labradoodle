@@ -44,7 +44,11 @@
     </div>
 </div>
 
-<div id="dishesTypes">
+<div id="dishesTypes" align="center">
+        <div class="dishesTypesImage" id="image_1"></div>
+        <div class="dishesTypesImage" id="image_2"></div>
+        <div class="dishesTypesImage" id="image_3"></div>
+        <div class="dishesTypesImage" id="image_4"></div>
     <div id="forDishes">
         <i id="dishesTypes-preloader" class="whirly-loader"></i>
     </div>
@@ -62,8 +66,3 @@
 </div>
 </body>
 </html>
-<#--<div class="addBasket" title="В корзину">-->
-    <#--<div class="addBasketPlus"></div>-->
-<#--</div>-->
-
-<#--$('.addBasket').hide();-->

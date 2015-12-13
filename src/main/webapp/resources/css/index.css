@@ -10,11 +10,68 @@
     width: 100%;
     min-width: 1200px;
     height: 300px;
-    background-image: url(../img/pizza_1920x1440.jpg);
+}
+
+/*change images on background*/
+#image_1{
+    z-index:1;
+    position: absolute;
+    top:70px;
+    align-content: center;
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image1.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
 }
+#image_2{
+    z-index:2;
+    position: absolute;
+    top:70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image2.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+#image_3{
+    z-index:3;
+    position: absolute;
+    top:70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image5.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+#image_4{
+    z-index:3;
+    position: absolute;
+    top:70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image6.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+
+
+
+
 #forDishes{
     margin:auto;
     height: 290px;
@@ -75,6 +132,7 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 .blackRectangle{
+    z-index: 777;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 10px;
@@ -112,6 +170,7 @@
     margin: 0px;
 }
 .basket {
+    z-index:900;
     position: absolute;
     right: 5px;
     top:10px;
@@ -124,6 +183,7 @@
     background-size: contain;
 }
 .basketCount{
+    z-index:990;
     position: absolute;
     top: 44px;
     right: 0px;
@@ -221,17 +281,19 @@
     background-image: url(../img/caesar.jpg);
     background-position:center;
 
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
+    /*scale*/
+    /*-moz-transition: all 1s ease-out;*/
+    /*-o-transition: all 1s ease-out;*/
+    /*-webkit-transition: all 1s ease-out;*/
 }
 .dishes:hover{
     box-shadow: 0 0 20px rgba(24, 255, 4, 0.97);
     cursor: pointer;
 
-    -webkit-transform: scale(1.01);
-    -moz-transform: scale(1.01);
-    -o-transform: scale(1.01);
+    /*scale*/
+    /*-webkit-transform: scale(1.01);*/
+    /*-moz-transform: scale(1.01);*/
+    /*-o-transform: scale(1.01);*/
 }
 .deadline{
     position: absolute;
@@ -285,18 +347,18 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.54);
 }
 .delBasket:hover{
-    background-color: rgba(24, 255, 4, 0.79);
-    box-shadow: 0 0 8px rgba(96, 255, 71, 0.64);
+    background-color: rgba(255, 0, 29, 0.79);
+    box-shadow: 0 0 8px rgba(255, 0, 21, 0.64);
 }
 
 .delBasketMinus{
     position: absolute;
-    top: 2px;
+    top: 10px;
     right: 2px;
     width: 26px;
     height: 26px;
     opacity: 0.8;
-    /*background: url(../img/plus.svg),no-repeat;*/
+    background: url(../img/minus.svg),no-repeat;
     background-repeat: no-repeat;
     background-size: contain;
 }
