@@ -40,7 +40,7 @@ Events = function () {
 
     var basketSum = 0;
     //click by add to basket
-    $('#HotDishesInside').on('click', '.deadline', function () {
+    $('#HotDishesInside').on('click', '.addBasket', function () {
         $('.modalDialog').hide();
         basketSum += 1;
         $('.basketCount').text(basketSum + basketCount());

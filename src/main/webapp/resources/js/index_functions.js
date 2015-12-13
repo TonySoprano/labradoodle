@@ -28,8 +28,8 @@ function hotdishesblock(kladr) {
                 var type = data[i];
                 var date = new Date(type.deadline);
                 $('#HotDishesInside')
-                    .append('<a href="#' + type.dishId + '"><div class="dishes" index="'+ type.dishId +'" style="background-image: url(../img/' + type.photo + '); background-size: cover;"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
-                    .append('<div id="' + type.dishId + '" class="modalDialog"><div><div class="modalImage" index="'+ type.dishId +'" style="background-image: url(../img/' + type.photo + '); background-size: cover;"></div>' +
+                    .append('<a href="#' + type.dishId + '"><div class="dishes" style="background-image: url(../img/' + type.photo + '); background-size: cover;"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="addBasket" title="В корзину"><div class="addBasketPlus"></div></div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
+                    .append('<div id="' + type.dishId + '" class="modalDialog"><div><div class="modalImage" style="background-image: url(../img/' + type.photo + '); background-size: cover;"></div>' +
                     '<div class="modalInfoHeader">' + type.name + '</div><div class="modaldeadline">' + date.getHours() + ':' + date.getMinutes() + '</div>' +
                     '<div class="modalInfo"><p class="modalInfoText">' + type.description + '</p></div>' +
                     '<div class="modalOLDPrice">' + type.priceOriginal + '</div><div class="modalNEWPrice">' + type.priceNew + '</div>' +
@@ -61,7 +61,7 @@ function typeofdishesblock(typeOfDishes, fullKladr) {
                 var date = new Date(type.deadline);
 
                 $('#HotDishesInside')
-                    .append('<a href="#' + type.dishId + '"><div class="dishes" index="'+ type.dishId +'" style="background-image: url(../img/' + type.photo + '); background-size: cover;"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
+                    .append('<a href="#' + type.dishId + '"><div class="dishes" index="'+ type.dishId +'" style="background-image: url(../img/' + type.photo + '); background-size: cover;"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="addBasket" title="В корзину"><div class="addBasketPlus"></div></div><div class="dishesinfo"><div class="dishesinfotext">' + type.name + '</div><div class="dishesinfoOLDPrice">' + type.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.priceNew + '</div></div></div></a>')
                     .append('<div id="' + type.dishId + '" class="modalDialog"><div><div class="modalImage" index="'+ type.dishId +'" style="background-image: url(../img/' + type.photo + '); background-size: cover;"></div>' +
                     '<div class="modalInfoHeader">' + type.name + '</div><div class="modaldeadline">' + date.getHours() + ':' + date.getMinutes() + '</div>' +
                     '<div class="modalInfo"><p class="modalInfoText">' + type.description + '</p></div>' +

@@ -38,7 +38,6 @@
         </select>
         <a href="#">
             <img class="basket" src="../img/basket.svg"></img>
-
             <div class="basketCount">0</div>
         </a>
 
@@ -63,3 +62,8 @@
 </div>
 </body>
 </html>
+<#--<div class="addBasket" title="В корзину">-->
+    <#--<div class="addBasketPlus"></div>-->
+<#--</div>-->
+
+<#--$('.addBasket').hide();-->
