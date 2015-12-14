@@ -63,6 +63,10 @@
             <i class="whirly-loader"></i>
         </div>
     </div>
+
+</div>
+<div id="vault">
+    <div id="vaultInfo"></div>
 </div>
 </body>
 </html>

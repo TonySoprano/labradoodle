@@ -9,7 +9,7 @@ $(document).ready(function () {
 Events = function () {
 
     //click by basket icon
-    $('.head').on('click', '.basket'&'.basketCount', function () {
+    $('.head').on('click', '.basket', function () {
         $('#HotDishesInside').html('');
         $('#HotDeals h1').text('BASKET');
 

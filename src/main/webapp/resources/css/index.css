@@ -50,7 +50,7 @@
     width: 100%;
     min-width: 1200px;
     height: 300px;
-    background-image: url(../img/image5.jpg);
+    background-image: url(../img/image3.jpg);
     background-size: 100% auto;
     background-position: center;
 }
@@ -64,7 +64,7 @@
     width: 100%;
     min-width: 1200px;
     height: 300px;
-    background-image: url(../img/image6.jpg);
+    background-image: url(../img/image4.jpg);
     background-size: 100% auto;
     background-position: center;
 }
@@ -243,7 +243,7 @@
 #HotDishes{
      display: flex;
      text-align: center;
-     height: 700px;
+     height: 790px;
      width: 100%;
  }
 #Dishes{
@@ -550,4 +550,21 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
     background-color: rgba(255, 0, 5, 0.67);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/*VAULT*/
+
+#vault{
+    width: 100%;
+    background-color: rgb(50, 163, 37);
+    /*background-color: rgb(108, 108, 108);*/
+    height: 90px;
+}
+#vaultInfo{
+    background-color: rgb(50, 163, 37);
+    /*background-color: rgb(108, 108, 108);*/
+    display: table;
+    margin: 0 auto;
+    width: 1200px;
+    height: 90px;
 }
