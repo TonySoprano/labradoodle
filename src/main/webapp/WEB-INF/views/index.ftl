@@ -63,10 +63,13 @@
             <i class="whirly-loader"></i>
         </div>
     </div>
-
 </div>
 <div id="vault">
-    <div id="vaultInfo"></div>
+    <div id="vaultInfo">
+        <div id="signIn">Sign in</div>
+        <div id="register" title="For new restaurant">Register</div>
+        <span id="copyright">Please contact on this e-mail: test-project@amazon.ua. Copyright, 2015.</span>
+    </div>
 </div>
 </body>
 </html>
