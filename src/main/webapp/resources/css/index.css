@@ -169,6 +169,7 @@
     height: 70px;
     margin: 0px;
 }
+
 .basket {
     z-index:900;
     position: absolute;
@@ -309,6 +310,32 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
     background-color: rgba(255, 0, 5, 0.67);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/*Basket*/
+.dishesBasket{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.22);
+    position: relative;
+    float: left;
+    display: table-cell;
+    max-width: 580px;
+    min-width: 580px;
+    height: 120px;
+    /*background-color: #cacaca;*/
+    border: 2px solid;
+    border-color: #bababa;;
+    /*background-image: url(../img/caesar.jpg);*/
+    /*background-position:center;*/
+}
+.dishesBasketImage{
+    margin: 10px;
+    width: 140px;
+    height: 100px;
+    background-position:center;
 }
 
 .addBasket{
