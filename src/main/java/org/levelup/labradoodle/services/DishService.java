@@ -42,7 +42,7 @@ public interface DishService {
      * @param restaurantId - String address filter
      * @return List of DishDto
      */
-    List<DishDto> getDishesByRestaurant(String restaurantId);
+    List<DishDto> getDishesByRestaurant(int restaurantId);
 
 }
 

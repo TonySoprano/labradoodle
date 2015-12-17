@@ -110,7 +110,25 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<DishDto> getDishesByRestaurant(String restaurantId) {
-        return null;
+    public List<DishDto> getDishesByRestaurant(int restaurantId) {
+        List<DishDto> dishDtoList = new ArrayList<>();
+        try {
+            for (Dish dish: dishRepository.getDishesByRestaurant(restaurantId)){
+                dishDtoList.add(new DishDto()
+                        .setDishId(dish.getDishId())
+                        .setName(dish.getName())
+                        .setDeadline(dish.getDeadline())
+                        .setDescription(dish.getDescription())
+                        .setPhoto(dish.getPhoto())
+                        .setPriceNew(dish.getPriceNew())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setTypesOfDishes(dish.getTypesOfDishes())
+                        .setRestaurant(dish.getRestaurant()));
+            }
+        }catch (Exception e){
+            LOGGER.error("{}",e.toString(),e);
+            return dishDtoList;
+        }
+        return dishDtoList;
     }
 }

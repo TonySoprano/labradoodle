@@ -30,8 +30,8 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public List<Dish> getDishesByRestaurant(int id){
-        return entityManager.createNamedQuery("getDishesByRestaurant").getResultList();
+    public List<Dish> getDishesByRestaurant(Integer id){
+        return entityManager.createNamedQuery("getDishesByRestaurant").setParameter("id",id).getResultList();
     }
 
     @Override
