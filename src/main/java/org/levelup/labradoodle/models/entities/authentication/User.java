@@ -1,7 +1,10 @@
-package org.levelup.labradoodle.models.entities;
+package org.levelup.labradoodle.models.entities.authentication;
+
+import org.levelup.labradoodle.models.entities.Restaurant;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
@@ -14,12 +17,14 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "getAllUsers", query = "SELECT a FROM User a"),
         @NamedQuery(name = "getUserById", query = "SELECT a FROM User a WHERE a.id = :id"),
+        @NamedQuery(name = "getUserByEmail", query = "SELECT a FROM User a WHERE a.email =:email"),
         @NamedQuery(name = "deleteUserById", query = "DELETE FROM User a WHERE a.id = :id")
 })
 public class User implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name = "user_id")
     private Integer id;
 
     private String email;
@@ -30,7 +35,8 @@ public class User implements Serializable {
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
-    //private List<UserRole> userRoles;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<UserRole> userRoles;
 
     public Integer getId() {
         return id;
@@ -58,13 +64,23 @@ public class User implements Serializable {
         this.email = email;
         return this;
     }
-/*
-    public List<UserRole> getUserRoles() {
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public User setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+        return  this;
+    }
+
+    public Set<UserRole> getUserRoles() {
         return userRoles;
     }
 
-    public void setUserRoles(List<UserRole> userRoles) {
+    public User setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
+        return this;
     }
-    */
+
 }

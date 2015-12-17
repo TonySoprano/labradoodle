@@ -1,6 +1,9 @@
-package org.levelup.labradoodle.models.entities;
+package org.levelup.labradoodle.models.entities.authentication;
 
 import org.springframework.security.core.GrantedAuthority;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Class  {@Link org.levelup.labradoodle.models.entities}
@@ -11,8 +14,8 @@ import org.springframework.security.core.GrantedAuthority;
  */
 public enum UserRole implements GrantedAuthority{
 
-    USER("USER_ROLE"),
-    ADMIN("ADMIN_ROLE");
+    USER("ROLE_USER"),
+    ADMIN("ROLE_ADMIN");
 
     private String authority;
 

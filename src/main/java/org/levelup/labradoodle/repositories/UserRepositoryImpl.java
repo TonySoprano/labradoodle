@@ -1,7 +1,7 @@
 package org.levelup.labradoodle.repositories;
 
 
-import org.levelup.labradoodle.models.entities.User;
+import org.levelup.labradoodle.models.entities.authentication.User;
 import org.levelup.labradoodle.services.DishService;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +26,13 @@ public class UserRepositoryImpl implements UserRepository {
     private EntityManager entityManager;
 
     @Override
-    public User getById(int id) {
+    public User getUserById(int id) {
         return (User) entityManager.createNamedQuery("getUserById").setParameter("id", id).getSingleResult();
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return (User) entityManager.createNamedQuery("getUserByEmail").setParameter("email", email).getSingleResult();
     }
 
     @Override

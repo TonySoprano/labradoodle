@@ -11,7 +11,6 @@
     <script type="text/javascript" src="/js/lib/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
-    <script type="text/javascript" src="/js/login.js"></script>
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
@@ -88,9 +87,9 @@
     </div>
 </div>
 
-<#-- Mock for cabinet -->>
+<#-- Mock for cabinet -->
     <div class="cabinet">
-        <div class="enter">Вход </div>
+        <div class="enterCabinet">Вход </div>
         <div class="registration">Регистрация</div>
     </div>
 
