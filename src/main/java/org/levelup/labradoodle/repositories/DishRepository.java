@@ -24,7 +24,7 @@ public interface DishRepository {
 
     void delete(int id);
 
-    void add(Dish admin);
+    void add(Dish dish);
 
     void update(Dish dish);
 

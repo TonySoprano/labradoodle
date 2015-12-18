@@ -3,12 +3,16 @@ package org.levelup.labradoodle.services;
 import org.levelup.labradoodle.models.entities.Dish;
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.response.CabinetClientResponse;
+import org.levelup.labradoodle.models.web.response.ClientResponseStatus;
 import org.levelup.labradoodle.repositories.DishRepository;
+import org.levelup.labradoodle.repositories.RestaurantRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +30,8 @@ public class DishServiceImpl implements DishService {
 
     @Autowired
     private DishRepository dishRepository;
+    @Autowired
+    private RestaurantRepository restaurantRepository;
 
     /**
      * This method get Dish from BD and converting it to WEB model
@@ -130,5 +136,37 @@ public class DishServiceImpl implements DishService {
             return dishDtoList;
         }
         return dishDtoList;
+    }
+
+    @Override
+    public CabinetClientResponse addDish(Integer restaurantId, TypesOfDishes type, Integer priceOriginal, Integer priceNew, Date deadline, String photo, String description) {
+        CabinetClientResponse response = new CabinetClientResponse();
+        Dish dish = new Dish();
+        dish
+                .setRestaurant(restaurantRepository.getById(restaurantId))
+                .setTypesOfDishes(type)
+                .setPriceOriginal(priceOriginal)
+                .setPriceNew(priceNew)
+                .setDeadline(deadline)
+                .setPhoto(photo)
+                .setDescription(description);
+        try {
+            dishRepository.add(dish);
+        }catch (Exception e){
+            LOGGER.error("{}",e.toString(),e);
+            return response.setStatus(ClientResponseStatus.FAIL);
+        }
+
+        return response
+                .setStatus(ClientResponseStatus.SUCCESS)
+                .setDishDto(new DishDto()
+                        .setDishId(dish.getDishId())
+                        .setTypesOfDishes(dish.getTypesOfDishes())
+                        .setName(dish.getName())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setPriceNew(dish.getPriceNew())
+                        .setDeadline(dish.getDeadline())
+                        .setPhoto(dish.getPhoto())
+                        .setDescription(dish.getDescription()));
     }
 }
