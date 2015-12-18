@@ -3,7 +3,9 @@ package org.levelup.labradoodle.services;
 
 import org.levelup.labradoodle.models.entities.TypesOfDishes;
 import org.levelup.labradoodle.models.web.DishDto;
+import org.levelup.labradoodle.models.web.response.CabinetClientResponse;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,6 +37,22 @@ public interface DishService {
      * @return List of DishDto
      */
     List<DishDto> getHotDishes(String cladr);
+
+    /**
+     * @author Barkovskiy Alexandr
+     * This method get all Dish from defenite resorant from BD and converting it to WEB model
+     * @param restaurantId - String address filter
+     * @return List of DishDto
+     */
+    List<DishDto> getDishesByRestaurant(int restaurantId);
+
+    /**
+     * @author Barkovskiy Alexandr
+     * This method add Dish in DB
+     * @param restaurantId - String address filter
+     * @return List of DishDto
+     */
+    CabinetClientResponse addDish(Integer restaurantId, TypesOfDishes type, Integer priceOriginal, Integer priceNew, Date deadline,String photo,String description);
 
 }
 

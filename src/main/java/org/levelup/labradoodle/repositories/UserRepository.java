@@ -1,6 +1,6 @@
 package org.levelup.labradoodle.repositories;
 
-import org.levelup.labradoodle.models.entities.User;
+import org.levelup.labradoodle.models.entities.authentication.User;
 import org.levelup.labradoodle.services.DishService;
 
 import java.util.List;
@@ -15,7 +15,9 @@ import java.util.List;
  */
 public interface UserRepository {
 
-    User getById(int id);
+    User getUserById(int id);
+
+    User getUserByEmail(String email);
 
     List getAll();
 

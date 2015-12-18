@@ -13,6 +13,12 @@ import java.util.List;
  */
 @Entity
 @Table(name = "restaurants")
+@NamedQueries({
+        @NamedQuery(name = "getRestaurantById",query = "SELECT a FROM Restaurant a WHERE a.restaurantId = :id"),
+        @NamedQuery(name = "getRestaurantByEmail",query = "SELECT a FROM Restaurant a WHERE a.email = :email"),
+        @NamedQuery(name = "getAllRestaurants",query = "SELECT a FROM Restaurant a")
+    }
+)
 public class Restaurant implements Serializable {
 
     @Id

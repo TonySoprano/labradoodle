@@ -18,13 +18,13 @@ public interface DishRepository {
 
     Dish getById(Integer id);
 
-    List<Dish> getDishesByRestaurant(int id);
+    List<Dish> getDishesByRestaurant(Integer id);
 
     List<Dish> getAll();
 
     void delete(int id);
 
-    void add(Dish admin);
+    void add(Dish dish);
 
     void update(Dish dish);
 

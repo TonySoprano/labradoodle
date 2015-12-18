@@ -15,11 +15,11 @@ import java.util.List;
  */
 public interface RestaurantRepository {
 
-    Restaurant getById(int id);
+    Restaurant getById(Integer id);
+
+    Restaurant getByEmail(String email);
 
     List<Restaurant> getAll();
-
-    List<Restaurant> getByCity(String city);
 
     void delete(int id);
 

@@ -27,6 +27,8 @@
             <svg class="logo"></svg>
         </a>
         <label for="sel1"></label>
+
+
         <select class="form-control" id="region-select">
             <option disabled selected>Выберите область</option>
         </select>
@@ -40,6 +42,7 @@
             <img class="basket" src="../img/basket.svg"></img>
             <div class="basketCount">0</div>
         </a>
+
 
     </div>
 </div>
@@ -60,6 +63,13 @@
         </div>
     </div>
 </div>
+
+<#-- Mock for cabinet -->
+    <div class="cabinet">
+        <div class="enterCabinet">Вход </div>
+        <div class="registration">Регистрация</div>
+    </div>
+
 </body>
 </html>
 <#--<div class="addBasket" title="В корзину">-->

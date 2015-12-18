@@ -25,18 +25,18 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     private EntityManager entityManager;
 
     @Override
-    public Restaurant getById(int id) {
+    public Restaurant getById(Integer id) {
         return (Restaurant) entityManager.createNamedQuery("getRestaurantById").setParameter("id", id).getSingleResult();
+    }
+
+    @Override
+    public Restaurant getByEmail(String email) {
+        return (Restaurant)entityManager.createNamedQuery("getRestaurantByEmail").setParameter("email",email).getSingleResult();
     }
 
     @Override
     public List<Restaurant> getAll() {
         return entityManager.createNamedQuery("getAllRestaurants").getResultList();
-    }
-
-    @Override
-    public List<Restaurant> getByCity(String city){
-        return entityManager.createNamedQuery("getAllRestorantsByCity").getResultList();
     }
 
     @Override
