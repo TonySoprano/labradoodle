@@ -887,3 +887,19 @@
     line-height: 120px;
     text-align: right;
 }
+#cabinetForm{
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+#cabinetFormInfo{
+    display: table;
+    margin: auto;
+    margin-top: 60px;
+    width: 1200px;
+    height: 300px;
+}
+.cabinetFormText{
+    font-size: 12pt;
+    font-family: sans-serif;
+}

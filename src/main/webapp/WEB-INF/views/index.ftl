@@ -65,10 +65,24 @@
     </div>
 </div>
 <div id="vault">
-    <div id="vaultInfo">
-        <div id="signIn">Sign in</div>
-        <div id="register" title="For new restaurant">Register</div>
-        <span id="copyright">Please contact on this e-mail: test-project@amazon.ua. Copyright, 2015.</span>
+    <div id="cabinet">
+        <div id="enterCabinet">Sign in</div>
+        <div id="registration" title="For new restaurant">Register</div>
+        <span id="copyright">Copyright, 2015.</span>
+    </div>
+</div>
+<div id="cabinetForm">
+    <div id="cabinetFormInfo">
+        <form class="cabinetFormText" action="" method="post">
+            <p><strong>Логин: </strong>
+                <br>
+                <input maxlength="25" size="40" name="Login/E-mail"></p>
+
+            <p><strong>Пароль:</strong>
+                <br>
+                <input type="password" maxlength="25" size="40" name="Password"></p>
+            <input type="submit" value="Подтвердить">
+        </form>
     </div>
 </div>
 </body>
