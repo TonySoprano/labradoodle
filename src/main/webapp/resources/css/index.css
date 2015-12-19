@@ -774,7 +774,7 @@
     height: 120px;
 }
 
-#vaultInfo {
+#cabinet {
     background-color: rgb(50, 163, 37);
     /*background-color: rgb(108, 108, 108);*/
     display: table;
@@ -783,7 +783,7 @@
     height: 120px;
 }
 
-#signIn {
+#enterCabinet {
     /*white-space: nowrap;*/
     display: inline-block;
     position: relative;
@@ -806,7 +806,7 @@
     -webkit-transition: all 0.4s ease-out;
 }
 
-#signIn:hover {
+#enterCabinet:hover {
     /*white-space: nowrap;*/
     position: relative;
     display: inline-block;
@@ -830,7 +830,7 @@
     -webkit-transition: all 0.4s ease-out;
 }
 
-#register {
+#registration {
     /*white-space: nowrap;*/
     position: relative;
     display: inline-block;
@@ -854,7 +854,7 @@
     -webkit-transition: all 0.4s ease-out;
 }
 
-#register:hover {
+#registration:hover {
     /*white-space: nowrap;*/
     position: relative;
     display: inline-block;
