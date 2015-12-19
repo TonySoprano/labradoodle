@@ -73,18 +73,6 @@ Events = function () {
     //});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     //var basketSum = 0;
     //click by add to basket
     $('#HotDishesInside').on('click', '.addBasket', function () {
@@ -110,6 +98,7 @@ Events = function () {
         });
     });
 
+
     //clic dy dell from basket
     $('#HotDishesInside').on('click', '.delBasket', function () {
         $('.modalDialog').hide();
@@ -117,7 +106,7 @@ Events = function () {
         //$('.basketCount').text(basketSum + basketCount()).show();
         //console.log('basketSum = ' + basketSum + basketCount());
 
-        var dishId = $(this).parent('.dishes').attr('index');
+        var dishId = $(this).parent('.dishesBasket').attr('index');
         console.log('dishId = ' + dishId);
 
         $.ajax({
@@ -127,7 +116,7 @@ Events = function () {
             contentType: 'application/json',
             success: function (data) {
                 $('.basketCount').text(data.countDishes).show();
-                $('.dishes').filter('[index="'+ dishId +'"]').remove();
+                $('.dishesBasket').filter('[index="'+ dishId +'"]').remove();
             },
             error: function (error) {
                 console.log(error)
@@ -135,6 +124,34 @@ Events = function () {
         });
     });
 };
+
+
+
+//    //clic dy dell from basket
+//    $('#HotDishesInside').on('click', '.delBasket', function () {
+//        $('.modalDialog').hide();
+//        //basketSum += 1;
+//        //$('.basketCount').text(basketSum + basketCount()).show();
+//        //console.log('basketSum = ' + basketSum + basketCount());
+//
+//        var dishId = $(this).parent('.dishes').attr('index');
+//        console.log('dishId = ' + dishId);
+//
+//        $.ajax({
+//            url: $hostRoot + 'basket/delete/dish?id=' + dishId,
+//            type: 'get',
+//            dataType: 'json',
+//            contentType: 'application/json',
+//            success: function (data) {
+//                $('.basketCount').text(data.countDishes).show();
+//                $('.dishes').filter('[index="'+ dishId +'"]').remove();
+//            },
+//            error: function (error) {
+//                console.log(error)
+//            }
+//        });
+//    });
+//};
 
 function basketCount() {
 var result = 0;

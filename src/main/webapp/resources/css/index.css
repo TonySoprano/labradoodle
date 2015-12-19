@@ -352,6 +352,10 @@
     border-color: #bababa;;
 
 }
+.dishesBasket:hover{
+    background-color: white;
+    border-color: #d1d1d1;;
+}
 
 .dishesBasketImage {
     margin: 8px;
