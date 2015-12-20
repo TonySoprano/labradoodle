@@ -71,7 +71,7 @@ public class DishRepositoryImpl implements DishRepository {
         return entityManager.createQuery(
                     "SELECT a FROM Dish a WHERE a.restaurant.address LIKE :cladr ORDER BY a.deadline")
                     .setParameter("cladr",cladr+"%")
-                    .setMaxResults(20)
+                    .setMaxResults(12)
                     .getResultList();
     }
 }

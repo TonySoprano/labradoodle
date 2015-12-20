@@ -24,13 +24,10 @@ Events = function () {
                     var type = data[i];
                     var date = new Date(type.dishDto.deadline);
                     $('#HotDishesInside')
-                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishes" index="' + type.dishDto.dishId + '" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"><div class="deadline">' + date.getHours() + ':' + date.getMinutes() + '</div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfo"><div class="dishesinfotext">' + type.dishDto.name + '</div><div class="dishesinfoOLDPrice">' + type.dishDto.priceOriginal + '</div><div class="dishesinfoNEWPrice">' + type.dishDto.priceNew + '</div></div></div></a>')
-                        .append('<div id="' + type.dishDto.dishId + '" class="modalDialog"><div><div class="modalImage" index="' + type.dishDto.dishId + '" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div>' +
-                        '<div class="modalInfoHeader">' + type.name + '</div><div class="modaldeadline">' + date.getHours() + ':' + date.getMinutes() + '</div>' +
-                        '<div class="modalInfo"><p class="modalInfoText">' + type.dishDto.description + '</p></div>' +
-                        '<div class="modalOLDPrice">' + type.dishDto.priceOriginal + '</div><div class="modalNEWPrice">' + type.dishDto.priceNew + '</div>' +
-                        '<a href="#close" title="Закрыть" class="close">X</a></div></div>');
+                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishesBasket" index="' + type.dishDto.dishId + '"><div class="dishesBasketImage" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfoBasket"><div class="dishesinfotextBasket">' + type.dishDto.name + '</div><div class="modalInfoBasket"><p class="modalInfoTextBasket">' + type.dishDto.description + '</p></div></div><div class="dishesCountBasket"></div><div class="dishesinfoNEWPriceBasket">' + type.dishDto.priceNew +",00"+ '</div></div></a>')
+
                 }
+                $('#HotDishesInside').append('<div class="basketAccept"><hr><div class="basketPrice">Всего: </div><div class="basketAcceptButton">Заказать</div></div>')
             },
             error: function (error) {
                 console.log(error)
@@ -63,6 +60,7 @@ Events = function () {
         });
     });
 
+
     //clic dy dell from basket
     $('#HotDishesInside').on('click', '.delBasket', function () {
         $('.modalDialog').hide();
@@ -70,7 +68,7 @@ Events = function () {
         //$('.basketCount').text(basketSum + basketCount()).show();
         //console.log('basketSum = ' + basketSum + basketCount());
 
-        var dishId = $(this).parent('.dishes').attr('index');
+        var dishId = $(this).parent('.dishesBasket').attr('index');
         console.log('dishId = ' + dishId);
 
         $.ajax({
@@ -80,7 +78,7 @@ Events = function () {
             contentType: 'application/json',
             success: function (data) {
                 $('.basketCount').text(data.countDishes).show();
-                $('.dishes').filter('[index="'+ dishId +'"]').remove();
+                $('.dishesBasket').filter('[index="'+ dishId +'"]').hide(300);
             },
             error: function (error) {
                 console.log(error)

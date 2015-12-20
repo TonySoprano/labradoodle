@@ -14,13 +14,11 @@
     <script type="text/javascript" src="/js/index_onstart.js"></script>
     <script type="text/javascript" src="/js/index_addevents.js"></script>
     <script type="text/javascript" src="/js/basket.js"></script>
-
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
         var $hostRoot = document.location.protocol + '//' + document.location.host + $applicationRoot;
     </script>
-
 </head>
 <body>
 <!-- Location -->
@@ -30,8 +28,6 @@
             <svg class="logo"></svg>
         </a>
         <label for="sel1"></label>
-
-
         <select class="form-control" id="region-select">
             <option disabled selected>Выберите область</option>
         </select>
@@ -46,11 +42,14 @@
             <div class="basketCount">0</div>
         </a>
 
-
     </div>
 </div>
 
-<div id="dishesTypes">
+<div id="dishesTypes" align="center">
+        <div class="dishesTypesImage" id="image_1"></div>
+        <div class="dishesTypesImage" id="image_2"></div>
+        <div class="dishesTypesImage" id="image_3"></div>
+        <div class="dishesTypesImage" id="image_4"></div>
     <div id="forDishes">
         <i id="dishesTypes-preloader" class="whirly-loader"></i>
     </div>
@@ -66,13 +65,27 @@
         </div>
     </div>
 </div>
-
-<#-- Mock for cabinet -->
-    <div class="cabinet">
-        <div class="enterCabinet">Вход </div>
-        <div class="registration">Регистрация</div>
+<div id="vault">
+    <div id="cabinet">
+        <div id="enterCabinet">Sign in</div>
+        <div id="registration" title="For new restaurant">Register</div>
+        <span id="copyright">Copyright, 2015.</span>
     </div>
+</div>
+<div id="cabinetForm">
+    <div id="cabinetFormInfo">
+        <form class="cabinetFormText" action="" method="post">
+            <p><strong>Логин: </strong>
+                <br>
+                <input maxlength="25" size="40" name="Login/E-mail"></p>
 
+            <p><strong>Пароль:</strong>
+                <br>
+                <input type="password" maxlength="25" size="40" name="Password"></p>
+            <input type="submit" value="Подтвердить">
+        </form>
+    </div>
+</div>
 </body>
 </html>
 <#--<div class="addBasket" title="В корзину">-->

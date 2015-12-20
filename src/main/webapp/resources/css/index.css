@@ -5,23 +5,82 @@
     left: 0;
     right: 0;
 }
+
 #dishesTypes {
     text-align: center;
     width: 100%;
     min-width: 1200px;
     height: 300px;
-    background-image: url(../img/pizza_1920x1440.jpg);
+}
+
+/*change images on background*/
+#image_1 {
+    z-index: 1;
+    position: absolute;
+    top: 70px;
+    align-content: center;
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image1.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
 }
-#forDishes{
-    margin:auto;
+
+#image_2 {
+    z-index: 2;
+    position: absolute;
+    top: 70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image2.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+
+#image_3 {
+    z-index: 3;
+    position: absolute;
+    top: 70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image3.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+
+#image_4 {
+    z-index: 3;
+    position: absolute;
+    top: 70px;
+    align-content: center;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    min-width: 1200px;
+    height: 300px;
+    background-image: url(../img/image4.jpg);
+    background-size: 100% auto;
+    background-position: center;
+}
+
+#forDishes {
+    margin: auto;
     height: 290px;
     width: 1200px;
     display: flex;
 }
-#pizza{
+
+#pizza {
     width: 130px;
     height: 130px;
     margin-top: 20px;
@@ -29,16 +88,18 @@
     background: url(../img/pizza.svg);
     background-size: contain;
 }
-#chine{
+
+#chine {
     width: 130px;
     height: 130px;
     margin-top: 25px;
     display: inline-block;
-    background: url(../img/chine.svg),no-repeat;
+    background: url(../img/chine.svg), no-repeat;
     background-repeat: no-repeat;
     /*background-size: contain;*/
 }
-#fish{
+
+#fish {
     width: 150px;
     height: 130px;
     margin-top: 40px;
@@ -46,16 +107,18 @@
     background: url(../img/fish.svg);
     background-repeat: no-repeat;
 }
-#burgers{
+
+#burgers {
     width: 150px;
     height: 130px;
     margin-top: 35px;
     display: inline-block;
-    background: url(../img/burger.svg),no-repeat;
+    background: url(../img/burger.svg), no-repeat;
     background-repeat: no-repeat;
     /*background-size: contain;*/
 }
-#sushi{
+
+#sushi {
     width: 150px;
     height: 130px;
     margin-top: 30px;
@@ -63,7 +126,8 @@
     background: url(../img/sushi.svg);
     background-repeat: no-repeat;
 }
-.infoText{
+
+.infoText {
     color: white;
     font-size: 26pt;
     font-family: sans-serif;
@@ -74,7 +138,9 @@
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-.blackRectangle{
+
+.blackRectangle {
+    z-index: 777;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 10px;
@@ -92,17 +158,20 @@
     -o-transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
 }
-.blackRectangle:hover{
+
+.blackRectangle:hover {
     background: rgba(51, 209, 19, 0.62);
     box-shadow: 0 0 25px rgba(255, 249, 255, 0.6);
     cursor: pointer;
 }
-.form-inline{
+
+.form-inline {
     width: 100%;
     background-color: rgb(50, 163, 37);
     height: 70px;
 }
-.head{
+
+.head {
     background-color: rgb(50, 163, 37);
     position: relative;
     display: inline-block;
@@ -111,10 +180,12 @@
     height: 70px;
     margin: 0px;
 }
+
 .basket {
+    z-index: 900;
     position: absolute;
     right: 5px;
-    top:10px;
+    top: 10px;
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -123,7 +194,9 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-.basketCount{
+
+.basketCount {
+    z-index: 990;
     position: absolute;
     top: 44px;
     right: 0px;
@@ -138,32 +211,34 @@
     background-color: rgba(255, 0, 6, 0.83);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
-.logo{
+
+.logo {
     width: auto;
     height: 54px;
     margin: 8px;
     display: inline;
     float: left;
     vertical-align: middle;
-    background: url(../img/logo.svg),no-repeat;
+    background: url(../img/logo.svg), no-repeat;
     background-repeat: no-repeat;
     background-size: contain;
 
 }
 
-
-.form-inline label{
+.form-inline label {
     margin: 18px;
 }
-.form-control{
+
+.form-control {
     margin-bottom: 16px;
     margin-top: 16px;
     /*vertical-align: middle;*/
 }
-#HotDeals{
+
+#HotDeals {
     margin-top: 20px;
     margin-bottom: 20px;
-    display:flex;
+    display: flex;
     align-items: center;
     text-align: center;
     width: 100%;
@@ -171,7 +246,8 @@
     height: 70px;
     background-color: orange;
 }
-.infoText2{
+
+.infoText2 {
     color: white;
     margin: auto;
     display: flex;
@@ -180,33 +256,38 @@
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-#HotDishes{
-     display: flex;
-     text-align: center;
-     height: 700px;
-     width: 100%;
- }
-#Dishes{
+
+#HotDishes {
+    display: flex;
+    text-align: center;
+    height: 790px;
+    width: 100%;
+}
+
+#Dishes {
     margin-top: 20px;
     margin-bottom: 20px;
-    display:flex;
+    display: flex;
     text-align: center;
     height: 250px;
     width: 100%;
 }
-#HotDishesInside{
+
+#HotDishesInside {
     display: table;
     margin: auto;
     height: 100%;
     width: 1200px;
 }
-#DishesInside{
+
+#DishesInside {
     display: table;
     margin: auto;
     height: 100%;
     width: 1200px;
 }
-.dishes{
+
+.dishes {
     margin-bottom: 10px;
     margin-right: 10px;
     margin-left: 10px;
@@ -219,21 +300,25 @@
     min-width: 280px;
     height: 250px;
     background-image: url(../img/caesar.jpg);
-    background-position:center;
+    background-position: center;
 
-    -moz-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    -webkit-transition: all 1s ease-out;
+    /*scale*/
+    /*-moz-transition: all 1s ease-out;*/
+    /*-o-transition: all 1s ease-out;*/
+    /*-webkit-transition: all 1s ease-out;*/
 }
-.dishes:hover{
+
+.dishes:hover {
     box-shadow: 0 0 20px rgba(24, 255, 4, 0.97);
     cursor: pointer;
 
-    -webkit-transform: scale(1.01);
-    -moz-transform: scale(1.01);
-    -o-transform: scale(1.01);
+    /*scale*/
+    /*-webkit-transform: scale(1.01);*/
+    /*-moz-transform: scale(1.01);*/
+    /*-o-transform: scale(1.01);*/
 }
-.deadline{
+
+.deadline {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -249,7 +334,39 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
-.addBasket{
+/*BASKET*/
+
+.dishesBasket {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.22);
+    position: relative;
+    float: left;
+    display: table-cell;
+    max-width: 580px;
+    min-width: 580px;
+    height: 120px;
+    background-color: #dadada;
+    border: 2px solid;
+    border-color: #bababa;;
+
+}
+.dishesBasket:hover{
+    background-color: white;
+    border-color: #d1d1d1;;
+}
+
+.dishesBasketImage {
+    margin: 8px;
+    width: 140px;
+    height: 100px;
+    background-position: center;
+    border-radius: 7px;
+}
+
+.addBasket {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -259,48 +376,120 @@
     border-radius: 15%;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.54);
 }
-.addBasket:hover{
-    background-color: rgba(24, 255, 4, 0.79);
-    box-shadow: 0 0 8px rgba(96, 255, 71, 0.64);
-}
-.addBasketPlus{
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 26px;
-    height: 26px;
-    opacity: 0.8;
-    background: url(../img/plus.svg),no-repeat;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.delBasket{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(104, 104, 101, 0.67);
-    border-radius: 15%;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.54);
-}
-.delBasket:hover{
+
+.addBasket:hover {
     background-color: rgba(24, 255, 4, 0.79);
     box-shadow: 0 0 8px rgba(96, 255, 71, 0.64);
 }
 
-.delBasketMinus{
+.addBasketPlus {
     position: absolute;
     top: 2px;
     right: 2px;
     width: 26px;
     height: 26px;
     opacity: 0.8;
-    /*background: url(../img/plus.svg),no-repeat;*/
+    background: url(../img/plus.svg), no-repeat;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.dishesinfo{
+
+.delBasket {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(104, 104, 101, 0.67);
+    border-radius: 15%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.54);
+}
+
+.delBasket:hover {
+    background-color: rgba(255, 0, 29, 0.79);
+    box-shadow: 0 0 8px rgba(255, 0, 21, 0.64);
+}
+
+.delBasketMinus {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 26px;
+    height: 26px;
+    opacity: 0.8;
+    background: url(../img/crest.svg), no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.basketAccept{
+    position: relative;
+    float: left;
+    width: 1200px;
+    height: 60px;
+    /*background-color: #b4b4b4;*/
+}
+.basketPrice{
+    width: 950px;
+    height: 50px;
+    float: left;
+    font-size: 20pt;
+    font-family: sans-serif;
+    text-align: right;
+    line-height: 50px;
+    vertical-align: middle;
+    color: black;
+}
+.basketAcceptButton{
+    /*white-space: nowrap;*/
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(50, 163, 37);
+    border: 2px solid;
+    border-color: rgb(146, 255, 142);
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+.basketAcceptButton:hover{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    background-color: orange;
+    border: 2px solid;
+    /*border-color: rgb(50, 163, 37);*/
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
+
+.dishesinfo {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.22);
@@ -311,13 +500,14 @@
     height: 50px;
     display: flex;
 }
-.dishesinfotext{
+
+.dishesinfotext {
     padding-left: 10px;
     padding-right: 5px;
     padding-top: 3px;
-    white-space:nowrap;
-    overflow:hidden;
-    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 185px;
@@ -329,7 +519,8 @@
     vertical-align: middle;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-.dishesinfoOLDPrice{
+
+.dishesinfoOLDPrice {
     display: inline-block;
     padding-top: 15px;
     width: 35px;
@@ -342,7 +533,8 @@
     background-color: rgba(168, 0, 3, 0.53);
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-.dishesinfoNEWPrice{
+
+.dishesinfoNEWPrice {
     display: inline-block;
     padding-top: 6px;
     width: 60px;
@@ -355,6 +547,76 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
 
+.dishesinfoBasket {
+    position: absolute;
+    top: 8px;
+    left: 158px;
+    width: 350px;
+    height: 50px;
+    display: flex;
+}
+
+.dishesinfotextBasket {
+    /*white-space:nowrap;*/
+    /*overflow:hidden;*/
+    /*display:inline-block;*/
+    line-height: 100%;
+    width: 320px;
+    color: black;
+    font-size: 15pt;
+    font-family: sans-serif;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.modalInfoBasket {
+    position: absolute;
+    top: 52px;
+    left: 0px;
+    width: 300px;
+    height: 50px;
+}
+
+.modalInfoTextBasket {
+    color: black;
+    font-size: 8pt;
+    font-family: sans-serif;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.dishesinfoNEWPriceBasket {
+    position: absolute;
+    top: 72px;
+    right: 6px;
+    width: 95px;
+    height: 38px;
+    color: #ffffff;
+    font-size: 17pt;
+    line-height: 38px;
+    font-family: sans-serif;
+    background-color: rgba(255, 12, 51, 1);
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #bababa;;
+}
+
+.dishesCountBasket {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 12pt;
+    font-family: sans-serif;
+    line-height: 34px;
+    text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
+    background-color: rgba(255, 12, 51, 0.86);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
 .modalDialog {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
@@ -362,7 +624,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
@@ -370,10 +632,12 @@
     display: none;
     pointer-events: none;
 }
+
 .modalDialog:target {
     display: block;
     pointer-events: auto;
 }
+
 .modalDialog > div {
     width: 650px;
     height: 500px;
@@ -386,6 +650,7 @@
     /*background: -webkit-linear-gradient(#fff, #999);*/
     /*background: -o-linear-gradient(#fff, #999);*/
 }
+
 .close {
     background-color: white;
     color: rgba(0, 189, 27, 0.75);
@@ -405,8 +670,12 @@
     -webkit-box-shadow: 1px 1px 3px #000;
     box-shadow: 1px 1px 3px #000;
 }
-.close:hover { background: #fbfdff; }
-.modalImage{
+
+.close:hover {
+    background: #fbfdff;
+}
+
+.modalImage {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -417,7 +686,8 @@
     background-size: 700px;
     background-position: center;
 }
-.modalInfo{
+
+.modalInfo {
     padding: 10px;
     position: absolute;
     top: 400px;
@@ -425,13 +695,15 @@
     width: 550px;
     height: 100px;
 }
-.modalInfoText{
+
+.modalInfoText {
     font-size: 11pt;
     font-family: sans-serif;
     vertical-align: middle;
     text-align: left;
 }
-.modalOLDPrice{
+
+.modalOLDPrice {
     position: absolute;
     top: 400px;
     padding-top: 9px;
@@ -446,7 +718,8 @@
     background-color: rgba(193, 19, 0, 0.61);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.73), 0 0 1em rgba(0, 0, 0, 0.55);
 }
-.modalNEWPrice{
+
+.modalNEWPrice {
     position: absolute;
     padding-top: 5px;
     top: 440px;
@@ -461,10 +734,11 @@
     border-bottom-right-radius: 8px;
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-.modalInfoHeader{
+
+.modalInfoHeader {
     position: absolute;
-    top:360px;
-    left:0px;
+    top: 360px;
+    left: 0px;
     width: 650px;
     height: 40px;
     color: white;
@@ -474,7 +748,8 @@
     background: rgba(15, 15, 15, 0.71);
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
 }
-.modaldeadline{
+
+.modaldeadline {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -488,4 +763,143 @@
     text-shadow: 2px 2px 3px black, 0 0 1em rgba(0, 0, 0, 0.74);
     background-color: rgba(255, 0, 5, 0.67);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/*VAULT*/
+
+#vault {
+    width: 100%;
+    background-color: rgb(50, 163, 37);
+    /*background-color: rgb(108, 108, 108);*/
+    height: 120px;
+}
+
+#cabinet {
+    background-color: rgb(50, 163, 37);
+    /*background-color: rgb(108, 108, 108);*/
+    display: table;
+    margin: 0 auto;
+    width: 1200px;
+    height: 120px;
+}
+
+#enterCabinet {
+    /*white-space: nowrap;*/
+    display: inline-block;
+    position: relative;
+    margin: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
+#enterCabinet:hover {
+    /*white-space: nowrap;*/
+    position: relative;
+    display: inline-block;
+    margin: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: rgb(50, 163, 37);
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid;
+    border-color: rgb(146, 255, 142);
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
+#registration {
+    /*white-space: nowrap;*/
+    position: relative;
+    display: inline-block;
+    margin: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
+#registration:hover {
+    /*white-space: nowrap;*/
+    position: relative;
+    display: inline-block;
+    margin: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: rgb(50, 163, 37);
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid;
+    border-color: rgb(146, 255, 142);
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
+#copyright {
+    float: right;
+    font-size: 12pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 120px;
+    text-align: right;
+}
+#cabinetForm{
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+#cabinetFormInfo{
+    display: table;
+    margin: auto;
+    margin-top: 60px;
+    width: 1200px;
+    height: 300px;
+}
+.cabinetFormText{
+    font-size: 12pt;
+    font-family: sans-serif;
 }
