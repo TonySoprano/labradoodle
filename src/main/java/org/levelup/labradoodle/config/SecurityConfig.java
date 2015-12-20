@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/cabinet").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
-            .formLogin().loginPage("/login").permitAll().and()
+            .formLogin().loginPage("/cabinet").permitAll().and()
             .logout().logoutUrl("/logout").logoutSuccessUrl("/cabinet**");
     }
 

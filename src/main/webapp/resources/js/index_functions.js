@@ -39,7 +39,7 @@ function hotdishesblock(kladr) {
 
                 $('.clock' + type.dishId)
                     .countdown(timer, function (event) {
-                    $(this).html(event.strftime('%Dд %H:%M:%S'));
+                    $(this).html(event.strftime('%H:%M'));
                 });
             }
         },
@@ -78,7 +78,7 @@ function typeofdishesblock(typeOfDishes, fullKladr) {
 
                 $('.clock' + type.dishId)
                     .countdown(timer, function (event) {
-                        $(this).html(event.strftime('%Dд %H:%M:%S'));
+                        $(this).html(event.strftime('%H:%M'));
                     });
             }
         },

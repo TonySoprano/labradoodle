@@ -88,7 +88,7 @@ Events = function () {
 };
 
 function basketCount() {
-var result = 0;
+    var result = 0;
     $.ajax({
         url: $hostRoot + 'basket/get/alldishes',
         type: 'get',
