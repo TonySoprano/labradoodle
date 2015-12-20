@@ -64,7 +64,7 @@ public class DishRepositoryImpl implements DishRepository {
 
     /**
      * @param cladr - String address filter
-     * @return first 20 dishes with min deadline
+     * @return first 12 dishes with min deadline
      */
     @Override
     public List<Dish> getHotDishes(String cladr) {

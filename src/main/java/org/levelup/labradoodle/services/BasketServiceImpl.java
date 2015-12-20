@@ -30,27 +30,26 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public Map addDishToBasket(Object basketAttribute, Integer dishId) {
-        Map basket = (HashMap)basketAttribute;
-        if (basket.containsKey(dishId)){
-            int countDish = (int)basket.get(dishId);
+        Map basket = (HashMap) basketAttribute;
+        if (basket.containsKey(dishId)) {
+            int countDish = (int) basket.get(dishId);
             countDish++;
-            basket.put(dishId,countDish);
+            basket.put(dishId, countDish);
         } else {
-            basket.put(dishId,1);
+            basket.put(dishId, 1);
         }
         return basket;
     }
 
     @Override
     public Map deleteDishFromBasket(Object basketAttribute, Integer dishId) {
-        Map basket = (HashMap)basketAttribute;
-        if (basket.containsKey(dishId)){
-            int countDish = (int)basket.get(dishId);
-            if (countDish != 1){
+        Map basket = (HashMap) basketAttribute;
+        if (basket.containsKey(dishId)) {
+            int countDish = (int) basket.get(dishId);
+            if (countDish != 1) {
                 countDish--;
-                basket.put(dishId,countDish);
-            }
-            else basket.remove(dishId);
+                basket.put(dishId, countDish);
+            } else basket.remove(dishId);
         }
         return basket;
     }
@@ -63,16 +62,16 @@ public class BasketServiceImpl implements BasketService {
             for (Map.Entry<Integer,Integer> entry: basket.entrySet()) {
                 Dish dish = dishRepository.getById(entry.getKey());
                 basketDtoList.add(new BasketDto().setDishDto(new DishDto()
-                                                        .setDishId(dish.getDishId())
-                                                        .setName(dish.getName())
-                                                        .setDeadline(dish.getDeadline())
-                                                        .setDescription(dish.getDescription())
-                                                        .setPhoto(dish.getPhoto())
-                                                        .setPriceNew(dish.getPriceNew())
-                                                        .setPriceOriginal(dish.getPriceOriginal())
-                                                        .setRestaurant(dish.getRestaurant())
-                                                        .setTypesOfDishes(dish.getTypesOfDishes()))
-                                                .setCount(entry.getValue()));
+                        .setDishId(dish.getDishId())
+                        .setName(dish.getName())
+                        .setDeadline(dish.getDeadline())
+                        .setDescription(dish.getDescription())
+                        .setPhoto(dish.getPhoto())
+                        .setPriceNew(dish.getPriceNew())
+                        .setPriceOriginal(dish.getPriceOriginal())
+                        .setRestaurant(dish.getRestaurant())
+                        .setTypesOfDishes(dish.getTypesOfDishes()))
+                        .setCount(entry.getValue()));
             }
         }catch (Exception e){
             LOGGER.error("{}",e.toString(),e);
@@ -83,10 +82,10 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public Integer getCountDishes(Object basketAttribute) {
-        Map<Integer,Integer> basket = (HashMap)basketAttribute;
+        Map<Integer, Integer> basket = (HashMap) basketAttribute;
         int count = 0;
-        for (Map.Entry<Integer,Integer> entry: basket.entrySet()) {
-            count+=entry.getValue();
+        for (Map.Entry<Integer, Integer> entry : basket.entrySet()) {
+            count += entry.getValue();
         }
         return count;
     }
