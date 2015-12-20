@@ -24,6 +24,7 @@
 <!-- Location -->
 <div class="form-inline" align="center">
     <div class="head">
+        <a name="top"></a>
         <a href="/">
             <svg class="logo"></svg>
         </a>
@@ -67,25 +68,14 @@
 </div>
 <div id="vault">
     <div id="cabinet">
+        <a href="#top">
         <div id="enterCabinet">Sign in</div>
+        </a>
         <div id="registration" title="For new restaurant">Register</div>
         <span id="copyright">Copyright, 2015.</span>
     </div>
 </div>
-<div id="cabinetForm">
-    <div id="cabinetFormInfo">
-        <form class="cabinetFormText" action="" method="post">
-            <p><strong>Логин: </strong>
-                <br>
-                <input maxlength="25" size="40" name="Login/E-mail"></p>
 
-            <p><strong>Пароль:</strong>
-                <br>
-                <input type="password" maxlength="25" size="40" name="Password"></p>
-            <input type="submit" value="Подтвердить">
-        </form>
-    </div>
-</div>
 </body>
 </html>
 <#--<div class="addBasket" title="В корзину">-->
