@@ -9,15 +9,18 @@
     <link href="/css/index.css" media="screen" rel="stylesheet">
     <script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="/js/index_functions.js"></script>
     <script type="text/javascript" src="/js/index_onstart.js"></script>
     <script type="text/javascript" src="/js/index_addevents.js"></script>
     <script type="text/javascript" src="/js/basket.js"></script>
+
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
         var $hostRoot = document.location.protocol + '//' + document.location.host + $applicationRoot;
     </script>
+
 </head>
 <body>
 <!-- Location -->
