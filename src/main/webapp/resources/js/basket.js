@@ -22,9 +22,9 @@ Events = function () {
 
                 for (var i = 0; i < data.length; i++) {
                     var type = data[i];
-                    var date = new Date(type.dishDto.deadline);
+
                     $('#HotDishesInside')
-                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishesBasket" index="' + type.dishDto.dishId + '"><div class="dishesBasketImage" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfoBasket"><div class="dishesinfotextBasket">' + type.dishDto.name + '</div><div class="modalInfoBasket"><p class="modalInfoTextBasket">' + type.dishDto.description + '</p></div></div><div class="dishesCountBasket"></div><div class="dishesinfoNEWPriceBasket">' + type.dishDto.priceNew +",00"+ '</div></div></a>')
+                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishesBasket" index="' + type.dishDto.dishId + '"><div class="dishesBasketImage" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfoBasket"><div class="dishesinfotextBasket">' + type.dishDto.name + '</div><div class="modalInfoBasket"><p class="modalInfoTextBasket">' + type.dishDto.description + '</p></div></div><div class="dishesCountBasket">'+ type.count +'</div><div class="dishesinfoNEWPriceBasket">' + type.dishDto.priceNew +",00"+ '</div></div></a>')
 
                 }
                 $('#HotDishesInside').append('<div class="basketAccept"><hr><div class="basketPrice">Всего: </div><div class="basketAcceptButton">Заказать</div></div>')
@@ -35,13 +35,9 @@ Events = function () {
         });
     });
 
-    //var basketSum = 0;
     //click by add to basket
     $('#HotDishesInside').on('click', '.addBasket', function () {
         $('.modalDialog').hide();
-        //basketSum += 1;
-        //$('.basketCount').text(basketSum + basketCount()).show();
-        //console.log('basketSum = ' + basketSum + basketCount());
 
         var dishId = $(this).parent('.dishes').attr('index');
         console.log('dishId = ' + dishId);
@@ -61,12 +57,9 @@ Events = function () {
     });
 
 
-    //clic dy dell from basket
+    //click by dell from basket
     $('#HotDishesInside').on('click', '.delBasket', function () {
         $('.modalDialog').hide();
-        //basketSum += 1;
-        //$('.basketCount').text(basketSum + basketCount()).show();
-        //console.log('basketSum = ' + basketSum + basketCount());
 
         var dishId = $(this).parent('.dishesBasket').attr('index');
         console.log('dishId = ' + dishId);
@@ -78,7 +71,18 @@ Events = function () {
             contentType: 'application/json',
             success: function (data) {
                 $('.basketCount').text(data.countDishes).show();
-                $('.dishesBasket').filter('[index="'+ dishId +'"]').hide(300);
+                var sumCurrentDishes = $('.dishesBasket').filter('[index="'+ dishId +'"]').children('.dishesCountBasket').text();
+
+                console.log('sumCurrentDishes = ' + sumCurrentDishes);
+
+                if ( sumCurrentDishes == 1 ) {
+                    $('.dishesBasket').filter('[index="'+ dishId +'"]').hide(300);
+                } else {
+                    sumCurrentDishes -= 1;
+                    $('.dishesBasket').filter('[index="'+ dishId +'"]').children('.dishesCountBasket').text(sumCurrentDishes);
+                }
+
+
             },
             error: function (error) {
                 console.log(error)

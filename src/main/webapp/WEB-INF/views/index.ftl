@@ -7,6 +7,7 @@
     <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" media="screen" rel="stylesheet">
     <link href="/css/index.css" media="screen" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
     <script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.countdown.min.js"></script>
@@ -68,7 +69,7 @@
 </div>
 <div id="vault">
     <div id="cabinet">
-        <a href="#top">
+        <a href="/cabinet">
         <div id="enterCabinet">Sign in</div>
         </a>
         <div id="registration" title="For new restaurant">Register</div>
