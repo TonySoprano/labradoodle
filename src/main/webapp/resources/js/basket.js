@@ -7,11 +7,12 @@ $(document).ready(function () {
 });
 
 Events = function () {
-
+    var priceAll=0;
     //click by basket icon
     $('.head').on('click', '.basket', function () {
         $('#HotDishesInside').html('');
         $('#HotDeals h1').text('BASKET');
+
 
         $.ajax({
             url: $hostRoot + 'basket/get/alldishes',
@@ -24,10 +25,10 @@ Events = function () {
                     var type = data[i];
 
                     $('#HotDishesInside')
-                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishesBasket" index="' + type.dishDto.dishId + '"><div class="dishesBasketImage" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfoBasket"><div class="dishesinfotextBasket">' + type.dishDto.name + '</div><div class="modalInfoBasket"><p class="modalInfoTextBasket">' + type.dishDto.description + '</p></div></div><div class="dishesCountBasket">'+ type.count +'</div><div class="dishesinfoNEWPriceBasket">' + type.dishDto.priceNew +",00"+ '</div></div></a>')
-
+                        .append('<a href="#' + type.dishDto.dishId + '"><div class="dishesBasket" index="' + type.dishDto.dishId + '" value="' + type.dishDto.priceNew + '"><div class="dishesBasketImage" style="background-image: url(../img/' + type.dishDto.photo + '); background-size: cover;"></div><div class="delBasket" title="Удалить из корзины"><div class="delBasketMinus"></div></div><div class="dishesinfoBasket"><div class="dishesinfotextBasket">' + type.dishDto.name + '</div><div class="modalInfoBasket"><p class="modalInfoTextBasket">' + type.dishDto.description + '</p></div></div><div class="dishesCountBasket">'+ type.count +'</div><div class="dishesinfoNEWPriceBasket">' + type.dishDto.priceNew*type.count +",00"+ '</div></div></a>');
+                    priceAll+=type.dishDto.priceNew*type.count;
                 }
-                $('#HotDishesInside').append('<div class="basketAccept"><hr><div class="basketPrice">Всего: </div><div class="basketAcceptButton">Заказать</div></div>')
+                $('#HotDishesInside').append('<div class="basketAccept"><hr><div class="basketPrice">Всего: '+priceAll+',00</div><div class="basketAcceptButton">Заказать</div></div>')
             },
             error: function (error) {
                 console.log(error)
@@ -62,7 +63,7 @@ Events = function () {
         $('.modalDialog').hide();
 
         var dishId = $(this).parent('.dishesBasket').attr('index');
-        console.log('dishId = ' + dishId);
+        var priceDish = $(this).parent('.dishesBasket').attr('value');
 
         $.ajax({
             url: $hostRoot + 'basket/delete/dish?id=' + dishId,
@@ -73,21 +74,31 @@ Events = function () {
                 $('.basketCount').text(data.countDishes).show();
                 var sumCurrentDishes = $('.dishesBasket').filter('[index="'+ dishId +'"]').children('.dishesCountBasket').text();
 
-                console.log('sumCurrentDishes = ' + sumCurrentDishes);
-
                 if ( sumCurrentDishes == 1 ) {
                     $('.dishesBasket').filter('[index="'+ dishId +'"]').hide(300);
+                    priceAll=priceAll-priceDish;
+                    $('.basketAccept').children('.basketPrice').text('Всего: '+priceAll+',00');
                 } else {
                     sumCurrentDishes -= 1;
                     $('.dishesBasket').filter('[index="'+ dishId +'"]').children('.dishesCountBasket').text(sumCurrentDishes);
+                    priceAll=priceAll-priceDish;
+                    $('.basketAccept').children('.basketPrice').text('Всего: '+priceAll+',00');
+                    $('.dishesBasket').filter('[index="'+ dishId +'"]').children('.dishesinfoNEWPriceBasket').text(priceDish*sumCurrentDishes+',00');
                 }
-
-
             },
             error: function (error) {
                 console.log(error)
             }
         });
+    });
+
+    //click by to order button
+    $('#HotDishesInside').on('click', '.basketAcceptButton', function () {
+        //$('.dishesBasket').html('');
+        $('#HotDeals h1').text('YOUR ORDER IS ACCEPTED');
+
+        alert("Ваш заказ принят! Менеджер свяжется с вами в ближайшее время");
+
     });
 };
 

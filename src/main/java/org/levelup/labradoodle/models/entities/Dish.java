@@ -14,7 +14,7 @@ import java.util.Date;
 @NamedQueries({
         @NamedQuery(name = "getAllDishes", query = "SELECT a FROM Dish a"),
         @NamedQuery(name = "getDishById", query = "SELECT a FROM Dish a WHERE a.id = :id"),
-       // @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dish a WHERE a.id = :id"),
+        @NamedQuery(name = "deleteDishById", query = "DELETE FROM Dish a WHERE a.id = :id"),
         @NamedQuery(name = "getDishByType", query = "SELECT a FROM Dish a WHERE a.typesOfDishes = :typesOfDishes AND a.restaurant.address LIKE :cladr"),
         @NamedQuery(name = "getDishesByRestaurant",query = "SELECT a FROM Dish a WHERE a.restaurant.restaurantId = :id")
 })
