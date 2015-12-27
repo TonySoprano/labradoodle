@@ -96,20 +96,4 @@ addEvents = function () {
         typeofdishesblock(typeOfDishes, fullKladr);
     });
 
-    //$('#enterCabinet').on('click', function() {
-    //
-    //    $('.form-control').hide();
-    //    $('a .basket').hide();
-    //    $('.basketCount').hide();
-    //    $('.blackRectangle').hide();
-    //    $('#HotDeals h1').text('SIGN IN');
-    //
-    //
-    //    $('#HotDishesInside').html('<div id="cabinetForm"><div id="cabinetFormInfo"><form class="cabinetFormText" action="/login" method="post">' +
-    //        '<p><strong>Логин: </strong><br><input type="text" maxlength="25" size="40" ></p><p><strong>Пароль:</strong>' +
-    //            '<br><input type="password" maxlength="25" size="40"></p><input type="submit" value="Подтвердить">' +
-    //            '</form></div></div>');
-    //
-    //
-    //})
 };

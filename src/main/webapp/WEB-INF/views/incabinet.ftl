@@ -33,6 +33,13 @@
 <div id="HotDeals">
     <h1 class="infoText2">SIGN IN</h1>
 </div>
+
+<div id="cabinetAddButton">
+    <hr>
+    <div class="cabinetAcceptButton">Добавить блюдо</div>
+    <hr>
+</div>
+
 <div id="HotDishes">
     <div id="HotDishesInside">
 
@@ -40,10 +47,9 @@
 </div>
 <div id="vault">
     <div id="cabinet">
-        <a href="#top">
-            <div id="enterCabinet">Sign in</div>
+        <a href="/logout">
+            <div id="enterCabinet" class="logoutCabinet">Logout</div>
         </a>
-        <div id="registration" title="For new restaurant">Register</div>
         <span id="copyright">Copyright, 2015.</span>
     </div>
 </div>

@@ -19,6 +19,8 @@ onStartCabinet = function() {
             console.log(cabinetName);
             $('#HotDeals h1').text(cabinetName);
 
+            //$('#HotDishesInside').append('<div class="basketAccept"><hr><div class="basketAcceptButton">Заказать</div></div><hr>');
+
             for (var i = 0; i < data.length; i++) {
                 var type = data[i];
                 var deadtime = new Date(type.deadline);

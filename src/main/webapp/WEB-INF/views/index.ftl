@@ -67,20 +67,16 @@
         </div>
     </div>
 </div>
+
 <div id="vault">
     <div id="cabinet">
         <a href="/incabinet">
         <div id="enterCabinet">Sign in</div>
         </a>
-        <div id="registration" title="For new restaurant">Register</div>
+        <#--<div id="registration" title="For new restaurant">Register</div>-->
         <span id="copyright">Copyright, 2015.</span>
     </div>
 </div>
 
 </body>
 </html>
-<#--<div class="addBasket" title="В корзину">-->
-    <#--<div class="addBasketPlus"></div>-->
-<#--</div>-->
-
-<#--$('.addBasket').hide();-->

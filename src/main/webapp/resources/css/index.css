@@ -903,3 +903,48 @@
     font-size: 12pt;
     font-family: sans-serif;
 }
+#cabinetAddButton{
+    margin: auto;
+    position: relative;
+    width: 1200px;
+    height: 80px;
+    /*background-color: #b4b4b4;*/
+}
+.cabinetAcceptButton{
+    position: relative;
+    margin: auto;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(50, 163, 37);
+    border: 2px solid;
+    border-color: rgb(146, 255, 142);
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+.cabinetAcceptButton:hover{
+    position: relative;
+    margin: auto;
+    width: 230px;
+    height: 50px;
+    font-size: 14pt;
+    font-family: sans-serif;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    background-color: orange;
+    border: 2px solid;
+    border-radius: 10px;
+
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+}
+
