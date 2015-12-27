@@ -50,9 +50,16 @@ public interface DishService {
      * @author Barkovskiy Alexandr
      * This method add Dish in DB
      * @param restaurantId - String address filter
-     * @return List of DishDto
+     * @return CabinetClientResponse
      */
     CabinetClientResponse addDish(Integer restaurantId, TypesOfDishes type, Integer priceOriginal, Integer priceNew, Date deadline,String photo,String description);
 
+    /**
+     * @author Barkovskiy Alexandr
+     * This method delete Dish from DB
+     * @param restaurantId - String address filter
+     * @return CabinetClientResponse
+     */
+    CabinetClientResponse delete(Integer restaurantId);
 }
 

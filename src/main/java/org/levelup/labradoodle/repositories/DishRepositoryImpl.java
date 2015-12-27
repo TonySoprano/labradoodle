@@ -50,6 +50,11 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
+    public void deletete(Integer id){
+        entityManager.remove(new Dish().setDishId(id));
+    }
+
+    @Override
     public void update(Dish dish) {
         entityManager.merge(dish);
     }

@@ -32,4 +32,6 @@ public interface DishRepository {
 
     List<Dish> getHotDishes(String cladr);
 
+    void deletete(Integer id);
+
 }

@@ -169,4 +169,18 @@ public class DishServiceImpl implements DishService {
                         .setPhoto(dish.getPhoto())
                         .setDescription(dish.getDescription()));
     }
+
+    @Override
+    public CabinetClientResponse delete(Integer restaurantId) {
+        try {
+            dishRepository.deletete(restaurantId);
+            return new CabinetClientResponse()
+                    .setStatus(ClientResponseStatus.SUCCESS)
+                    .setDishDto(new DishDto()
+                            .setDishId(restaurantId));
+        }catch (Exception e){
+            LOGGER.error("{}",e.toString(),e);
+            return new CabinetClientResponse().setStatus(ClientResponseStatus.FAIL);
+        }
+    }
 }

@@ -42,12 +42,17 @@ public class CabinetController {
         return dishService.getDishesByRestaurant(userService.getIdRestaurantByEmail(principal.getName()));
     }
 
-    @RequestMapping(value = "/cabinet/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/cabinet/add",method = RequestMethod.GET)
     @ResponseBody
     public CabinetClientResponse addDish(@RequestParam Integer restaurantId, String type, Integer priceOriginal, Integer priceNew, Date deadline,String photo, String description){
         TypesOfDishes typesOfDishes = TypesOfDishes.valueOf(type.toUpperCase());
         return dishService.addDish(restaurantId,typesOfDishes,priceOriginal,priceNew,deadline,photo,description);
     }
 
+    @RequestMapping(value = "/cabinet/delete",method = RequestMethod.GET)
+    @ResponseBody
+    public CabinetClientResponse deleteDish(@RequestParam Integer restaurantId){
+        return dishService.delete(restaurantId);
+    }
 
 }
