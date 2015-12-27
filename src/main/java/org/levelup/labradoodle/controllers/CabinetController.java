@@ -35,6 +35,11 @@ public class CabinetController {
         return "login";
     }
 
+    @RequestMapping(value = "/incabinet")
+    public String incabinet(){
+        return "incabinet";
+    }
+
     @RequestMapping(value = "/cabinet")
     @ResponseBody
     public List<DishDto> personalCabinet(HttpServletRequest request){

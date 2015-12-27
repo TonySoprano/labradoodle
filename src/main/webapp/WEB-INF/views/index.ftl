@@ -69,7 +69,7 @@
 </div>
 <div id="vault">
     <div id="cabinet">
-        <a href="/cabinet">
+        <a href="/incabinet">
         <div id="enterCabinet">Sign in</div>
         </a>
         <div id="registration" title="For new restaurant">Register</div>
