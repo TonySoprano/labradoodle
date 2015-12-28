@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     onStartCabinet();
+    eventsCabinet();
 });
 
 onStartCabinet = function() {
@@ -42,5 +43,33 @@ onStartCabinet = function() {
         error: function (error) {
             console.log(error)
         }
+    });
+};
+
+eventsCabinet = function() {
+
+    $('#cabinetAddButton').on('click', '.cabinetAcceptButton', function(){
+
+        console.log('нажата кнопка Добавить блюдо');
+    });
+
+    $('#HotDishesInside').on('click', '.delBasket', function(){
+
+        var delIdDish = $(this).parent().attr('index');
+        console.log('нажата кнопка Удалить блюдо id блюда = ' + delIdDish);
+
+        $.ajax({
+            url: $hostRoot + "cabinet/delete" + delIdDish,
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+
+                alert('блюдо удалено');
+
+            }, error: function (error) {
+                console.log(error)
+            }
+        });
     });
 };

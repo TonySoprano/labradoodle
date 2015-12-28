@@ -928,6 +928,8 @@
     -moz-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out;
+
+    cursor: pointer;
 }
 .cabinetAcceptButton:hover{
     position: relative;

@@ -11,7 +11,7 @@
     <script type="text/javascript" src="/js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="/js/cabinet.js"></script>
-    <script type="text/javascript" src="/js/basket.js"></script>
+    <#--<script type="text/javascript" src="/js/basket.js"></script>-->
     <script type="text/javascript">
         var $applicationRoot = '/';
         var $host = document.location.protocol + '//' + document.location.host;
